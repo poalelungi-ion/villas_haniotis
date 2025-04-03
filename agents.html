@@ -39,14 +39,14 @@
 
     <nav id="navmenu" class="navmenu" style="font-weight: normal;">
       <ul>
-        <li><a href="index.html" class="active" data-translate="Home">Home</a></li>
-        <li><a href="about.html" data-translate="About">About</a></li>
-        <li><a href="services.html" data-translate="Accommodations">Accommodations</a></li>
-        <li><a href="properties.html" data-translate="Villas">Villas</a></li>
-        <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Accommodations</a></li>
+        <li><a href="properties.html">Villas</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <!-- Language Dropdown (Always Visible) -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#" class="dropdown" data-bs-toggle="dropdown">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul class="dropdown-menu show">
             <li><a href="#" onclick="translatePage('en')">English</a></li>
             <li><a href="#" onclick="translatePage('el')">Greek</a></li>
@@ -55,7 +55,7 @@
             <li><a href="#" onclick="translatePage('tr')">Turkish</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="#" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href="#">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="#">Basic Facilities</a></li>
             <li class="dropdown"><a href="#">Additional Amenities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -70,7 +70,7 @@
             <li><a href="#">Pet-Friendly Options</a></li>
           </ul>
         </li>
-        <li><a href="contact.html" data-translate="Contact">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
@@ -135,9 +135,11 @@
           <p class="fst-italic" data-translate="Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.">
             Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.
           </p>
-          <p data-translate="At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.">
-            At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.
-          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Spacious 3 and 4-bedroom villas with private pools.">Spacious 3 and 4-bedroom villas with private pools.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Modern amenities including air conditioning, flat-screen TVs, and BBQ facilities.">Modern amenities including air conditioning, flat-screen TVs, and BBQ facilities.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Family-friendly with a picnic area and pet-friendly options upon request.">Family-friendly with a picnic area and pet-friendly options upon request.</span></li>
+          </ul>
         </div>
         <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
@@ -412,7 +414,7 @@
 
 <!-- Translation Script -->
 <script>
-  // Translation dictionary
+  // Simple translation dictionary (expand as needed)
   const translations = {
     en: {
       "Home": "Home",
@@ -432,7 +434,9 @@
       "Who We Are": "Who We Are",
       "Luxury Villas in Hanioti, Chalkidiki": "Luxury Villas in Hanioti, Chalkidiki",
       "Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.": "Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.",
-      "At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.": "At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.",
+      "Spacious 3 and 4-bedroom villas with private pools.": "Spacious 3 and 4-bedroom villas with private pools.",
+      "Modern amenities including air conditioning, flat-screen TVs, and BBQ facilities.": "Modern amenities including air conditioning, flat-screen TVs, and BBQ facilities.",
+      "Family-friendly with a picnic area and pet-friendly options upon request.": "Family-friendly with a picnic area and pet-friendly options upon request.",
       "Enjoy a range of amenities and services designed for a perfect vacation.": "Enjoy a range of amenities and services designed for a perfect vacation.",
       "Free WiFi": "Free WiFi",
       "Stay connected with complimentary high-speed WiFi available throughout the property.": "Stay connected with complimentary high-speed WiFi available throughout the property.",
@@ -495,7 +499,9 @@
       "Who We Are": "Ποιοι Είμαστε",
       "Luxury Villas in Hanioti, Chalkidiki": "Πολυτελείς Βίλες στη Χανιώτη, Χαλκιδική",
       "Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.": "Βρίσκεται στη Χανιώτη, μόλις 1,6 χλμ. από την παραλία Χανιώτη, οι Βίλες Χανιώτη προσφέρουν πολυτελή καταλύματα με θέα στη θάλασσα, δωρεάν WiFi και ιδιωτικό χώρο στάθμευσης.",
-      "At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.": "Στις Βίλες Χανιώτη, προσφέρουμε ευρύχωρες βίλες 3 και 4 υπνοδωματίων σχεδιασμένες για απόλυτη άνεση και χαλάρωση. Κάθε βίλα διαθέτει ιδιωτική πισίνα με εκπληκτική θέα στην πισίνα και τον κήπο, ιδανική για μια δροσιστική βουτιά ή ένα χαλαρωτικό βράδυ δίπλα στο νερό. Απολαύστε δωρεάν WiFi υψηλής ταχύτητας σε όλο το κατάλυμα, εξασφαλίζοντας ότι παραμένετε συνδεδεμένοι κατά τη διάρκεια της διαμονής σας. Προσφέρουμε δωρεάν ιδιωτικό χώρο στάθμευσης στις εγκαταστάσεις για όλους τους επισκέπτες, καθιστώντας το βολικό για όσους ταξιδεύουν με αυτοκίνητο. Για περισσότερη ευελιξία, υπηρεσίες ενοικίασης αυτοκινήτων είναι διαθέσιμες κατόπιν αιτήματος για να εξερευνήσετε την όμορφη περιοχή της Χαλκιδικής. Οι σύγχρονες ανέσεις μας περιλαμβάνουν κλιματισμό, τηλεοράσεις επίπεδης οθόνης και πλήρως εξοπλισμένες εγκαταστάσεις BBQ για υπαίθρια δείπνα. Οι οικογένειες θα εκτιμήσουν την περιοχή πικνίκ, ενώ οι επιλογές φιλικές προς τα κατοικίδια είναι διαθέσιμες κατόπιν αιτήματος, εξασφαλίζοντας μια φιλόξενη διαμονή για όλους. Πρόσθετες υπηρεσίες όπως μεταφορές από/προς το αεροδρόμιο μπορούν επίσης να κανονιστούν για να βελτιώσουν την εμπειρία των διακοπών σας.",
+      "Spacious 3 and 4-bedroom villas with private pools.": "Ευρύχωρες βίλες 3 και 4 υπνοδωματίων με ιδιωτικές πισίνες.",
+      "Modern amenities including air conditioning, flat-screen TVs, and BBQ facilities.": "Σύγχρονες ανέσεις όπως κλιματισμός, τηλεοράσεις επίπεδης οθόνης και εγκαταστάσεις BBQ.",
+      "Family-friendly with a picnic area and pet-friendly options upon request.": "Φιλικό προς την οικογένεια με χώρο πικνίκ και επιλογές φιλικές προς τα κατοικίδια κατόπιν αιτήματος.",
       "Enjoy a range of amenities and services designed for a perfect vacation.": "Απολαύστε μια σειρά από ανέσεις και υπηρεσίες σχεδιασμένες για τέλειες διακοπές.",
       "Free WiFi": "Δωρεάν WiFi",
       "Stay connected with complimentary high-speed WiFi available throughout the property.": "Μείνετε συνδεδεμένοι με δωρεάν WiFi υψηλής ταχύτητας σε όλο το κατάλυμα.",
@@ -558,7 +564,9 @@
       "Who We Are": "Хто ми",
       "Luxury Villas in Hanioti, Chalkidiki": "Розкішні вілли в Ханіоті, Халкідікі",
       "Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.": "Розташовані в Ханіоті, лише за 1,6 км від пляжу Ханіоті, вілли Ханіоті пропонують розкішне проживання з видом на море, безкоштовним WiFi та приватним паркінгом.",
-      "At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.": "У віллах Ханіоті ми пропонуємо просторі вілли з 3 та 4 спальнями, створені для максимального комфорту та відпочинку. Кожна вілла має приватний басейн із чудовим видом на басейн і сад, ідеальний для освіжаючого купання або розслабляючого вечора біля води. Насолоджуйтесь безкоштовним високошвидкісним WiFi по всій території, що гарантує вашу зв’язність під час перебування. Ми пропонуємо безкоштовну приватну парковку на території для всіх гостей, що зручно для тих, хто подорожує автомобілем. Для більшої гнучкості доступні послуги оренди автомобілів за запитом, щоб досліджувати прекрасний регіон Халкідікі. Наші сучасні зручності включають кондиціонер, телевізори з плоским екраном та повністю обладнані зони для барбекю для обідів на свіжому повітрі. Сім’ї оцінять зону для пікніка, а варіанти, дружні до домашніх тварин, доступні за запитом, забезпечуючи комфортне перебування для всіх. Додаткові послуги, такі як трансфер до/з аеропорту, також можуть бути організовані для покращення вашого відпочинку.",
+      "Spacious 3 and 4-bedroom villas with private pools.": "Просторі вілли з 3 та 4 спальнями з приватними басейнами.",
+      "Modern amenities including air conditioning, flat-screen TVs, and BBQ facilities.": "Сучасні зручності, включаючи кондиціонер, телевізори з плоским екраном та обладнання для барбекю.",
+      "Family-friendly with a picnic area and pet-friendly options upon request.": "Дружнє до сімей з зоною для пікніка та можливістю проживання з домашніми тваринами за запитом.",
       "Enjoy a range of amenities and services designed for a perfect vacation.": "Насолоджуйтесь широким спектром зручностей та послуг, створених для ідеального відпочинку.",
       "Free WiFi": "Безкоштовний WiFi",
       "Stay connected with complimentary high-speed WiFi available throughout the property.": "Залишайтеся на зв’язку з безкоштовним високошвидкісним WiFi, доступним по всій території.",
@@ -621,7 +629,9 @@
       "Who We Are": "Кто мы",
       "Luxury Villas in Hanioti, Chalkidiki": "Роскошные виллы в Ханиоти, Халкидики",
       "Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.": "Расположенные в Ханиоти, всего в 1,6 км от пляжа Ханиоти, виллы Ханиоти предлагают роскошное проживание с видом на море, бесплатным WiFi и частной парковкой.",
-      "At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.": "В виллах Ханиоти мы предоставляем просторные виллы с 3 и 4 спальнями, разработанные для максимального комфорта и релакса. Каждая вилла оснащена частным бассейном с потрясающим видом на бассейн и сад, идеально подходящим для освежающего купания или расслабляющего вечера у воды. Наслаждайтесь бесплатным высокоскоростным WiFi по всей территории, что гарантирует вашу связь во время пребывания. Мы предлагаем бесплатную частную парковку на территории для всех гостей, что удобно для тех, кто путешествует на автомобиле. Для дополнительной гибкости доступны услуги аренды автомобилей по запросу, чтобы исследовать прекрасный регион Халкидики. Наши современные удобства включают кондиционер, телевизоры с плоским экраном и полностью оборудованные зоны для барбекю для ужинов на свежем воздухе. Семьи оценят зону для пикника, а варианты, дружелюбные к домашним животным, доступны по запросу, обеспечивая комфортное пребывание для всех. Дополнительные услуги, такие как трансфер из/в аэропорт, также могут быть организованы для улучшения вашего отдыха.",
+      "Spacious 3 and 4-bedroom villas with private pools.": "Просторные виллы с 3 и 4 спальнями с частными бассейнами.",
+      "Modern amenities including air conditioning, flat-screen TVs, and BBQ facilities.": "Современные удобства, включая кондиционер, телевизоры с плоским экраном и оборудование для барбекю.",
+      "Family-friendly with a picnic area and pet-friendly options upon request.": "Подходит для семей с зоной для пикника и возможностью проживания с домашними животными по запросу.",
       "Enjoy a range of amenities and services designed for a perfect vacation.": "Наслаждайтесь широким спектром удобств и услуг, созданных для идеального отдыха.",
       "Free WiFi": "Бесплатный WiFi",
       "Stay connected with complimentary high-speed WiFi available throughout the property.": "Оставайтесь на связи с бесплатным высокоскоростным WiFi, доступным по всей территории.",
@@ -684,7 +694,9 @@
       "Who We Are": "Biz Kimiz",
       "Luxury Villas in Hanioti, Chalkidiki": "Hanioti, Halkidiki'deki Lüks Villalar",
       "Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.": "Hanioti'de, Hanioti Plajı'na sadece 1,6 km mesafede bulunan Villas Hanioti, deniz manzaralı lüks konaklama, ücretsiz WiFi ve özel otopark sunar.",
-      "At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.": "Villas Hanioti'de, maksimum konfor ve rahatlama için tasarlanmış geniş 3 ve 4 yatak odalı villalar sunuyoruz. Her villa, serinletici bir dalış veya su kenarında rahatlatıcı bir akşam için mükemmel olan çarpıcı havuz ve bahçe manzaralı özel bir havuza sahiptir. Tesis genelinde ücretsiz yüksek hızlı WiFi ile bağlantıda kalmanızı sağlıyoruz. Tüm konuklar için yerinde ücretsiz özel otopark sunuyoruz, bu da arabayla seyahat edenler için kolaylık sağlıyor. Ekstra esneklik için, güzel Halkidiki bölgesini keşfetmek amacıyla istek üzerine araba kiralama hizmetleri mevcuttur. Modern olanaklarımız arasında klima, düz ekran TV'ler ve açık havada yemek için tam donanımlı barbekü olanakları bulunmaktadır. Aileler piknik alanını takdir edecek ve evcil hayvan dostu seçenekler istek üzerine mevcut olup, herkes için misafirperver bir konaklama sağlar. Tatil deneyiminizi geliştirmek için havalimanı servisleri gibi ek hizmetler de düzenlenebilir.",
+      "Spacious 3 and 4-bedroom villas with private pools.": "Özel havuzlu geniş 3 ve 4 yatak odalı villalar.",
+      "Modern amenities including air conditioning, flat-screen TVs, and BBQ facilities.": "Klima, düz ekran TV'ler ve barbekü olanakları gibi modern удобства.",
+      "Family-friendly with a picnic area and pet-friendly options upon request.": "Piknik alanı ile aile dostu ve talep üzerine evcil hayvan dostu seçenekler.",
       "Enjoy a range of amenities and services designed for a perfect vacation.": "Mükemmel bir tatil için tasarlanmış bir dizi удобство ve hizmetten yararlanın.",
       "Free WiFi": "Ücretsiz WiFi",
       "Stay connected with complimentary high-speed WiFi available throughout the property.": "Tüm tesiste mevcut olan ücretsiz yüksek hızlı WiFi ile bağlantıda kalın.",
@@ -738,25 +750,12 @@
         element.textContent = translations[lang][key];
       }
     });
-    localStorage.setItem('language', lang); // Save the selected language
+    localStorage.setItem('language', lang); // Persist language choice
   }
 
   // Apply translation on page load
-  document.addEventListener('DOMContentLoaded', function () {
-    const savedLang = localStorage.getItem('language') || 'en';
-    translatePage(savedLang);
-  });
-
-  // Ensure navigation links maintain the selected language
-  document.querySelectorAll('.navmenu a:not(.dropdown-toggle)').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent default navigation
-      const href = this.getAttribute('href');
-      const lang = localStorage.getItem('language') || 'en';
-      window.location.href = href; // Navigate to the page
-      translatePage(lang); // Ensure language persists (though this runs on next page load)
-    });
-  });
+  const savedLang = localStorage.getItem('language') || 'en';
+  translatePage(savedLang);
 </script>
 
 <!-- Swiper Initialization -->
