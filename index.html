@@ -26,6 +26,98 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom CSS for Gallery -->
+  <style>
+    .gallery-section {
+      padding: 60px 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Increased min width for larger images */
+      grid-auto-rows: 250px; /* Increased row height for larger images */
+      gap: 2px; /* Reduced gap for a more compact layout */
+      overflow: hidden;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures images fill the space without distortion */
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1); /* Hover effect for interactivity */
+    }
+
+    /* Mosaic effect with full coverage */
+    .gallery-item:nth-child(3n) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .gallery-item:nth-child(5n) {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain; /* Preserves original aspect ratio in lightbox */
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Custom CSS to Ensure Language Dropdown is Always Visible */
+    .navmenu .dropdown .dropdown-menu.show {
+      display: block;
+      position: absolute;
+      background: var(--nav-dropdown-background-color);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+    }
+
+    @media (max-width: 1199px) {
+      .navmenu .dropdown .dropdown-menu.show {
+        position: static;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -46,7 +138,7 @@
         <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
         <!-- Language Dropdown (Always Visible) -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#" class="dropdown-toggle" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul class="dropdown-menu show">
             <li><a href="#" onclick="translatePage('en')">English</a></li>
             <li><a href="#" onclick="translatePage('el')">Greek</a></li>
@@ -226,7 +318,7 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
           <div class="service-item position-relative">
             <div class="icon">
-              <i class="bi bi-paw"></i>
+              <i class="bi bi-pet"></i>
             </div>
             <a href="service-details.html" class="stretched-link">
               <h3 data-translate="Pet-Friendly">Pet-Friendly</h3>
@@ -282,33 +374,58 @@
   </section><!-- /Features Section -->
 
   <!-- Gallery Section -->
-  <section id="gallery" class="services section">
+  <section id="gallery" class="gallery-section section">
     <div class="container section-title" data-aos="fade-up">
       <h2 data-translate="Gallery">Gallery</h2>
-      <p data-translate="Explore the beauty of Villas Hanioti through our rotating photo gallery.">Explore the beauty of Villas Hanioti through our rotating photo gallery.</p>
+      <p data-translate="Explore the beauty of Villas Hanioti through our rotating mosaic photo gallery.">Explore the beauty of Villas Hanioti through our rotating mosaic photo gallery.</p>
     </div>
     <div class="container">
-      <div class="swiper" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="assets/img/gallery-1.jpg" class="img-fluid" alt="Gallery Image 1">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/gallery-2.jpg" class="img-fluid" alt="Gallery Image 2">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/gallery-3.jpg" class="img-fluid" alt="Gallery Image 3">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/gallery-4.jpg" class="img-fluid" alt="Gallery Image 4">
-          </div>
+      <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0693.JPG" class="img-fluid" alt="Gallery Image 1">
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0694.JPG" class="img-fluid" alt="Gallery Image 2">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0704.JPG" class="img-fluid" alt="Gallery Image 3">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0708.JPG" class="img-fluid" alt="Gallery Image 4">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0710.JPG" class="img-fluid" alt="Gallery Image 5">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0713.JPG" class="img-fluid" alt="Gallery Image 6">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0715.JPG" class="img-fluid" alt="Gallery Image 7">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0721.JPG" class="img-fluid" alt="Gallery Image 8">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0684.JPG" class="img-fluid" alt="Gallery Image 9">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_0723.JPG" class="img-fluid" alt="Gallery Image 10">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_1646.JPG" class="img-fluid" alt="Gallery Image 11">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/img/Exterior/IMG_5570.JPG" class="img-fluid" alt="Gallery Image 12">
+        </div>
       </div>
     </div>
-  </section><!-- /Gallery Section -->
+
+    <!-- Lightbox for full-screen view -->
+    <div class="lightbox">
+      <span class="close-lightbox">×</span>
+      <img src="" alt="Full-screen Image">
+    </div>
+  </section><!-- End Gallery Section -->
 
   <!-- Advantages Section -->
   <section id="advantages" class="services section">
@@ -410,6 +527,55 @@
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
 
+<!-- Custom JS for Gallery and Lightbox -->
+<script>
+  // Initialize AOS
+  AOS.init();
+
+  // Lightbox functionality
+  const galleryItems = document.querySelectorAll('.gallery-item img');
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const closeLightbox = document.querySelector('.close-lightbox');
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  closeLightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
+
+  // Rotating gallery effect without fading
+  const galleryGrid = document.querySelector('.gallery-grid');
+  const images = Array.from(galleryGrid.children);
+  let currentIndex = 0;
+
+  function rotateGallery() {
+    // Remove the current image from its position
+    const currentItem = images[currentIndex];
+    galleryGrid.removeChild(currentItem);
+
+    // Add it back to the end of the grid
+    galleryGrid.appendChild(currentItem);
+
+    // Update the index to the next item
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  // Rotate every 5 seconds without fading
+  setInterval(rotateGallery, 15000);
+</script>
+
 <!-- Translation Script -->
 <script>
   // Translation dictionary
@@ -456,7 +622,7 @@
       "Each villa features a private pool with pool and garden views.": "Each villa features a private pool with pool and garden views.",
       "Prime Location": "Prime Location",
       "Close to Hanioti Beach and the vibrant village center.": "Close to Hanioti Beach and the vibrant village center.",
-      "Explore the beauty of Villas Hanioti through our rotating photo gallery.": "Explore the beauty of Villas Hanioti through our rotating photo gallery.",
+      "Explore the beauty of Villas Hanioti through our rotating mosaic photo gallery.": "Explore the beauty of Villas Hanioti through our rotating mosaic photo gallery.",
       "Advantages of Accommodation": "Advantages of Accommodation",
       "Discover what makes Villas Hanioti the perfect choice for your vacation.": "Discover what makes Villas Hanioti the perfect choice for your vacation.",
       "Choose to take a dip in the cool pool, or enjoy delicious local wines on the terrace overlooking the sunset.": "Choose to take a dip in the cool pool, or enjoy delicious local wines on the terrace overlooking the sunset.",
@@ -519,7 +685,7 @@
       "Each villa features a private pool with pool and garden views.": "Κάθε βίλα διαθέτει ιδιωτική πισίνα με θέα στην πισίνα και τον κήπο.",
       "Prime Location": "Πρώτη Τοποθεσία",
       "Close to Hanioti Beach and the vibrant village center.": "Κοντά στην παραλία Χανιώτη και το ζωντανό κέντρο του χωριού.",
-      "Explore the beauty of Villas Hanioti through our rotating photo gallery.": "Εξερευνήστε την ομορφιά των Βιλών Χανιώτη μέσω της περιστρεφόμενης γκαλερί φωτογραφιών μας.",
+      "Explore the beauty of Villas Hanioti through our rotating mosaic photo gallery.": "Εξερευνήστε την ομορφιά των Βιλών Χανιώτη μέσω της περιστρεφόμενης μωσαϊκής φωτογραφικής μας γκαλερί.",
       "Advantages of Accommodation": "Πλεονεκτήματα Καταλύματος",
       "Discover what makes Villas Hanioti the perfect choice for your vacation.": "Ανακαλύψτε τι κάνει τις Βίλες Χανιώτη την τέλεια επιλογή για τις διακοπές σας.",
       "Choose to take a dip in the cool pool, or enjoy delicious local wines on the terrace overlooking the sunset.": "Επιλέξτε να βουτήξετε στη δροσερή πισίνα ή να απολαύσετε νόστιμα τοπικά κρασιά στη βεράντα με θέα το ηλιοβασίλεμα.",
@@ -582,7 +748,7 @@
       "Each villa features a private pool with pool and garden views.": "Кожна вілла має приватний басейн з видом на басейн та сад.",
       "Prime Location": "Першокласне розташування",
       "Close to Hanioti Beach and the vibrant village center.": "Поруч із пляжем Ханіоті та жвавим центром села.",
-      "Explore the beauty of Villas Hanioti through our rotating photo gallery.": "Досліджуйте красу вілл Ханіоті через нашу обертову фотогалерею.",
+      "Explore the beauty of Villas Hanioti through our rotating mosaic photo gallery.": "Досліджуйте красу вілл Ханіоті через нашу обертову мозаїчну фотогалерею.",
       "Advantages of Accommodation": "Переваги проживання",
       "Discover what makes Villas Hanioti the perfect choice for your vacation.": "Дізнайтесь, що робить вілли Ханіоті ідеальним вибором для вашого відпочинку.",
       "Choose to take a dip in the cool pool, or enjoy delicious local wines on the terrace overlooking the sunset.": "Вибирайте між купанням у прохолодному басейні або насолодою смачними місцевими винами на терасі з видом на захід сонця.",
@@ -645,7 +811,7 @@
       "Each villa features a private pool with pool and garden views.": "Каждая вилла имеет частный бассейн с видом на бассейн и сад.",
       "Prime Location": "Отличное расположение",
       "Close to Hanioti Beach and the vibrant village center.": "Рядом с пляжем Ханиоти и оживленным центром деревни.",
-      "Explore the beauty of Villas Hanioti through our rotating photo gallery.": "Исследуйте красоту вилл Ханиоти через нашу вращающуюся фотогалерею.",
+      "Explore the beauty of Villas Hanioti through our rotating mosaic photo gallery.": "Исследуйте красоту вилл Ханиоти через нашу вращающуюся мозаичную фотогалерею.",
       "Advantages of Accommodation": "Преимущества проживания",
       "Discover what makes Villas Hanioti the perfect choice for your vacation.": "Узнайте, что делает виллы Ханиоти идеальным выбором для вашего отдыха.",
       "Choose to take a dip in the cool pool, or enjoy delicious local wines on the terrace overlooking the sunset.": "Выбирайте между купанием в прохладном бассейне или наслаждением вкусными местными винами на террасе с видом на закат.",
@@ -666,6 +832,7 @@
       "All Rights Reserved": "Все права защищены",
       "Hanioti, Chalkidiki, Greece": "Ханиоти, Халкидики, Греция"
     },
+    // Translation dictionary (continued)
     tr: {
       "Home": "Ana Sayfa",
       "About": "Hakkımızda",
@@ -685,19 +852,19 @@
       "Luxury Villas in Hanioti, Chalkidiki": "Hanioti, Halkidiki'deki Lüks Villalar",
       "Situated in Hanioti, just 1.6 km from Hanioti Beach, Villas Hanioti offers luxurious accommodations with sea views, free WiFi, and private parking.": "Hanioti'de, Hanioti Plajı'na sadece 1,6 km mesafede bulunan Villas Hanioti, deniz manzaralı lüks konaklama, ücretsiz WiFi ve özel otopark sunar.",
       "At Villas Hanioti, we provide spacious 3 and 4-bedroom villas designed for ultimate comfort and relaxation. Each villa comes with a private pool offering stunning pool and garden views, perfect for a refreshing dip or a relaxing evening by the water. Enjoy complimentary high-speed WiFi throughout the property, ensuring you stay connected during your stay. We offer free private parking on-site for all guests, making it convenient for those traveling by car. For added flexibility, car rental services are available upon request to explore the beautiful Chalkidiki region. Our modern amenities include air conditioning, flat-screen TVs, and fully equipped BBQ facilities for outdoor dining. Families will appreciate the picnic area, and pet-friendly options are available upon request, ensuring a welcoming stay for everyone. Additional services like airport shuttles can also be arranged to enhance your vacation experience.": "Villas Hanioti'de, maksimum konfor ve rahatlama için tasarlanmış geniş 3 ve 4 yatak odalı villalar sunuyoruz. Her villa, serinletici bir dalış veya su kenarında rahatlatıcı bir akşam için mükemmel olan çarpıcı havuz ve bahçe manzaralı özel bir havuza sahiptir. Tesis genelinde ücretsiz yüksek hızlı WiFi ile bağlantıda kalmanızı sağlıyoruz. Tüm konuklar için yerinde ücretsiz özel otopark sunuyoruz, bu da arabayla seyahat edenler için kolaylık sağlıyor. Ekstra esneklik için, güzel Halkidiki bölgesini keşfetmek amacıyla istek üzerine araba kiralama hizmetleri mevcuttur. Modern olanaklarımız arasında klima, düz ekran TV'ler ve açık havada yemek için tam donanımlı barbekü olanakları bulunmaktadır. Aileler piknik alanını takdir edecek ve evcil hayvan dostu seçenekler istek üzerine mevcut olup, herkes için misafirperver bir konaklama sağlar. Tatil deneyiminizi geliştirmek için havalimanı servisleri gibi ek hizmetler de düzenlenebilir.",
-      "Enjoy a range of amenities and services designed for a perfect vacation.": "Mükemmel bir tatil için tasarlanmış bir dizi удобство ve hizmetten yararlanın.",
+      "Enjoy a range of amenities and services designed for a perfect vacation.": "Mükemmel bir tatil için tasarlanmış bir dizi olanak ve hizmetten yararlanın.",
       "Free WiFi": "Ücretsiz WiFi",
       "Stay connected with complimentary high-speed WiFi available throughout the property.": "Tüm tesiste mevcut olan ücretsiz yüksek hızlı WiFi ile bağlantıda kalın.",
       "Free Parking": "Ücretsiz Otopark",
-      "Convenient private parking available at no extra cost for all guests.": "Tüm konuklar için ek ücret olmadan uygun özel otopark.",
+      "Convenient private parking available at no extra cost for all guests.": "Tüm konuklar için ek ücret olmadan uygun özel otopark mevcuttur.",
       "Private Pool": "Özel Havuz",
       "Relax in your own private swimming pool with stunning views.": "Muhteşem manzaralı kendi özel yüzme havuzunuzda rahatlayın.",
       "BBQ Facilities": "Barbekü Olanakları",
       "Enjoy outdoor dining with fully equipped BBQ facilities.": "Tam donanımlı barbekü olanaklarıyla açık havada yemek yemenin keyfini çıkarın.",
       "Airport Shuttle": "Havalimanı Servisi",
-      "Convenient airport shuttle service available upon request.": "Talep üzerine uygun havalimanı servis hizmeti.",
+      "Convenient airport shuttle service available upon request.": "İstek üzerine uygun havalimanı servisi mevcuttur.",
       "Pet-Friendly": "Evcil Hayvan Dostu",
-      "Pets are welcome upon request, making it a home for everyone.": "Evcil hayvanlar talep üzerine kabul edilir, burası herkes için bir evdir.",
+      "Pets are welcome upon request, making it a home for everyone.": "Evcil hayvanlar istek üzerine kabul edilir, böylece herkes için bir ev olur.",
       "Discover Villas Hanioti": "Villas Hanioti'yi Keşfedin",
       "Located just 1.6 km from Hanioti Beach and 2.5 km from Pefkohori Beach, our villas offer the perfect blend of luxury and convenience.": "Hanioti Plajı'na sadece 1,6 km ve Pefkohori Plajı'na 2,5 km mesafede bulunan villalarımız, lüks ve rahatlığın mükemmel bir karışımını sunar.",
       "Spacious Villas": "Geniş Villalar",
@@ -707,15 +874,15 @@
       "Private Pools": "Özel Havuzlar",
       "Each villa features a private pool with pool and garden views.": "Her villa, havuz ve bahçe manzaralı özel bir havuza sahiptir.",
       "Prime Location": "Mükemmel Konum",
-      "Close to Hanioti Beach and the vibrant village center.": "Hanioti Plajı'na ve hareketli köy merkezine yakın.",
-      "Explore the beauty of Villas Hanioti through our rotating photo gallery.": "Dönen fotoğraf galerimizle Villas Hanioti'nin güzelliğini keşfedin.",
+      "Close to Hanioti Beach and the vibrant village center.": "Hanioti Plajı'na ve canlı köy merkezine yakın.",
+      "Explore the beauty of Villas Hanioti through our rotating mosaic photo gallery.": "Dönen mozaik fotoğraf galerimiz aracılığıyla Villas Hanioti'nin güzelliğini keşfedin.",
       "Advantages of Accommodation": "Konaklama Avantajları",
       "Discover what makes Villas Hanioti the perfect choice for your vacation.": "Villas Hanioti'yi tatiliniz için mükemmel bir seçim yapan şeyleri keşfedin.",
       "Choose to take a dip in the cool pool, or enjoy delicious local wines on the terrace overlooking the sunset.": "Serin havuzda yüzmeyi seçin veya gün batımını izleyen terasta lezzetli yerel şarapların tadını çıkarın.",
       "Balcony with View": "Manzaralı Balkon",
-      "Their balconies offer a view of the sea and the green surrounding area.": "Balkonları deniz ve çevresindeki yeşil alan manzarası sunar.",
+      "Their balconies offer a view of the sea and the green surrounding area.": "Balkonları, deniz ve çevresindeki yeşil alan manzarası sunar.",
       "Luxurious Rooms": "Lüks Odalar",
-      "Spacious accommodation with a private pool surrounded by a well-kept garden.": "Bakımlı bir bahçe ile çevrili özel havuzlu geniş konaklama.",
+      "Spacious accommodation with a private pool surrounded by a well-kept garden.": "Bakımlı bir bahçeyle çevrili özel havuzlu geniş konaklama.",
       "Address": "Adres",
       "Chaniotis": "Hanioti",
       "Chalkidiki, Greece 63085": "Halkidiki, Yunanistan 63085",
@@ -731,6 +898,7 @@
     }
   };
 
+  // Function to translate the page
   function translatePage(lang) {
     document.querySelectorAll('[data-translate]').forEach(element => {
       const key = element.getAttribute('data-translate');
@@ -738,64 +906,16 @@
         element.textContent = translations[lang][key];
       }
     });
-    localStorage.setItem('language', lang); // Save the selected language
+    localStorage.setItem('language', lang);
   }
 
-  // Apply translation on page load
-  document.addEventListener('DOMContentLoaded', function () {
+  // Load the saved language or default to English
+  document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'en';
     translatePage(savedLang);
   });
-
-  // Ensure navigation links maintain the selected language
-  document.querySelectorAll('.navmenu a:not(.dropdown-toggle)').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent default navigation
-      const href = this.getAttribute('href');
-      const lang = localStorage.getItem('language') || 'en';
-      window.location.href = href; // Navigate to the page
-      translatePage(lang); // Ensure language persists (though this runs on next page load)
-    });
-  });
 </script>
-
-<!-- Swiper Initialization -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.swiper', {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  });
-</script>
-
-<!-- Custom CSS to Ensure Language Dropdown is Always Visible -->
-<style>
-  .navmenu .dropdown .dropdown-menu.show {
-    display: block;
-    position: absolute;
-    background: var(--nav-dropdown-background-color);
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-    z-index: 99;
-  }
-
-  @media (max-width: 1199px) {
-    .navmenu .dropdown .dropdown-menu.show {
-      position: static;
-      box-shadow: none;
-    }
-  }
-</style>
 
 </body>
+
 </html>
