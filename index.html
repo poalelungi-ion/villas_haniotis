@@ -35,36 +35,46 @@
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Increased min width for larger images */
-      grid-auto-rows: 250px; /* Increased row height for larger images */
-      gap: 2px; /* Reduced gap for a more compact layout */
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Reduced minmax size to fit more items */
+      grid-auto-rows: 180px; /* Reduced row height for better fit */
+      gap: 5px;
       overflow: hidden;
+      position: relative;
+      grid-auto-flow: dense; /* Helps fill gaps by rearranging items */
     }
 
     .gallery-item {
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures images fill the space without distortion */
-      transition: transform 0.3s ease;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .gallery-item:hover img {
-      transform: scale(1.1); /* Hover effect for interactivity */
+      transform: scale(1.1);
     }
 
-    /* Mosaic effect with full coverage */
-    .gallery-item:nth-child(3n) {
+    /* Adjusted mosaic effect to reduce gaps */
+    .gallery-item:nth-child(3n) { /* Changed from 3n to 4n to reduce frequency */
       grid-column: span 2;
       grid-row: span 1;
     }
 
-    .gallery-item:nth-child(5n) {
+    .gallery-item:nth-child(9999n) { /* Changed from 5n to 6n to reduce frequency */
       grid-column: span 1;
       grid-row: span 2;
     }
@@ -86,7 +96,8 @@
     .lightbox img {
       max-width: 90%;
       max-height: 90%;
-      object-fit: contain; /* Preserves original aspect ratio in lightbox */
+      object-fit: contain;
+      border-radius: 5px;
     }
 
     .lightbox.active {
@@ -100,8 +111,59 @@
       color: white;
       font-size: 30px;
       cursor: pointer;
+      transition: color 0.3s ease;
     }
 
+    .close-lightbox:hover {
+      color: #ccc;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      color: #ccc;
+    }
+
+    .lightbox-prev {
+      left: 20px;
+    }
+
+    .lightbox-next {
+      right: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Smaller items on mobile */
+        grid-auto-rows: 140px;
+      }
+
+      /* Simplify mosaic effect on mobile to avoid gaps */
+      .gallery-item:nth-child(4n),
+      .gallery-item:nth-child(6n) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Even smaller for very small screens */
+        grid-auto-rows: 100px;
+      }
+    }
     /* Custom CSS to Ensure Language Dropdown is Always Visible */
     .navmenu .dropdown .dropdown-menu.show {
       display: block;
@@ -133,7 +195,6 @@
       <ul>
         <li><a href="index.html" class="active" data-translate="Home">Home</a></li>
         <li><a href="about.html" data-translate="About">About</a></li>
-        <li><a href="services.html" data-translate="Accommodations">Accommodations</a></li>
         <li><a href="properties.html" data-translate="Villas">Villas</a></li>
         <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
         <!-- Language Dropdown (Always Visible) -->
@@ -142,24 +203,21 @@
           <ul class="dropdown-menu show">
             <li><a href="#" onclick="translatePage('en')">English</a></li>
             <li><a href="#" onclick="translatePage('el')">Greek</a></li>
-            <li><a href="#" onclick="translatePage('uk')">Ukrainian</a></li>
-            <li><a href="#" onclick="translatePage('ru')">Russian</a></li>
-            <li><a href="#" onclick="translatePage('tr')">Turkish</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="#" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Basic Facilities</a></li>
-            <li class="dropdown"><a href="#">Additional Amenities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">WiFi</a></li>
-                <li><a href="#">Parking</a></li>
-                <li><a href="#">BBQ Facilities</a></li>
+        <li class="dropdown "><a href="#" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="service-breakfast.html">Breakfast</a></li>
+            <li class="dropdown "><a href="#">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul class="dropdown-menu ">
+                <li><a href="service-wifi.html">WiFi</a></li>
+                <li><a href="service-parking.html">Parking</a></li>
+                <li><a href="service-BBQ.html">BBQ Facilities</a></li>
                 <li><a href="#">Private Pool</a></li>
               </ul>
             </li>
-            <li><a href="#">Airport Shuttle</a></li>
-            <li><a href="#">Pet-Friendly Options</a></li>
+            <li><a href="https://goldrentcar.eu/contact.html">Airport Shuttle</a></li>
+<!--            <li><a href="#">Pet-Friendly Options</a></li>-->
           </ul>
         </li>
         <li><a href="contact.html" data-translate="Contact">Contact</a></li>
@@ -318,7 +376,7 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
           <div class="service-item position-relative">
             <div class="icon">
-              <i class="bi bi-pet"></i>
+              <img src="assets/img/Exterior/12638.png" width="35px" height="30px" alt="">
             </div>
             <a href="service-details.html" class="stretched-link">
               <h3 data-translate="Pet-Friendly">Pet-Friendly</h3>
@@ -381,41 +439,54 @@
     </div>
     <div class="container">
       <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="0">
           <img src="assets/img/Exterior/IMG_0693.JPG" class="img-fluid" alt="Gallery Image 1">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="1">
           <img src="assets/img/Exterior/IMG_0694.JPG" class="img-fluid" alt="Gallery Image 2">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="2">
           <img src="assets/img/Exterior/IMG_0704.JPG" class="img-fluid" alt="Gallery Image 3">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="3">
           <img src="assets/img/Exterior/IMG_0708.JPG" class="img-fluid" alt="Gallery Image 4">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="4">
           <img src="assets/img/Exterior/IMG_0710.JPG" class="img-fluid" alt="Gallery Image 5">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="5">
           <img src="assets/img/Exterior/IMG_0713.JPG" class="img-fluid" alt="Gallery Image 6">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="6">
           <img src="assets/img/Exterior/IMG_0715.JPG" class="img-fluid" alt="Gallery Image 7">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="7">
           <img src="assets/img/Exterior/IMG_0721.JPG" class="img-fluid" alt="Gallery Image 8">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="8">
           <img src="assets/img/Exterior/IMG_0684.JPG" class="img-fluid" alt="Gallery Image 9">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="9">
           <img src="assets/img/Exterior/IMG_0723.JPG" class="img-fluid" alt="Gallery Image 10">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="10">
           <img src="assets/img/Exterior/IMG_1646.JPG" class="img-fluid" alt="Gallery Image 11">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-index="11">
           <img src="assets/img/Exterior/IMG_5570.JPG" class="img-fluid" alt="Gallery Image 12">
+        </div>
+        <!-- Added 4 more images to fill gaps (replace with actual image paths) -->
+        <div class="gallery-item" data-index="12">
+          <img src="assets/img/Exterior/IMG_5571.JPG" class="img-fluid" alt="Gallery Image 13">
+        </div>
+        <div class="gallery-item" data-index="13">
+          <img src="assets/img/Exterior/IMG_5564.JPG" class="img-fluid" alt="Gallery Image 14">
+        </div>
+        <div class="gallery-item" data-index="14">
+          <img src="assets/img/Exterior/IMG_0704.JPG" class="img-fluid" alt="Gallery Image 15">
+        </div>
+        <div class="gallery-item" data-index="15">
+          <img src="assets/img/Exterior/IMG_5574.JPG" class="img-fluid" alt="Gallery Image 16">
         </div>
       </div>
     </div>
@@ -423,7 +494,9 @@
     <!-- Lightbox for full-screen view -->
     <div class="lightbox">
       <span class="close-lightbox">×</span>
+      <span class="lightbox-prev"><i class="bi bi-chevron-left"></i></span>
       <img src="" alt="Full-screen Image">
+      <span class="lightbox-next"><i class="bi bi-chevron-right"></i></span>
     </div>
   </section><!-- End Gallery Section -->
 
@@ -532,18 +605,54 @@
   // Initialize AOS
   AOS.init();
 
+  // Gallery rotation functionality
+  const galleryGrid = document.querySelector('.gallery-grid');
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  let currentIndex = 0;
+
+  function rotateGallery() {
+    // Reset all items to their original positions
+    galleryItems.forEach((item, index) => {
+      item.style.order = (index + currentIndex) % galleryItems.length;
+    });
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+  }
+
+  // Rotate every 15 seconds
+  setInterval(rotateGallery, 20000);
+
   // Lightbox functionality
-  const galleryItems = document.querySelectorAll('.gallery-item img');
   const lightbox = document.querySelector('.lightbox');
   const lightboxImg = lightbox.querySelector('img');
   const closeLightbox = document.querySelector('.close-lightbox');
+  const lightboxPrev = document.querySelector('.lightbox-prev');
+  const lightboxNext = document.querySelector('.lightbox-next');
+  let currentLightboxIndex = 0;
 
-  galleryItems.forEach(item => {
+  galleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-      lightboxImg.src = item.src;
+      currentLightboxIndex = parseInt(item.getAttribute('data-index'));
+      updateLightboxImage();
       lightbox.classList.add('active');
     });
+
+    // Add keyboard navigation for gallery items
+    item.setAttribute('tabindex', '0');
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        currentLightboxIndex = parseInt(item.getAttribute('data-index'));
+        updateLightboxImage();
+        lightbox.classList.add('active');
+      }
+    });
   });
+
+  function updateLightboxImage() {
+    const currentItem = galleryItems[currentLightboxIndex];
+    lightboxImg.src = currentItem.querySelector('img').src;
+    lightboxImg.alt = currentItem.querySelector('img').alt;
+  }
 
   closeLightbox.addEventListener('click', () => {
     lightbox.classList.remove('active');
@@ -555,25 +664,32 @@
     }
   });
 
-  // Rotating gallery effect without fading
-  const galleryGrid = document.querySelector('.gallery-grid');
-  const images = Array.from(galleryGrid.children);
-  let currentIndex = 0;
+  lightboxPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+    updateLightboxImage();
+  });
 
-  function rotateGallery() {
-    // Remove the current image from its position
-    const currentItem = images[currentIndex];
-    galleryGrid.removeChild(currentItem);
+  lightboxNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+    updateLightboxImage();
+  });
 
-    // Add it back to the end of the grid
-    galleryGrid.appendChild(currentItem);
-
-    // Update the index to the next item
-    currentIndex = (currentIndex + 1) % images.length;
-  }
-
-  // Rotate every 5 seconds without fading
-  setInterval(rotateGallery, 15000);
+  // Keyboard navigation for lightbox
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+      } else if (e.key === 'ArrowLeft') {
+        currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+        updateLightboxImage();
+      } else if (e.key === 'ArrowRight') {
+        currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+        updateLightboxImage();
+      }
+    }
+  });
 </script>
 
 <!-- Translation Script -->

@@ -33,7 +33,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
     <a href="index.html" class="logo d-flex align-items-center">
-      <img src="assets/img/logo.png" alt="Villas Hanioti Logo" style="aspect-ratio: initial;">
+      <img src="assets/img/logo.png" alt="Villas Hanioti Logo" style="aspect-ratio: initial;" loading="lazy">
       <h1 class="sitename" style="margin-top: 3%; font-weight: normal;">Villas <span>Hanioti</span></h1>
     </a>
 
@@ -49,9 +49,6 @@
           <ul class="dropdown-menu show">
             <li><a href="#" onclick="translatePage('en')">English</a></li>
             <li><a href="#" onclick="translatePage('el')">Greek</a></li>
-            <li><a href="#" onclick="translatePage('uk')">Ukrainian</a></li>
-            <li><a href="#" onclick="translatePage('ru')">Russian</a></li>
-            <li><a href="#" onclick="translatePage('tr')">Turkish</a></li>
           </ul>
         </li>
         <li class="dropdown"><a href="#" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -100,86 +97,47 @@
     </nav>
   </div><!-- End Page Title -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p class="who-we-are" data-translate="Who We Are">Who We Are</p>
-            <h3 data-translate="Luxury Living in Chalkidiki">Luxury Living in Chalkidiki</h3>
-            <p class="fst-italic" data-translate="Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki.">Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki.</p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span data-translate="Spacious villas with private pools and modern amenities.">Spacious villas with private pools and modern amenities.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span data-translate="Prime location near the beach and local attractions.">Prime location near the beach and local attractions.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span data-translate="Personalized service to ensure a memorable stay.">Personalized service to ensure a memorable stay.</span></li>
+  <!-- About Section -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+          <p class="who-we-are" data-translate="Who We Are">Who We Are</p>
+          <h3 data-translate="Luxury Living in Chalkidiki">Luxury Living in Chalkidiki</h3>
+          <p class="fst-italic" data-translate="Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki, offering a wide range of services to ensure a memorable stay.">
+            Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki, offering a wide range of services to ensure a memorable stay.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Spacious villas with private pools and modern amenities, including air conditioning, flat-screen TVs, and soundproofing.">Spacious villas with private pools and modern amenities, including air conditioning, flat-screen TVs, and soundproofing.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Free high-speed WiFi throughout the property to keep you connected.">Free high-speed WiFi throughout the property to keep you connected.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Free private parking on-site for all guests, with car rental services available upon request.">Free private parking on-site for all guests, with car rental services available upon request.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="BBQ facilities for outdoor dining, complemented by a picnic area for families.">BBQ facilities for outdoor dining, complemented by a picnic area for families.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Airport shuttle services available upon request for a seamless travel experience.">Airport shuttle services available upon request for a seamless travel experience.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Pet-friendly options available upon request, ensuring a welcoming stay for everyone.">Pet-friendly options available upon request, ensuring a welcoming stay for everyone.</span></li>
             </ul>
-          </div>
-          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-              <div class="col-lg-6">
-                <img src="assets/img/Exterior/IMG_0684.JPG" class="img-fluid" alt="Villa Exterior">
-              </div>
-              <div class="col-lg-6">
-                <div class="row gy-4">
-                  <div class="col-lg-12">
-                    <img src="assets/img/Exterior/IMG_0721.JPG" class="img-fluid" alt="Private Pool">
-                  </div>
-                  <div class="col-lg-12">
-                    <img src="assets/img/Exterior/IMG_0689.JPG" class="img-fluid" alt="Interior View">
-                  </div>
+        </div>
+        <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+            <div class="col-lg-6">
+              <img src="assets/img/Exterior/IMG_0684.JPG" class="img-fluid" alt="Villa Exterior" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+              <div class="row gy-4">
+                <div class="col-lg-12">
+                  <img src="assets/img/Exterior/IMG_0721.JPG" class="img-fluid" alt="Private Pool" loading="lazy">
+                </div>
+                <div class="col-lg-12">
+                  <img src="assets/img/Exterior/IMG_0689.JPG" class="img-fluid" alt="Interior View" loading="lazy">
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- /About Section -->
+    </div>
+  </section><!-- /About Section -->
 
-<!--  &lt;!&ndash; Stats Section &ndash;&gt;-->
-<!--  <section id="stats" class="stats section">-->
-<!--    <div class="container" data-aos="fade-up" data-aos-delay="100">-->
-<!--      <div class="row gy-4">-->
-<!--        <div class="col-lg-3 col-md-6">-->
-<!--          <div class="stats-item d-flex align-items-center w-100 h-100">-->
-<!--            <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>-->
-<!--            <div>-->
-<!--              <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>-->
-<!--              <p data-translate="Happy Guests">Happy Guests</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>&lt;!&ndash; End Stats Item &ndash;&gt;-->
-<!--        <div class="col-lg-3 col-md-6">-->
-<!--          <div class="stats-item d-flex align-items-center w-100 h-100">-->
-<!--            <i class="bi bi-house-door color-orange flex-shrink-0"></i>-->
-<!--            <div>-->
-<!--              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>-->
-<!--              <p data-translate="Luxury Villas">Luxury Villas</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>&lt;!&ndash; End Stats Item &ndash;&gt;-->
-<!--        <div class="col-lg-3 col-md-6">-->
-<!--          <div class="stats-item d-flex align-items-center w-100 h-100">-->
-<!--            <i class="bi bi-headset color-green flex-shrink-0"></i>-->
-<!--            <div>-->
-<!--              <span data-purecounter-start="0" data-purecounter-end="365" data-purecounter-duration="1" class="purecounter"></span>-->
-<!--              <p data-translate="Days of Support">Days of Support</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>&lt;!&ndash; End Stats Item &ndash;&gt;-->
-<!--        <div class="col-lg-3 col-md-6">-->
-<!--          <div class="stats-item d-flex align-items-center w-100 h-100">-->
-<!--            <i class="bi bi-calendar-check color-pink flex-shrink-0"></i>-->
-<!--            <div>-->
-<!--              <span data-purecounter-start="0" data-purecounter-end="1965" data-purecounter-duration="1" class="purecounter"></span>-->
-<!--              <p data-translate="Bookings">Bookings</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>&lt;!&ndash; End Stats Item &ndash;&gt;-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </section>&lt;!&ndash; /Stats Section &ndash;&gt;-->
-
-  <!-- Features Section -->
+  <!-- Features Section (Unchanged as per request) -->
   <section id="features" class="features section">
     <div class="container">
       <div class="row justify-content-around gy-4">
@@ -214,7 +172,7 @@
             <i class="bi bi-tree flex-shrink-0"></i>
             <div>
               <h4 data-translate="Scenic Surroundings">Scenic Surroundings</h4>
-              <p data-translate="Immerse yourself in the natural beauty of Hanioti with stunning views and lush gardens.">Immerse yourself in the natural beauty of Hanioti with stunning views and lush gardens.</p>
+              <p data-translate="Immerse yourself in the naturalbeauty of Hanioti with stunning views and lush gardens.">Immerse yourself in the natural beauty of Hanioti with stunning views and lush gardens.</p>
             </div>
           </div><!-- End Icon Box -->
         </div>
@@ -232,8 +190,6 @@
 
     .icon-box.feature-item:hover,
     .icon-box.feature-item.active {
-
-
       transform: translateY(-5px); /* Slight lift effect */
     }
 
@@ -300,7 +256,7 @@
           <h4 data-translate="Contact">Contact</h4>
           <p>
             <strong data-translate="Phone:">Phone:</strong> <span><a href="tel:+306973957267">+30 6973957267</a></span><br>
-            <strong data-translate="Email:">Email:</strong> <span><a href="mailto:villashanioti5@gmail.com">villashanioti5@gmail.com</a></span><br>
+            <strong data-translate="Email:">Email:</strong> <span><a href="/cdn-cgi/l/email-protection#e3958a8f8f82908b828d8a8c978ad6a3848e828a8fcd808c8e"><span class="__cf_email__" data-cfemail="05332c292924362d242b2c2a312c70052228242c296b262a28">[email&#160;protected]</span></a></span><br>
           </p>
         </div>
       </div>
@@ -333,6 +289,7 @@
 <div id="preloader"></div>
 
 <!-- Vendor JS Files -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
@@ -344,7 +301,7 @@
 
 <!-- Translation Script -->
 <script>
-  // Translation dictionary
+  // Translation dictionary (Limited to English and Greek)
   const translations = {
     en: {
       "Home": "Home",
@@ -358,14 +315,15 @@
       "Discover the story behind Villas Hanioti, your premier destination for luxury villa rentals in Hanioti, Chalkidiki, Greece, offering unparalleled comfort and hospitality.": "Discover the story behind Villas Hanioti, your premier destination for luxury villa rentals in Hanioti, Chalkidiki, Greece, offering unparalleled comfort and hospitality.",
       "Who We Are": "Who We Are",
       "Luxury Living in Chalkidiki": "Luxury Living in Chalkidiki",
-      "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki.": "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki.",
-      "Spacious villas with private pools and modern amenities.": "Spacious villas with private pools and modern amenities.",
-      "Prime location near the beach and local attractions.": "Prime location near the beach and local attractions.",
-      "Personalized service to ensure a memorable stay.": "Personalized service to ensure a memorable stay.",
-      "Happy Guests": "Happy Guests",
-      "Luxury Villas": "Luxury Villas",
-      "Days of Support": "Days of Support",
-      "Bookings": "Bookings",
+      "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki, offering a wide range of services to ensure a memorable stay.": "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki, offering a wide range of services to ensure a memorable stay.",
+      "Spacious villas with private pools and modern amenities, including air conditioning, flat-screen TVs, and soundproofing.": "Spacious villas with private pools and modern amenities, including air conditioning, flat-screen TVs, and soundproofing.",
+      "Prime location near the beach and local attractions, just 1.6 km from Hanioti Beach and 2.5 km from Pefkohori Beach.": "Prime location near the beach and local attractions, just 1.6 km from Hanioti Beach and 2.5 km from Pefkohori Beach.",
+      "Free high-speed WiFi throughout the property to keep you connected.": "Free high-speed WiFi throughout the property to keep you connected.",
+      "Free private parking on-site for all guests, with car rental services available upon request.": "Free private parking on-site for all guests, with car rental services available upon request.",
+      "BBQ facilities for outdoor dining, complemented by a picnic area for families.": "BBQ facilities for outdoor dining, complemented by a picnic area for families.",
+      "Airport shuttle services available upon request for a seamless travel experience.": "Airport shuttle services available upon request for a seamless travel experience.",
+      "Pet-friendly options available upon request, ensuring a welcoming stay for everyone.": "Pet-friendly options available upon request, ensuring a welcoming stay for everyone.",
+      "Personalized service to ensure a memorable stay, with 24/7 support for all your needs.": "Personalized service to ensure a memorable stay, with 24/7 support for all your needs.",
       "Why Choose Villas Hanioti": "Why Choose Villas Hanioti",
       "Experience the perfect blend of luxury, comfort, and nature with our exceptional villa rentals in Chalkidiki.": "Experience the perfect blend of luxury, comfort, and nature with our exceptional villa rentals in Chalkidiki.",
       "Private Pools": "Private Pools",
@@ -399,14 +357,15 @@
       "Discover the story behind Villas Hanioti, your premier destination for luxury villa rentals in Hanioti, Chalkidiki, Greece, offering unparalleled comfort and hospitality.": "Ανακαλύψτε την ιστορία πίσω από τις Βίλες Χανιώτη, τον κορυφαίο προορισμό σας για ενοικιάσεις πολυτελών βιλών στη Χανιώτη, Χαλκιδική, Ελλάδα, που προσφέρουν απαράμιλλη άνεση και φιλοξενία.",
       "Who We Are": "Ποιοι Είμαστε",
       "Luxury Living in Chalkidiki": "Πολυτελής Διαβίωση στη Χαλκιδική",
-      "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki.": "Οι Βίλες Χανιώτη είναι αφιερωμένες στην παροχή εξαιρετικών εμπειριών διακοπών με τις πολυτελείς βίλες μας στην καρδιά της Χανιώτης, Χαλκιδικής.",
-      "Spacious villas with private pools and modern amenities.": "Ευρύχωρες βίλες με ιδιωτικές πισίνες και σύγχρονες ανέσεις.",
-      "Prime location near the beach and local attractions.": "Πρώτη τοποθεσία κοντά στην παραλία και τα τοπικά αξιοθέατα.",
-      "Personalized service to ensure a memorable stay.": "Προσωποποιημένη εξυπηρέτηση για να εξασφαλίσετε μια αξέχαστη διαμονή.",
-      "Happy Guests": "Ευτυχισμένοι Επισκέπτες",
-      "Luxury Villas": "Πολυτελείς Βίλες",
-      "Days of Support": "Ημέρες Υποστήριξης",
-      "Bookings": "Κρατήσεις",
+      "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki, offering a wide range of services to ensure a memorable stay.": "Οι Βίλες Χανιώτη είναι αφιερωμένες στην παροχή εξαιρετικών εμπειριών διακοπών με τις πολυτελείς βίλες μας στην καρδιά της Χανιώτης, Χαλκιδικής, προσφέροντας μια ευρεία γκάμα υπηρεσιών για να εξασφαλίσουν μια αξέχαστη διαμονή.",
+      "Spacious villas with private pools and modern amenities, including air conditioning, flat-screen TVs, and soundproofing.": "Ευρύχωρες βίλες με ιδιωτικές πισίνες και σύγχρονες ανέσεις, συμπεριλαμβανομένων κλιματισμού, τηλεοράσεων επίπεδης οθόνης και ηχομόνωσης.",
+      "Prime location near the beach and local attractions, just 1.6 km from Hanioti Beach and 2.5 km from Pefkohori Beach.": "Πρώτη τοποθεσία κοντά στην παραλία και τα τοπικά αξιοθέατα, μόλις 1,6 χλμ. από την παραλία Χανιώτη και 2,5 χλμ. από την παραλία Πευκοχώρι.",
+      "Free high-speed WiFi throughout the property to keep you connected.": "Δωρεάν WiFi υψηλής ταχύτητας σε όλο το κατάλυμα για να παραμένετε συνδεδεμένοι.",
+      "Free private parking on-site for all guests, with car rental services available upon request.": "Δωρεάν ιδιωτικός χώρος στάθμευσης στις εγκαταστάσεις για όλους τους επισκέπτες, με υπηρεσίες ενοικίασης αυτοκινήτων διαθέσιμες κατόπιν αιτήματος.",
+      "BBQ facilities for outdoor dining, complemented by a picnic area for families.": "Εγκαταστάσεις BBQ για υπαίθρια δείπνα, συμπληρωμένες με χώρο πικνίκ για οικογένειες.",
+      "Airport shuttle services available upon request for a seamless travel experience.": "Υπηρεσίες μεταφοράς από/προς το αεροδρόμιο διαθέσιμες κατόπιν αιτήματος για μια απρόσκοπτη ταξιδιωτική εμπειρία.",
+      "Pet-friendly options available upon request, ensuring a welcoming stay for everyone.": "Επιλογές φιλικές προς τα κατοικίδια διαθέσιμες κατόπιν αιτήματος, εξασφαλίζοντας μια φιλόξενη διαμονή για όλους.",
+      "Personalized service to ensure a memorable stay, with 24/7 support for all your needs.": "Προσωποποιημένη εξυπηρέτηση για να εξασφαλίσετε μια αξέχαστη διαμονή, με υποστήριξη 24/7 για όλες τις ανάγκες σας.",
       "Why Choose Villas Hanioti": "Γιατί να Επιλέξετε τις Βίλες Χανιώτη",
       "Experience the perfect blend of luxury, comfort, and nature with our exceptional villa rentals in Chalkidiki.": "Ζήστε τον τέλειο συνδυασμό πολυτέλειας, άνεσης και φύσης με τις εξαιρετικές ενοικιάσεις βιλών μας στη Χαλκιδική.",
       "Private Pools": "Ιδιωτικές Πισίνες",
@@ -427,129 +386,6 @@
       "24/7 Support": "Υποστήριξη 24/7",
       "Copyright": "Πνευματικά Δικαιώματα",
       "All Rights Reserved": "Με επιφύλαξη παντός δικαιώματος"
-    },
-    uk: {
-      "Home": "Головна",
-      "About": "Про нас",
-      "Accommodations": "Проживання",
-      "Villas": "Вілли",
-      "Gallery": "Галерея",
-      "Language": "Мова",
-      "Our Services": "Наші послуги",
-      "Contact": "Контакти",
-      "Discover the story behind Villas Hanioti, your premier destination for luxury villa rentals in Hanioti, Chalkidiki, Greece, offering unparalleled comfort and hospitality.": "Дізнайтесь історію Villas Hanioti, вашого головного місця для оренди розкішних вілл у Ханіоті, Халкідікі, Греція, що пропонує неперевершений комфорт і гостинність.",
-      "Who We Are": "Хто Ми",
-      "Luxury Living in Chalkidiki": "Розкішне Життя в Халкідікі",
-      "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki.": "Villas Hanioti прагне забезпечити виняткові враження від відпочинку з нашими розкішними віллами в самому серці Ханіоті, Халкідікі.",
-      "Spacious villas with private pools and modern amenities.": "Просторі вілли з приватними басейнами та сучасними зручностями.",
-      "Prime location near the beach and local attractions.": "Першокласне розташування поблизу пляжу та місцевих визначних пам'яток.",
-      "Personalized service to ensure a memorable stay.": "Персоналізоване обслуговування для незабутнього перебування.",
-      "Happy Guests": "Щасливі Гості",
-      "Luxury Villas": "Розкішні Вілли",
-      "Days of Support": "Дні Підтримки",
-      "Bookings": "Бронювання",
-      "Why Choose Villas Hanioti": "Чому Обрати Villas Hanioti",
-      "Experience the perfect blend of luxury, comfort, and nature with our exceptional villa rentals in Chalkidiki.": "Відчуйте ідеальне поєднання розкоші, комфорту та природи з нашими винятковими орендами вілл у Халкідікі.",
-      "Private Pools": "Приватні Басейни",
-      "Enjoy exclusive access to private pools at each villa for a refreshing and relaxing stay.": "Насолоджуйтесь ексклюзивним доступом до приватних басейнів на кожній віллі для освіжаючого та розслабляючого перебування.",
-      "High-Speed WiFi": "Високошвидкісний WiFi",
-      "Stay connected with fast and reliable internet throughout your villa.": "Залишайтеся на зв’язку з швидким і надійним інтернетом по всій віллі.",
-      "Free Parking": "Безкоштовна Парковка",
-      "Convenient parking spaces available for all guests at no extra cost.": "Зручні паркувальні місця доступні для всіх гостей без додаткової плати.",
-      "Scenic Surroundings": "Мальовниче Оточення",
-      "Immerse yourself in the natural beauty of Hanioti with stunning views and lush gardens.": "Пориньте в природну красу Ханіоті з приголомшливими краєвидами та пишними садами.",
-      "Address": "Адреса",
-      "Chaniotis": "Ханіоті",
-      "Chalkidiki, Greece 63085": "Халкідікі, Греція 63085",
-      "Phone:": "Телефон:",
-      "Email:": "Електронна пошта:",
-      "Opening Hours": "Години роботи",
-      "Mon-Sun:": "Пн-Нд:",
-      "24/7 Support": "Підтримка 24/7",
-      "Copyright": "Авторське право",
-      "All Rights Reserved": "Усі права захищено"
-    },
-    ru: {
-      "Home": "Главная",
-      "About": "О нас",
-      "Accommodations": "Проживание",
-      "Villas": "Виллы",
-      "Gallery": "Галерея",
-      "Language": "Язык",
-      "Our Services": "Наши услуги",
-      "Contact": "Контакты",
-      "Discover the story behind Villas Hanioti, your premier destination for luxury villa rentals in Hanioti, Chalkidiki, Greece, offering unparalleled comfort and hospitality.": "Узнайте историю Villas Hanioti, вашего главного направления для аренды роскошных вилл в Ханиоти, Халкидики, Греция, предлагающего непревзойденный комфорт и гостеприимство.",
-      "Who We Are": "Кто Мы",
-      "Luxury Living in Chalkidiki": "Роскошная Жизнь в Халкидики",
-      "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki.": "Villas Hanioti стремится обеспечить исключительные впечатления от отдыха с нашими роскошными виллами в самом сердце Ханиоти, Халкидики.",
-      "Spacious villas with private pools and modern amenities.": "Просторные виллы с частными бассейнами и современными удобствами.",
-      "Prime location near the beach and local attractions.": "Прекрасное расположение рядом с пляжем и местными достопримечательностями.",
-      "Personalized service to ensure a memorable stay.": "Персонализированное обслуживание для незабываемого пребывания.",
-      "Happy Guests": "Счастливые Гости",
-      "Luxury Villas": "Роскошные Виллы",
-      "Days of Support": "Дни Поддержки",
-      "Bookings": "Бронирования",
-      "Why Choose Villas Hanioti": "Почему Выбрать Villas Hanioti",
-      "Experience the perfect blend of luxury, comfort, and nature with our exceptional villa rentals in Chalkidiki.": "Испытайте идеальное сочетание роскоши, комфорта и природы с нашими исключительными арендами вилл в Халкидики.",
-      "Private Pools": "Частные Бассейны",
-      "Enjoy exclusive access to private pools at each villa for a refreshing and relaxing stay.": "Наслаждайтесь эксклюзивным доступом к частным бассейнам на каждой вилле для освежающего и расслабляющего пребывания.",
-      "High-Speed WiFi": "Высокоскоростной WiFi",
-      "Stay connected with fast and reliable internet throughout your villa.": "Оставайтесь на связи с быстрым и надежным интернетом по всей вилле.",
-      "Free Parking": "Бесплатная Парковка",
-      "Convenient parking spaces available for all guests at no extra cost.": "Удобные парковочные места доступны для всех гостей без дополнительной платы.",
-      "Scenic Surroundings": "Живописные Окрестности",
-      "Immerse yourself in the natural beauty of Hanioti with stunning views and lush gardens.": "Погрузитесь в природную красоту Ханиоти с потрясающими видами и пышными садами.",
-      "Address": "Адрес",
-      "Chaniotis": "Ханиоти",
-      "Chalkidiki, Greece 63085": "Халкидики, Греция 63085",
-      "Phone:": "Телефон:",
-      "Email:": "Электронная почта:",
-      "Opening Hours": "Часы работы",
-      "Mon-Sun:": "Пн-Вс:",
-      "24/7 Support": "Поддержка 24/7",
-      "Copyright": "Авторское право",
-      "All Rights Reserved": "Все права защищены"
-    },
-    tr: {
-      "Home": "Ana Sayfa",
-      "About": "Hakkımızda",
-      "Accommodations": "Konaklama",
-      "Villas": "Villalar",
-      "Gallery": "Galeri",
-      "Language": "Dil",
-      "Our Services": "Hizmetlerimiz",
-      "Contact": "İletişim",
-      "Discover the story behind Villas Hanioti, your premier destination for luxury villa rentals in Hanioti, Chalkidiki, Greece, offering unparalleled comfort and hospitality.": "Villas Hanioti’nin hikayesini keşfedin; Hanioti, Halkidiki, Yunanistan’da lüks villa kiralamaları için önde gelen destinasyonunuz, eşsiz konfor ve misafirperverlik sunuyor.",
-      "Who We Are": "Biz Kimiz",
-      "Luxury Living in Chalkidiki": "Halkidiki’de Lüks Yaşam",
-      "Villas Hanioti is dedicated to providing exceptional vacation experiences with our luxurious villas in the heart of Hanioti, Chalkidiki.": "Villas Hanioti, Hanioti, Halkidiki’nin kalbinde yer alan lüks villalarımızla olağanüstü tatil deneyimleri sunmaya adanmıştır.",
-      "Spacious villas with private pools and modern amenities.": "Geniş villalar, özel havuzlar ve modern olanaklarla.",
-      "Prime location near the beach and local attractions.": "Plaja ve yerel cazibe merkezlerine yakın birinci sınıf konum.",
-      "Personalized service to ensure a memorable stay.": "Unutulmaz bir konaklama sağlamak için kişiselleştirilmiş hizmet.",
-      "Happy Guests": "Mutlu Misafirler",
-      "Luxury Villas": "Lüks Villalar",
-      "Days of Support": "Destek Günleri",
-      "Bookings": "Rezervasyonlar",
-      "Why Choose Villas Hanioti": "Neden Villas Hanioti’yi Seçmelisiniz",
-      "Experience the perfect blend of luxury, comfort, and nature with our exceptional villa rentals in Chalkidiki.": "Halkidiki’deki olağanüstü villa kiralamalarımızla lüks, konfor ve doğanın mükemmel karışımını yaşayın.",
-      "Private Pools": "Özel Havuzlar",
-      "Enjoy exclusive access to private pools at each villa for a refreshing and relaxing stay.": "Her villada özel havuzlara özel erişimle ferahlatıcı ve rahatlatıcı bir konaklama yaşayın.",
-      "High-Speed WiFi": "Yüksek Hızlı WiFi",
-      "Stay connected with fast and reliable internet throughout your villa.": "Villanız boyunca hızlı ve güvenilir internetle bağlantıda kalın.",
-      "Free Parking": "Ücretsiz Otopark",
-      "Convenient parking spaces available for all guests at no extra cost.": "Tüm misafirler için uygun park alanları ek ücret olmadan mevcuttur.",
-      "Scenic Surroundings": "Manzaralı Çevre",
-      "Immerse yourself in the natural beauty of Hanioti with stunning views and lush gardens.": "Hanioti’nin doğal güzelliğine, muhteşem manzaralar ve yemyeşil bahçelerle kendinizi kaptırın.",
-      "Address": "Adres",
-      "Chaniotis": "Hanioti",
-      "Chalkidiki, Greece 63085": "Halkidiki, Yunanistan 63085",
-      "Phone:": "Telefon:",
-      "Email:": "E-posta:",
-      "Opening Hours": "Çalışma Saatleri",
-      "Mon-Sun:": "Pzt-Paz:",
-      "24/7 Support": "7/24 Destek",
-      "Copyright": "Telif Hakkı",
-      "All Rights Reserved": "Tüm Hakları Saklıdır"
     }
   };
 
@@ -598,6 +434,8 @@
     }
   }
 </style>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92d0cf53fe5a06ea',t:'MTc0NDEwNTI5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 
 </body>
 
