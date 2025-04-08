@@ -33,43 +33,37 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
     <a href="index.html" class="logo d-flex align-items-center">
-      <img src="assets/img/logo.png" alt="Villas Hanioti Logo">
-      <h1 class="sitename">Villas <span>Hanioti</span></h1>
+      <img src="assets/img/logo.png" alt="Villas Hanioti Logo" style="aspect-ratio: initial;">
+      <h1 class="sitename" style="margin-top: 3%; font-weight: normal;">Villas <span>Hanioti</span></h1>
     </a>
 
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class="navmenu" style="font-weight: normal;">
       <ul>
         <li><a href="index.html" data-translate="Home">Home</a></li>
-        <li><a href="about.html" data-translate="About">About</a></li>
-        <li><a href="services.html" data-translate="Accommodations">Accommodations</a></li>
-        <li><a href="properties.html" class="active" data-translate="Villas">Villas</a></li>
+        <li><a href="about.html" data-translate="About">About</a></li>|
+        <li><a href="services.html" data-translate="Acomodation Rules">Acomodation Rules</a></li>
+        <li><a href="properties.html" data-translate="Villas">Villas</a></li>
         <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
+        <!-- Language Dropdown (Always Visible) -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul class="dropdown-menu">
+          <a href="#" class="dropdown-toggle" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
             <li><a href="#" onclick="translatePage('en')">English</a></li>
             <li><a href="#" onclick="translatePage('el')">Greek</a></li>
-            <li><a href="#" onclick="translatePage('uk')">Ukrainian</a></li>
-            <li><a href="#" onclick="translatePage('ru')">Russian</a></li>
-            <li><a href="#" onclick="translatePage('tr')">Turkish</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a href="#" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#" data-translate="Basic Facilities">Basic Facilities</a></li>
-            <li class="dropdown"><a href="#" data-translate="Additional Amenities">Additional Amenities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#" data-translate="WiFi">WiFi</a></li>
-                <li><a href="#" data-translate="Parking">Parking</a></li>
-                <li><a href="#" data-translate="BBQ Facilities">BBQ Facilities</a></li>
-                <li><a href="#" data-translate="Private Pool">Private Pool</a></li>
+        <li class="dropdown"><a href="#" class="active" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="service-breakfast.html">Breakfast</a></li>
+            <li class="dropdown"><a href="#">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="service-wifi.html" class="active">WiFi</a></li>
+                <li><a href="service-parking.html">Parking</a></li>
+                <li><a href="service-BBQ.html">BBQ Facilities</a></li>
+                <li><a href="#">Private Pool</a></li>
               </ul>
             </li>
-            <li><a href="#" data-translate="Airport Shuttle">Airport Shuttle</a></li>
-            <li><a href="#" data-translate="Pet-Friendly Options">Pet-Friendly Options</a></li>
-            <li><a href="#" data-translate="Breakfast">Breakfast</a></li>
-            <li><a href="#" data-translate="Play Zone">Play Zone</a></li>
-            <li><a href="#" data-translate="Guided Excursions">Guided Excursions</a></li>
+            <li><a href="https://goldrentcar.eu/contact.html">Airport Shuttle</a></li>
           </ul>
         </li>
         <li><a href="contact.html" data-translate="Contact">Contact</a></li>

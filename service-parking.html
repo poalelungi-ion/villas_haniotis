@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Service Details - EstateAgency Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Parking - Villas Hanioti</title>
+  <meta name="description" content="Enjoy hassle-free parking at Villas Hanioti with our spacious and secure parking facilities available for all guests.">
+  <meta name="keywords" content="Parking, Villas Hanioti, secure parking, vacation amenities">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -27,7 +27,23 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Custom CSS for Language Dropdown -->
+  <style>
+    .navmenu .dropdown .dropdown-menu.show {
+      display: block;
+      position: absolute;
+      background: var(--nav-dropdown-background-color);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+    }
 
+    @media (max-width: 1199px) {
+      .navmenu .dropdown .dropdown-menu.show {
+        position: static;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="service-details-page">
@@ -41,201 +57,277 @@
 
     <nav id="navmenu" class="navmenu" style="font-weight: normal;">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Accommodations</a></li>
-        <li><a href="properties.html">Villas</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="agents.html">Location</a></li>
-        <li class="dropdown"><a href="#"><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Basic Facilities</a></li>
-            <li class="dropdown"><a href="#"><span>Additional Amenities</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">WiFi</a></li>
-                <li><a href="#">Parking</a></li>
-                <li><a href="#">BBQ Facilities</a></li>
+        <li><a href="index.html" data-translate="Home">Home</a></li>
+        <li><a href="about.html" data-translate="About">About</a></li>
+        <li><a href="services.html" data-translate="Acomodation Rules">Acomodation Rules</a></li>
+        <li><a href="properties.html" data-translate="Villas">Villas</a></li>
+        <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
+        <!-- Language Dropdown (Always Visible) -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="#" onclick="translatePage('en')">English</a></li>
+            <li><a href="#" onclick="translatePage('el')">Greek</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="active" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="service-breakfast.html">Breakfast</a></li>
+            <li class="dropdown"><a href="#">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="service-wifi.html">WiFi</a></li>
+                <li><a href="service-parking.html" class="active">Parking</a></li>
+                <li><a href="service-BBQ.html">BBQ Facilities</a></li>
                 <li><a href="#">Private Pool</a></li>
               </ul>
             </li>
-            <li><a href="#">Airport Shuttle</a></li>
-            <li><a href="#">Pet-Friendly Options</a></li>
+            <li><a href="https://goldrentcar.eu/contact.html">Airport Shuttle</a></li>
           </ul>
         </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" data-translate="Contact">Contact</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
   </div>
 </header>
 
-  <main class="main">
+<main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>Service Details</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Service Details</li>
-          </ol>
-        </div>
-      </nav>
-    </div><!-- End Page Title -->
-
-    <!-- Service Details Section -->
-    <section id="service-details" class="service-details section">
-
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
       <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="service-box">
-              <h4>Serices List</h4>
-              <div class="services-list">
-                <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Web Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Web Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Product Management</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Graphic Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Marketing</span></a>
-              </div>
-            </div><!-- End Services List -->
-
-            <div class="service-box">
-              <h4>Download Catalog</h4>
-              <div class="download-catalog">
-                <a href="#"><i class="bi bi-filetype-pdf"></i><span>Catalog PDF</span></a>
-                <a href="#"><i class="bi bi-file-earmark-word"></i><span>Catalog DOC</span></a>
-              </div>
-            </div><!-- End Services List -->
-
-            <div class="help-box d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-headset help-icon"></i>
-              <h4>Have a Question?</h4>
-              <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1 5589 55488 55</span></p>
-              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:contact@example.com">contact@example.com</a></p>
-            </div>
-
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1 data-translate="Parking">Parking</h1>
+            <p class="mb-0" data-translate="Enjoy hassle-free parking at Villas Hanioti with our spacious and secure parking facilities available for all guests.">Enjoy hassle-free parking at Villas Hanioti with our spacious and secure parking facilities available for all guests.</p>
           </div>
-
-          <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
-            <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
-            <p>
-              Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
-            </ul>
-            <p>
-              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
-            </p>
-            <p>
-              Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
-            </p>
-          </div>
-
         </div>
-
       </div>
+    </div>
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="index.html" data-translate="Home">Home</a></li>
+          <li><a href="services.html" data-translate="Our Services">Our Services</a></li>
+          <li class="current" data-translate="Parking">Parking</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Page Title -->
 
-    </section><!-- /Service Details Section -->
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
+  <!-- Service Details Section -->
+  <section id="service-details" class="service-details section">
 
     <div class="container">
-      <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-geo-alt icon"></i>
-          <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p></p>
+
+      <div class="row gy-5">
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="service-box">
+            <h4 data-translate="Our Services">Our Services</h4>
+            <div class="services-list">
+              <a href="service-breakfast.html"><i class="bi bi-arrow-right-circle"></i><span data-translate="Breakfast Service">Breakfast Service</span></a>
+              <a href="service-wifi.html"><i class="bi bi-arrow-right-circle"></i><span data-translate="WiFi Access">WiFi Access</span></a>
+              <a href="service-parking.html" class="active"><i class="bi bi-arrow-right-circle"></i><span data-translate="Parking">Parking</span></a>
+              <a href="service-BBQ.html"><i class="bi bi-arrow-right-circle"></i><span data-translate="BBQ Facilities">BBQ Facilities</span></a>
+              <a href="https://goldrentcar.eu/contact.html"><i class="bi bi-arrow-right-circle"></i><span data-translate="Airport Shuttle">Airport Shuttle</span></a>
+            </div>
+          </div><!-- End Services List -->
+
+          <div class="help-box d-flex flex-column justify-content-center align-items-center">
+            <i class="bi bi-headset help-icon"></i>
+            <h4 data-translate="Have a Question?">Have a Question?</h4>
+            <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <a href="tel:+306973957267">+30 6973 957267</a></p>
+            <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:villashanioti5@gmail.com">villashanioti5@gmail.com</a></p>
           </div>
 
         </div>
 
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-telephone icon"></i>
-          <div>
-            <h4>Contact</h4>
-            <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-clock icon"></i>
-          <div>
-            <h4>Opening Hours</h4>
-            <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
-          <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
+        <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/img/parking-area.jpg" alt="Parking Area at Villas Hanioti" class="img-fluid services-img">
+          <h3 data-translate="Convenient and Secure Parking at Villas Hanioti">Convenient and Secure Parking at Villas Hanioti</h3>
+          <p data-translate="At Villas Hanioti, we offer complimentary parking facilities to ensure your stay is as convenient as possible. Our spacious parking areas are designed to accommodate all guests, whether you're arriving with a compact car or a larger vehicle.">
+            At Villas Hanioti, we offer complimentary parking facilities to ensure your stay is as convenient as possible. Our spacious parking areas are designed to accommodate all guests, whether you're arriving with a compact car or a larger vehicle.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Dedicated parking spaces for each villa, ensuring availability.">Dedicated parking spaces for each villa, ensuring availability.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Secure, well-lit parking area with 24/7 surveillance.">Secure, well-lit parking area with 24/7 surveillance.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Ample space for up to two vehicles per villa.">Ample space for up to two vehicles per villa.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span data-translate="Easy access to villas from the parking area for hassle-free unloading.">Easy access to villas from the parking area for hassle-free unloading.</span></li>
+          </ul>
+          <p data-translate="Our parking facilities are located just steps away from your villa, making it easy to unload luggage or groceries upon arrival. We prioritize safety with regular patrols and lighting to give you peace of mind throughout your stay. For guests with special parking needs, such as larger vehicles or accessibility requirements, please contact our team in advance to ensure we meet your needs.">
+            Our parking facilities are located just steps away from your villa, making it easy to unload luggage or groceries upon arrival. We prioritize safety with regular patrols and lighting to give you peace of mind throughout your stay. For guests with special parking needs, such as larger vehicles or accessibility requirements, please contact our team in advance to ensure we meet your needs.
+          </p>
+          <p data-translate="No reservation is required for parking—just arrive and park in the designated space for your villa. During peak seasons, we recommend informing us of your vehicle details to streamline your check-in process. Enjoy the freedom of exploring Chalkidiki with the convenience of secure parking waiting for you at Villas Hanioti.">
+            No reservation is required for parking—just arrive and park in the designated space for your villa. During peak seasons, we recommend informing us of your vehicle details to streamline your check-in process. Enjoy the freedom of exploring Chalkidiki with the convenience of secure parking waiting for you at Villas Hanioti.
+          </p>
         </div>
 
       </div>
+
     </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  </section><!-- /Service Details Section -->
+
+</main>
+
+<footer id="footer" class="footer light-background">
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt icon"></i>
+        <div class="address">
+          <h4 data-translate="Address">Address</h4>
+          <p data-translate="Chaniotis">Chaniotis</p>
+          <p data-translate="Chalkidiki, Greece 63085">Chalkidiki, Greece 63085</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-telephone icon"></i>
+        <div>
+          <h4 data-translate="Contact">Contact</h4>
+          <p>
+            <strong data-translate="Phone:">Phone:</strong> <span>+306973957267</span><br>
+            <strong data-translate="Email:">Email:</strong> <span><a href="mailto:villashanioti5@gmail.com">villashanioti5@gmail.com</a></span><br>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-clock icon"></i>
+        <div>
+          <h4 data-translate="Opening Hours">Opening Hours</h4>
+          <p>
+            <strong data-translate="Mon-Sun:">Mon-Sun:</strong> <span data-translate="24/7 Support">24/7 Support</span><br>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <!-- Social links removed -->
       </div>
     </div>
+  </div>
+  <div class="container copyright text-center mt-4">
+    <p>© <span data-translate="Copyright">Copyright</span> <strong class="px-1 sitename">Villas Hanioti</strong> <span data-translate="All Rights Reserved">All Rights Reserved</span></p>
+  </div>
+</footer>
 
-  </footer>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+<!-- Translation Script -->
+<script>
+  // Initialize AOS
+  AOS.init();
+
+  // Translation dictionary
+  const translations = {
+    en: {
+      "Home": "Home",
+      "About": "About",
+      "Villas": "Villas",
+      "Gallery": "Gallery",
+      "Language": "Language",
+      "Our Services": "Our Services",
+      "Contact": "Contact",
+      "Parking": "Parking",
+      "Enjoy hassle-free parking at Villas Hanioti with our spacious and secure parking facilities available for all guests.": "Enjoy hassle-free parking at Villas Hanioti with our spacious and secure parking facilities available for all guests.",
+      "Breakfast Service": "Breakfast Service",
+      "WiFi Access": "WiFi Access",
+      "Parking": "Parking",
+      "BBQ Facilities": "BBQ Facilities",
+      "Airport Shuttle": "Airport Shuttle",
+      "Have a Question?": "Have a Question?",
+      "Convenient and Secure Parking at Villas Hanioti": "Convenient and Secure Parking at Villas Hanioti",
+      "At Villas Hanioti, we offer complimentary parking facilities to ensure your stay is as convenient as possible. Our spacious parking areas are designed to accommodate all guests, whether you're arriving with a compact car or a larger vehicle.": "At Villas Hanioti, we offer complimentary parking facilities to ensure your stay is as convenient as possible. Our spacious parking areas are designed to accommodate all guests, whether you're arriving with a compact car or a larger vehicle.",
+      "Dedicated parking spaces for each villa, ensuring availability.": "Dedicated parking spaces for each villa, ensuring availability.",
+      "Secure, well-lit parking area with 24/7 surveillance.": "Secure, well-lit parking area with 24/7 surveillance.",
+      "Ample space for up to two vehicles per villa.": "Ample space for up to two vehicles per villa.",
+      "Easy access to villas from the parking area for hassle-free unloading.": "Easy access to villas from the parking area for hassle-free unloading.",
+      "Our parking facilities are located just steps away from your villa, making it easy to unload luggage or groceries upon arrival. We prioritize safety with regular patrols and lighting to give you peace of mind throughout your stay. For guests with special parking needs, such as larger vehicles or accessibility requirements, please contact our team in advance to ensure we meet your needs.": "Our parking facilities are located just steps away from your villa, making it easy to unload luggage or groceries upon arrival. We prioritize safety with regular patrols and lighting to give you peace of mind throughout your stay. For guests with special parking needs, such as larger vehicles or accessibility requirements, please contact our team in advance to ensure we meet your needs.",
+      "No reservation is required for parking—just arrive and park in the designated space for your villa. During peak seasons, we recommend informing us of your vehicle details to streamline your check-in process. Enjoy the freedom of exploring Chalkidiki with the convenience of secure parking waiting for you at Villas Hanioti.": "No reservation is required for parking—just arrive and park in the designated space for your villa. During peak seasons, we recommend informing us of your vehicle details to streamline your check-in process. Enjoy the freedom of exploring Chalkidiki with the convenience of secure parking waiting for you at Villas Hanioti.",
+      "Address": "Address",
+      "Chaniotis": "Chaniotis",
+      "Chalkidiki, Greece 63085": "Chalkidiki, Greece 63085",
+      "Contact": "Contact",
+      "Phone:": "Phone:",
+      "Email:": "Email:",
+      "Opening Hours": "Opening Hours",
+      "Mon-Sun:": "Mon-Sun:",
+      "24/7 Support": "24/7 Support",
+      "Copyright": "Copyright",
+      "All Rights Reserved": "All Rights Reserved"
+    },
+    el: {
+      "Home": "Αρχική",
+      "About": "Σχετικά",
+      "Villas": "Βίλες",
+      "Gallery": "Γκαλερί",
+      "Language": "Γλώσσα",
+      "Our Services": "Οι Υπηρεσίες μας",
+      "Contact": "Επικοινωνία",
+      "Parking": "Χώρος Στάθμευσης",
+      "Enjoy hassle-free parking at Villas Hanioti with our spacious and secure parking facilities available for all guests.": "Απολαύστε εύκολη στάθμευση στις Βίλες Χανιώτη με τις ευρύχωρες και ασφαλείς εγκαταστάσεις στάθμευσης που είναι διαθέσιμες για όλους τους επισκέπτες.",
+      "Breakfast Service": "Υπηρεσία Πρωινού",
+      "WiFi Access": "Πρόσβαση WiFi",
+      "Parking": "Χώρος Στάθμευσης",
+      "BBQ Facilities": "Εγκαταστάσεις BBQ",
+      "Airport Shuttle": "Υπηρεσία Μεταφοράς από/προς το Αεροδρόμιο",
+      "Have a Question?": "Έχετε κάποια ερώτηση;",
+      "Convenient and Secure Parking at Villas Hanioti": "Βολικός και Ασφαλής Χώρος Στάθμευσης στις Βίλες Χανιώτη",
+      "At Villas Hanioti, we offer complimentary parking facilities to ensure your stay is as convenient as possible. Our spacious parking areas are designed to accommodate all guests, whether you're arriving with a compact car or a larger vehicle.": "Στις Βίλες Χανιώτη, προσφέρουμε δωρεάν εγκαταστάσεις στάθμευσης για να εξασφαλίσουμε ότι η διαμονή σας είναι όσο το δυνατόν πιο βολική. Οι ευρύχωροι χώροι στάθμευσης μας είναι σχεδιασμένοι για να φιλοξενούν όλους τους επισκέπτες, είτε φτάνετε με μικρό αυτοκίνητο είτε με μεγαλύτερο όχημα.",
+      "Dedicated parking spaces for each villa, ensuring availability.": "Αποκλειστικοί χώροι στάθμευσης για κάθε βίλα, εξασφαλίζοντας διαθεσιμότητα.",
+      "Secure, well-lit parking area with 24/7 surveillance.": "Ασφαλής, καλά φωτισμένος χώρος στάθμευσης με 24/7 επιτήρηση.",
+      "Ample space for up to two vehicles per villa.": "Επαρκής χώρος για έως δύο οχήματα ανά βίλα.",
+      "Easy access to villas from the parking area for hassle-free unloading.": "Εύκολη πρόσβαση στις βίλες από τον χώρο στάθμευσης για ξεφόρτωση χωρίς προβλήματα.",
+      "Our parking facilities are located just steps away from your villa, making it easy to unload luggage or groceries upon arrival. We prioritize safety with regular patrols and lighting to give you peace of mind throughout your stay. For guests with special parking needs, such as larger vehicles or accessibility requirements, please contact our team in advance to ensure we meet your needs.": "Οι εγκαταστάσεις στάθμευσης μας βρίσκονται μόλις λίγα βήματα μακριά από τη βίλα σας, διευκολύνοντας το ξεφόρτωμα αποσκευών ή ψώνιων κατά την άφιξη. Δίνουμε προτεραιότητα στην ασφάλεια με τακτικές περιπολίες και φωτισμό για να σας προσφέρουμε ηρεμία καθ' όλη τη διάρκεια της διαμονής σας. Για επισκέπτες με ειδικές ανάγκες στάθμευσης, όπως μεγαλύτερα οχήματα ή απαιτήσεις προσβασιμότητας, παρακαλούμε επικοινωνήστε με την ομάδα μας εκ των προτέρων για να εξασφαλίσουμε ότι καλύπτουμε τις ανάγκες σας.",
+      "No reservation is required for parking—just arrive and park in the designated space for your villa. During peak seasons, we recommend informing us of your vehicle details to streamline your check-in process. Enjoy the freedom of exploring Chalkidiki with the convenience of secure parking waiting for you at Villas Hanioti.": "Δεν απαιτείται κράτηση για τη στάθμευση—απλώς φτάστε και παρκάρετε στον καθορισμένο χώρο για τη βίλα σας. Κατά τις περιόδους αιχμής, συνιστούμε να μας ενημερώσετε για τα στοιχεία του οχήματός σας για να διευκολύνουμε τη διαδικασία check-in. Απολαύστε την ελευθερία να εξερευνήσετε τη Χαλκιδική με την άνεση ενός ασφαλούς χώρου στάθμευσης που σας περιμένει στις Βίλες Χανιώτη.",
+      "Address": "Διεύθυνση",
+      "Chaniotis": "Χανιώτης",
+      "Chalkidiki, Greece 63085": "Χαλκιδική, Ελλάδα 63085",
+      "Contact": "Επικοινωνία",
+      "Phone:": "Τηλέφωνο:",
+      "Email:": "Email:",
+      "Opening Hours": "Ώρες Λειτουργίας",
+      "Mon-Sun:": "Δευ-Κυρ:",
+      "24/7 Support": "Υποστήριξη 24/7",
+      "Copyright": "Πνευματικά Δικαιώματα",
+      "All Rights Reserved": "Με επιφύλαξη παντός δικαιώματος"
+    }
+  };
+
+  // Function to translate the page
+  function translatePage(lang) {
+    document.querySelectorAll('[data-translate]').forEach(element => {
+      const key = element.getAttribute('data-translate');
+      if (translations[lang] && translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+    localStorage.setItem('language', lang);
+  }
+
+  // Load the saved language or default to English
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'en';
+    translatePage(savedLang);
+  });
+</script>
 
 </body>
 
-</html>
+</html>\

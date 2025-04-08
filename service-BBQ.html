@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Service Details - EstateAgency Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>BBQ Facilities - Villas Hanioti</title>
+  <meta name="description" content="Discover the BBQ facilities at Villas Hanioti, perfect for outdoor dining and gatherings during your stay.">
+  <meta name="keywords" content="BBQ facilities, Villas Hanioti, outdoor dining, vacation amenities">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -26,8 +26,23 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Custom CSS for Language Dropdown -->
+  <style>
+    .navmenu .dropdown .dropdown-menu.show {
+      display: block;
+      position: absolute;
+      background: var(--nav-dropdown-background-color);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+    }
 
-
+    @media (max-width: 1199px) {
+      .navmenu .dropdown .dropdown-menu.show {
+        position: static;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="service-details-page">
@@ -41,200 +56,178 @@
 
     <nav id="navmenu" class="navmenu" style="font-weight: normal;">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Accommodations</a></li>
-        <li><a href="properties.html">Villas</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="agents.html">Location</a></li>
-        <li class="dropdown"><a href="#"><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Basic Facilities</a></li>
-            <li class="dropdown"><a href="#"><span>Additional Amenities</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">WiFi</a></li>
-                <li><a href="#">Parking</a></li>
-                <li><a href="#">BBQ Facilities</a></li>
+        <li><a href="index.html" data-translate="Home">Home</a></li>
+        <li><a href="about.html" data-translate="About">About</a></li>
+        <li><a href="properties.html" data-translate="Villas">Villas</a></li>
+        <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
+        <!-- Language Dropdown (Always Visible) -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="#" onclick="translatePage('en')">English</a></li>
+            <li><a href="#" onclick="translatePage('el')">Greek</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="active" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="service-breakfast.html">Breakfast</a></li>
+            <li class="dropdown"><a href="#">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="service-wifi.html">WiFi</a></li>
+                <li><a href="service-parking.html">Parking</a></li>
+                <li><a href="service-BBQ.html" class="active">BBQ Facilities</a></li>
                 <li><a href="#">Private Pool</a></li>
               </ul>
             </li>
-            <li><a href="#">Airport Shuttle</a></li>
-            <li><a href="#">Pet-Friendly Options</a></li>
+            <li><a href="https://goldrentcar.eu/contact.html">Airport Shuttle</a></li>
           </ul>
         </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" data-translate="Contact">Contact</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
   </div>
 </header>
 
-  <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>Service Details</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Service Details</li>
-          </ol>
-        </div>
-      </nav>
-    </div><!-- End Page Title -->
+<main class="main">
 
-    <!-- Service Details Section -->
-    <section id="service-details" class="service-details section">
-
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
       <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="service-box">
-              <h4>Serices List</h4>
-              <div class="services-list">
-                <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Web Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Web Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Product Management</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Graphic Design</span></a>
-                <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Marketing</span></a>
-              </div>
-            </div><!-- End Services List -->
-
-            <div class="service-box">
-              <h4>Download Catalog</h4>
-              <div class="download-catalog">
-                <a href="#"><i class="bi bi-filetype-pdf"></i><span>Catalog PDF</span></a>
-                <a href="#"><i class="bi bi-file-earmark-word"></i><span>Catalog DOC</span></a>
-              </div>
-            </div><!-- End Services List -->
-
-            <div class="help-box d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-headset help-icon"></i>
-              <h4>Have a Question?</h4>
-              <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1 5589 55488 55</span></p>
-              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:contact@example.com">contact@example.com</a></p>
-            </div>
-
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>BBQ Facilities</h1>
+            <p class="mb-0">Enjoy memorable outdoor dining experiences with our fully equipped BBQ facilities at Villas Hanioti, perfect for gatherings with family and friends.</p>
           </div>
-
-          <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
-            <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
-            <p>
-              Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
-            </ul>
-            <p>
-              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
-            </p>
-            <p>
-              Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
-            </p>
-          </div>
-
         </div>
-
       </div>
+    </div>
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li class="current">BBQ Facilities</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Page Title -->
 
-    </section><!-- /Service Details Section -->
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
+  <!-- Service Details Section -->
+  <section id="service-details" class="service-details section">
 
     <div class="container">
-      <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-geo-alt icon"></i>
-          <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p></p>
+
+      <div class="row gy-5">
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="service-box">
+            <h4>Our Services</h4>
+            <div class="services-list">
+              <a href="service-breakfast.html"><i class="bi bi-arrow-right-circle"></i><span>Breakfast Service</span></a>
+              <a href="service-wifi.html"><i class="bi bi-arrow-right-circle"></i><span>WiFi Access</span></a>
+              <a href="service-parking.html"><i class="bi bi-arrow-right-circle"></i><span>Parking</span></a>
+              <a href="service-BBQ.html" class="active"><i class="bi bi-arrow-right-circle"></i><span>BBQ Facilities</span></a>
+              <a href="https://goldrentcar.eu/contact.html"><i class="bi bi-arrow-right-circle"></i><span>Airport Shuttle</span></a>
+            </div>
+          </div><!-- End Services List -->
+
+
+          <div class="help-box d-flex flex-column justify-content-center align-items-center">
+            <i class="bi bi-headset help-icon"></i>
+            <h4>Have a Question?</h4>
+            <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <a href="tel:+306947355457">+30 6947 355457</a></p>
+            <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:villashanioti5@gmail.com">villashanioti5@gmail.com</a></p>
           </div>
 
         </div>
 
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-telephone icon"></i>
-          <div>
-            <h4>Contact</h4>
-            <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-clock icon"></i>
-          <div>
-            <h4>Opening Hours</h4>
-            <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
-          <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
+        <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/img/Exterior/IMG_0689.JPG" alt="BBQ Facilities at Villas Hanioti" class="img-fluid services-img">
+          <h3>Experience Outdoor Dining with Our BBQ Facilities</h3>
+          <p>
+            At Villas Hanioti, we provide state-of-the-art BBQ facilities to enhance your vacation experience. Whether you're planning a family barbecue or a casual gathering with friends, our outdoor grilling areas are designed for convenience and enjoyment. Each villa is equipped with a modern BBQ setup, complete with all the essentials you need for a perfect meal under the sun or stars.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> <span>High-quality gas and charcoal grills available for versatile cooking options.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>Spacious outdoor dining areas with seating for up to 10 guests.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>Complimentary BBQ utensils, including tongs, spatulas, and cleaning tools.</span></li>
+            <li><i class="bi bi-check-circle"></i> <span>Shaded pergolas and ambient lighting for comfortable day or night use.</span></li>
+          </ul>
+          <p>
+            Our BBQ facilities are located in beautifully landscaped gardens, offering a scenic backdrop for your meals. We ensure that all equipment is maintained to the highest standards, with regular cleaning and safety checks. Guests can also request optional extras, such as premium charcoal or pre-prepared ingredient kits, to make your barbecue experience even more seamless.
+          </p>
+          <p>
+            To use the BBQ facilities, simply reserve your preferred time slot through our villa management team during your stay. We recommend booking in advance during peak seasons to ensure availability. Whether you're grilling fresh seafood from the local market or savoring classic barbecue dishes, Villas Hanioti's BBQ facilities are designed to create unforgettable dining moments.
+          </p>
         </div>
 
       </div>
+
     </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  </section><!-- /Service Details Section -->
+
+</main>
+
+<footer id="footer" class="footer light-background">
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt icon"></i>
+        <div class="address">
+          <h4 data-translate="Address">Address</h4>
+          <p data-translate="Chaniotis">Chaniotis</p>
+          <p data-translate="Chalkidiki, Greece 63085">Chalkidiki, Greece 63085</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-telephone icon"></i>
+        <div>
+          <h4 data-translate="Contact">Contact</h4>
+          <p>
+            <strong data-translate="Phone:">Phone:</strong> <span>+306973957267</span><br>
+            <strong data-translate="Email:">Email:</strong> <span>villashanioti5@gmail.com</span><br>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-clock icon"></i>
+        <div>
+          <h4 data-translate="Opening Hours">Opening Hours</h4>
+          <p>
+            <strong data-translate="Mon-Sun:">Mon-Sun:</strong> <span data-translate="24/7 Support">24/7 Support</span><br>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <!-- Social links removed -->
       </div>
     </div>
+  </div>
+  <div class="container copyright text-center mt-4">
+    <p>© <span data-translate="Copyright">Copyright</span> <strong class="px-1 sitename">Villas Hanioti</strong> <span data-translate="All Rights Reserved">All Rights Reserved</span></p>
+  </div>
+</footer>
 
-  </footer>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
 
 </body>
 

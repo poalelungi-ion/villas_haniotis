@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Services - EstateAgency Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Accommodation Rules - Villas Hanioti</title>
+  <meta name="description" content="Review the accommodation rules for Villas Hanioti to ensure a comfortable and enjoyable stay for all guests.">
+  <meta name="keywords" content="accommodation rules, Villas Hanioti, guest guidelines, vacation policies">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -27,7 +27,74 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Custom CSS for Language Tabs and Rules -->
+  <style>
+    .navmenu .dropdown .dropdown-menu.show {
+      display: block;
+      position: absolute;
+      background: var(--nav-dropdown-background-color);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+    }
 
+    @media (max-width: 1199px) {
+      .navmenu .dropdown .dropdown-menu.show {
+        position: static;
+        box-shadow: none;
+      }
+    }
+
+    .rules-section {
+      padding: 40px 0;
+    }
+
+    .language-tabs {
+      margin-bottom: 20px;
+    }
+
+    .language-tabs .nav-link {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .language-tabs .nav-link.active {
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .tab-content {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .tab-pane ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .tab-pane ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .tab-pane ul li:before {
+      content: "\2022"; /* Bullet point */
+      color: #007bff;
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #dc3545; /* Red for emphasis */
+    }
+  </style>
 </head>
 
 <body class="services-page">
@@ -41,226 +108,537 @@
 
     <nav id="navmenu" class="navmenu" style="font-weight: normal;">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Accommodations</a></li>
-        <li><a href="properties.html">Villas</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="agents.html">Location</a></li>
-        <li class="dropdown"><a href="#"><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Basic Facilities</a></li>
-            <li class="dropdown"><a href="#"><span>Additional Amenities</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">WiFi</a></li>
-                <li><a href="#">Parking</a></li>
-                <li><a href="#">BBQ Facilities</a></li>
+        <li><a href="index.html" data-translate="Home">Home</a></li>
+        <li><a href="about.html" data-translate="About">About</a></li>
+        <li><a href="services.html" data-translate="Acomodation Rules">Acomodation Rules</a></li>
+        <li><a href="properties.html" data-translate="Villas">Villas</a></li>
+        <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
+        <!-- Language Dropdown (Always Visible) -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="#" onclick="showRules('en')">English</a></li>
+            <li><a href="#" onclick="showRules('el')">Greek</a></li>
+            <li><a href="#" onclick="showRules('tr')">Turkish</a></li>
+            <li><a href="#" onclick="showRules('ru')">Russian</a></li>
+            <li><a href="#" onclick="showRules('uk')">Ukrainian</a></li>
+            <li><a href="#" onclick="showRules('de')">German</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="active" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="service-breakfast.html">Breakfast</a></li>
+            <li class="dropdown"><a href="#">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="service-wifi.html">WiFi</a></li>
+                <li><a href="service-parking.html">Parking</a></li>
+                <li><a href="service-BBQ.html">BBQ Facilities</a></li>
                 <li><a href="#">Private Pool</a></li>
               </ul>
             </li>
-            <li><a href="#">Airport Shuttle</a></li>
-            <li><a href="#">Pet-Friendly Options</a></li>
+            <li><a href="https://goldrentcar.eu/contact.html">Airport Shuttle</a></li>
+            <li><a href="accommodation-rules.html" class="active">Accommodation Rules</a></li>
           </ul>
         </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" data-translate="Contact">Contact</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
   </div>
 </header>
 
-  <main class="main">
+<main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>Services</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Services</li>
-          </ol>
-        </div>
-      </nav>
-    </div><!-- End Page Title -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
       <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
-              </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Eosle Commodi</h3>
-              </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Ledo Markt</h3>
-              </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Velit Doloremque</h3>
-              </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Dolori Architecto</h3>
-              </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1 data-translate="Accommodation Rules">Accommodation Rules</h1>
+            <p class="mb-0" data-translate="Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.">Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.</p>
+          </div>
         </div>
-
       </div>
+    </div>
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="index.html" data-translate="Home">Home</a></li>
+          <li><a href="services.html" data-translate="Our Services">Our Services</a></li>
+          <li class="current" data-translate="Accommodation Rules">Accommodation Rules</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Page Title -->
 
-    </section><!-- /Services Section -->
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
-
+  <!-- Rules Section -->
+  <section id="rules" class="rules-section section">
     <div class="container">
-      <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-geo-alt icon"></i>
-          <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p></p>
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+          <!-- Language Tabs -->
+          <ul class="nav nav-tabs language-tabs" id="languageTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="en-tab" data-bs-toggle="tab" data-bs-target="#en" type="button" role="tab" aria-controls="en" aria-selected="true">English</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="el-tab" data-bs-toggle="tab" data-bs-target="#el" type="button" role="tab" aria-controls="el" aria-selected="false">Greek</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tr-tab" data-bs-toggle="tab" data-bs-target="#tr" type="button" role="tab" aria-controls="tr" aria-selected="false">Turkish</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="ru-tab" data-bs-toggle="tab" data-bs-target="#ru" type="button" role="tab" aria-controls="ru" aria-selected="false">Russian</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="uk-tab" data-bs-toggle="tab" data-bs-target="#uk" type="button" role="tab" aria-controls="uk" aria-selected="false">Ukrainian</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="de-tab" data-bs-toggle="tab" data-bs-target="#de" type="button" role="tab" aria-controls="de" aria-selected="false">German</button>
+            </li>
+          </ul>
+
+          <!-- Tab Content -->
+          <div class="tab-content" id="languageTabContent">
+            <!-- English -->
+            <div class="tab-pane fade show active" id="en" role="tabpanel" aria-labelledby="en-tab">
+              <h3>Accommodation Rules - Villas Hanioti</h3>
+              <p>Dear guests, for the purpose of a comfortable and cultural holiday for all our guests, let us inform you about the established accommodation rules at Villas Hanioti:</p>
+              <ul>
+                <li>Please notify us 30 minutes before your arrival.</li>
+                <li>During check-in, the person for whom the booking is made provides their identity document and a security deposit of 300€ at the reception, which will be returned during check-out after checking the villa.</li>
+                <li>Payment is made during check-in, in full, in cash.</li>
+                <li>After passing check-in, according to the Rules, guests are allowed to check into the villa.</li>
+                <li>The stay of other people, in addition to those indicated in the booking, is <span class="highlight">PROHIBITED</span> (inviting guests is <span class="highlight">PROHIBITED</span>).</li>
+                <li>The entry of outside cars into the territory of the complex is <span class="highlight">PROHIBITED</span>.</li>
+                <li>The parking lot is designed for 3 cars only (if there are more cars, they are parked outside the complex, without obstructing the movement of other vehicles. Cars with parking violations can be towed away upon complaint from neighbors).</li>
+                <li>Car washing on the territory of the complex is <span class="highlight">PROHIBITED</span>.</li>
+                <li>Charging electric cars on the territory of the villa <span class="highlight">ONLY FOR AN ADDITIONAL FEE</span>.</li>
+                <li>The presence of animals is subject to mandatory approval (additional fee may apply).</li>
+                <li>Walking animals on the territory of the complex is <span class="highlight">PROHIBITED</span>! Keep the lawns clean after animals.</li>
+                <li>Do not leave the electricity and air conditioners on in the room if you leave. The service personnel will enter the room and turn them off.</li>
+                <li>Do not leave windows or doors open when the air conditioners are running.</li>
+                <li>Do not flush sand from the beach in the bathrooms. This immediately clogs the sewer. There is a tap outside.</li>
+                <li>Do not throw paper and hygiene products in the toilet.</li>
+                <li>Wash off sunscreen oils/creams with shower gel, they destroy bed linen and towels. Damaged or heavily soiled bed linen and towels are subject to compensation (10 € per item).</li>
+                <li>Take out your trash. It is advisable to do this daily, as it is dragged by street animals. If you have difficulty, our staff will do it, the service costs 10 € / day.</li>
+                <li>Smoking inside the premises is <span class="highlight">PROHIBITED</span>.</li>
+                <li>Do not leave the keys in the keyhole inside the villa, in case of an incident, we will not be able to open the door with our spare keys. An additional call from a specialist costs 100 €.</li>
+                <li>If you fill the refrigerator with warm food, it needs 2-3 hours to reach the desired temperature.</li>
+                <li>Keep quiet after 23:00.</li>
+                <li>Check-out until 11:00.</li>
+                <li>Any damage is compensated in full, in cash.</li>
+                <li>Breakfast orders are accepted until 18:00 the day before. Cost 18€/person. 100% prepayment.</li>
+                <li>If any complaints or breakfast issues, please call immediately: <strong>+3069 73957267 Marina (Viber, WhatsApp)</strong></li>
+              </ul>
+              <p>Thank you for your understanding and compliance with the Rules! With respect, Villas Hanioti</p>
+            </div>
+
+            <!-- Greek -->
+            <div class="tab-pane fade" id="el" role="tabpanel" aria-labelledby="el-tab">
+              <h3>Κανόνες Διαμονής - Villas Hanioti</h3>
+              <p>Αγαπητοί επισκέπτες, για να εξασφαλίσουμε μια άνετη και πολιτισμένη διαμονή για όλους τους επισκέπτες μας, σας ενημερώνουμε για τους καθιερωμένους κανόνες διαμονής στις Villas Hanioti:</p>
+              <ul>
+                <li>Παρακαλούμε ενημερώστε μας 30 λεπτά πριν την άφιξή σας.</li>
+                <li>Κατά το check-in, το άτομο για το οποίο έχει γίνει η κράτηση παρέχει το έγγραφο ταυτότητάς του και μια εγγύηση 300€ στη ρεσεψιόν, η οποία θα επιστραφεί κατά το check-out μετά τον έλεγχο της βίλας.</li>
+                <li>Η πληρωμή γίνεται κατά το check-in, πλήρως, σε μετρητά.</li>
+                <li>Μετά την ολοκλήρωση του check-in, σύμφωνα με τους Κανόνες, οι επισκέπτες επιτρέπεται να εγκατασταθούν στη βίλα.</li>
+                <li>Η διαμονή άλλων ατόμων, πέρα από αυτά που αναφέρονται στην κράτηση, είναι <span class="highlight">ΑΠΑΓΟΡΕΥΜΕΝΗ</span> (η πρόσκληση επισκεπτών είναι <span class="highlight">ΑΠΑΓΟΡΕΥΜΕΝΗ</span>).</li>
+                <li>Η είσοδος εξωτερικών αυτοκινήτων στην περιοχή του συγκροτήματος είναι <span class="highlight">ΑΠΑΓΟΡΕΥΜΕΝΗ</span>.</li>
+                <li>Ο χώρος στάθμευσης είναι σχεδιασμένος μόνο για 3 αυτοκίνητα (εάν υπάρχουν περισσότερα αυτοκίνητα, σταθμεύουν εκτός του συγκροτήματος, χωρίς να εμποδίζουν την κίνηση άλλων οχημάτων. Αυτοκίνητα με παραβάσεις στάθμευσης μπορεί να απομακρυνθούν με ρυμούλκηση κατόπιν παραπόνου από γείτονες).</li>
+                <li>Το πλύσιμο αυτοκινήτων στην περιοχή του συγκροτήματος είναι <span class="highlight">ΑΠΑΓΟΡΕΥΜΕΝΟ</span>.</li>
+                <li>Η φόρτιση ηλεκτρικών αυτοκινήτων στην περιοχή της βίλας γίνεται <span class="highlight">ΜΟΝΟ ΜΕ ΕΠΙΠΛΕΟΝ ΧΡΕΩΣΗ</span>.</li>
+                <li>Η παρουσία ζώων υπόκειται σε υποχρεωτική έγκριση (μπορεί να ισχύει επιπλέον χρέωση).</li>
+                <li>Η βόλτα ζώων στην περιοχή του συγκροτήματος είναι <span class="highlight">ΑΠΑΓΟΡΕΥΜΕΝΗ</span>! Διατηρήστε τους χλοοτάπητες καθαρούς μετά τα ζώα.</li>
+                <li>Μην αφήνετε την ηλεκτρική ενέργεια και τα κλιματιστικά ανοιχτά στο δωμάτιο αν φύγετε. Το προσωπικό υπηρεσιών θα εισέλθει στο δωμάτιο και θα τα απενεργοποιήσει.</li>
+                <li>Μην αφήνετε παράθυρα ή πόρτες ανοιχτά όταν λειτουργούν τα κλιματιστικά.</li>
+                <li>Μην ξεπλένετε άμμο από την παραλία στα μπάνια. Αυτό φράζει αμέσως την αποχέτευση. Υπάρχει βρύση έξω.</li>
+                <li>Μην πετάτε χαρτί και προϊόντα υγιεινής στην τουαλέτα.</li>
+                <li>Ξεπλύνετε τα λάδια/κρέμες αντηλιακής προστασίας με αφρόλουτρο, καθώς καταστρέφουν τα κλινοσκεπάσματα και τις πετσέτες. Τα κατεστραμμένα ή πολύ λερωμένα κλινοσκεπάσματα και πετσέτες υπόκεινται σε αποζημίωση (10 € ανά τεμάχιο).</li>
+                <li>Βγάλτε τα σκουπίδια σας. Συνιστάται να το κάνετε καθημερινά, καθώς τα σκουπίδια τα σέρνουν τα αδέσποτα ζώα. Αν δυσκολεύεστε, το προσωπικό μας θα το κάνει, η υπηρεσία κοστίζει 10 € / ημέρα.</li>
+                <li>Το κάπνισμα εντός των χώρων είναι <span class="highlight">ΑΠΑΓΟΡΕΥΜΕΝΟ</span>.</li>
+                <li>Μην αφήνετε τα κλειδιά στην κλειδαριά μέσα στη βίλα, σε περίπτωση περιστατικού, δεν θα μπορέσουμε να ανοίξουμε την πόρτα με τα εφεδρικά μας κλειδιά. Μια επιπλέον κλήση ειδικού κοστίζει 100 €.</li>
+                <li>Αν γεμίσετε το ψυγείο με ζεστά τρόφιμα, χρειάζονται 2-3 ώρες για να φτάσει στην επιθυμητή θερμοκρασία.</li>
+                <li>Διατηρήστε ησυχία μετά τις 23:00.</li>
+                <li>Check-out μέχρι τις 11:00.</li>
+                <li>Οποιαδήποτε ζημιά αποζημιώνεται πλήρως, σε μετρητά.</li>
+                <li>Οι παραγγελίες πρωινού γίνονται δεκτές μέχρι τις 18:00 της προηγούμενης ημέρας. Κόστος 18€/άτομο. 100% προπληρωμή.</li>
+                <li>Σε περίπτωση παραπόνων ή προβλημάτων με το πρωινό, καλέστε αμέσως: <strong>+3069 73957267 Μαρίνα (Viber, WhatsApp)</strong></li>
+              </ul>
+              <p>Σας ευχαριστούμε για την κατανόηση και την τήρηση των Κανόνων! Με εκτίμηση, Villas Hanioti</p>
+            </div>
+
+            <!-- Turkish -->
+            <div class="tab-pane fade" id="tr" role="tabpanel" aria-labelledby="tr-tab">
+              <h3>Konaklama Kuralları - Villas Hanioti</h3>
+              <p>Saygıdeğer misafirlerimiz, tüm misafirlerimiz için konforlu ve kültürlü bir tatil amacıyla, Villas Hanioti'deki konaklama kuralları hakkında sizi bilgilendirelim:</p>
+              <ul>
+                <li>Lütfen varışınızdan 30 dakika önce bizi bilgilendirin.</li>
+                <li>Giriş sırasında, rezervasyonu yapan kişi kimlik belgesini ve resepsiyonda 300€'luk bir güvenlik depozitosunu sunar; bu depozito, villa kontrol edildikten sonra çıkışta iade edilir.</li>
+                <li>Ödeme, giriş sırasında tam olarak ve nakit olarak yapılır.</li>
+                <li>Giriş prosedüründen sonra, Kurallara uygun olarak misafirlerin villaya yerleşmesine izin verilir.</li>
+                <li>Rezervasyonda belirtilenler dışında başka kişilerin kalması <span class="highlight">YASAKTIR</span> (misafir davet etmek <span class="highlight">YASAKTIR</span>).</li>
+                <li>Kompleks alanına dışarıdan araç girişi <span class="highlight">YASAKTIR</span>.</li>
+                <li>Otopark sadece 3 araba için tasarlanmıştır (daha fazla araç varsa, kompleks dışında, diğer araçların hareketini engellemeden park edilir. Park ihlali yapan araçlar, komşuların şikayeti üzerine çekilebilir).</li>
+                <li>Kompleks alanında araba yıkamak <span class="highlight">YASAKTIR</span>.</li>
+                <li>Villanın alanında elektrikli arabaları şarj etmek <span class="highlight">SADECE EK ÜCRET KARŞILIĞINDA</span> mümkündür.</li>
+                <li>Hayvanların varlığı zorunlu onay gerektirir (ek ücret uygulanabilir).</li>
+                <li>Kompleks alanında hayvan gezdirmek <span class="highlight">YASAKTIR</span>! Çimleri hayvanlardan sonra temiz tutun.</li>
+                <li>Odanızdan çıkarken elektrik ve klimaları açık bırakmayın. Hizmet personeli odaya girip bunları kapatacaktır.</li>
+                <li>Klimalar çalışırken pencere veya kapıları açık bırakmayın.</li>
+                <li>Plajdan gelen kumu banyolarda yıkamayın. Bu, kanalizasyonu hemen tıkar. Dışarıda bir musluk var.</li>
+                <li>Tuvalete kağıt ve hijyen ürünleri atmayın.</li>
+                <li>Güneş kremlerini/yağlarını duş jeliyle yıkayın; bunlar yatak çarşaflarını ve havluları tahrip eder. Hasarlı veya çok kirli yatak çarşafları ve havlular için tazminat alınır (parça başına 10 €).</li>
+                <li>Çöpünüzü çıkarın. Bunu günlük yapmanız önerilir, çünkü sokak hayvanları çöpleri dağıtır. Zorlanırsanız, personelimiz bunu yapar, hizmet günlük 10 €'dur.</li>
+                <li>İç mekanlarda sigara içmek <span class="highlight">YASAKTIR</span>.</li>
+                <li>Villanın içinde anahtarı kilidin içinde bırakmayın; bir olay durumunda yedek anahtarlarımızla kapıyı açamayız. Uzman çağırılması ek 100 €'dur.</li>
+                <li>Buzdolabını sıcak yiyeceklerle doldurursanız, istenen sıcaklığa ulaşması 2-3 saat sürer.</li>
+                <li>23:00'ten sonra sessiz olun.</li>
+                <li>Çıkış saati 11:00'e kadardır.</li>
+                <li>Herhangi bir hasar tam olarak ve nakit olarak tazmin edilir.</li>
+                <li>Kahvaltı siparişleri bir önceki gün saat 18:00'e kadar kabul edilir. Kişi başı 18€. %100 ön ödeme.</li>
+                <li>Herhangi bir şikayet veya kahvaltı sorunu için hemen arayın: <strong>+3069 73957267 Marina (Viber, WhatsApp)</strong></li>
+              </ul>
+              <p>Kurallara anlayışınız ve uyumunuz için teşekkür ederiz! Saygılarımızla, Villas Hanioti</p>
+            </div>
+
+            <!-- Russian -->
+            <div class="tab-pane fade" id="ru" role="tabpanel" aria-labelledby="ru-tab">
+              <h3>Правила проживания - Villas Hanioti</h3>
+              <p>Уважаемые гости, в целях комфортного и культурного отдыха для всех наших гостей, сообщаем вам о действующих правилах проживания в Villas Hanioti:</p>
+              <ul>
+                <li>Пожалуйста, уведомите нас за 30 минут до вашего приезда.</li>
+                <li>При заселении лицо, на которое оформлено бронирование, предоставляет документ, удостоверяющий личность, и залог в размере 300€ на ресепшене, который будет возвращен при выезде после проверки виллы.</li>
+                <li>Оплата производится при заселении полностью наличными.</li>
+                <li>После прохождения регистрации в соответствии с Правилами гостям разрешается заселиться на виллу.</li>
+                <li>Проживание других лиц, помимо указанных в бронировании, <span class="highlight">ЗАПРЕЩЕНО</span> (приглашение гостей <span class="highlight">ЗАПРЕЩЕНО</span>).</li>
+                <li>Въезд посторонних автомобилей на территорию комплекса <span class="highlight">ЗАПРЕЩЕН</span>.</li>
+                <li>Парковка рассчитана только на 3 автомобиля (если автомобилей больше, они паркуются за пределами комплекса, не препятствуя движению других транспортных средств. Автомобили с нарушениями парковки могут быть эвакуированы по жалобе соседей).</li>
+                <li>Мойка автомобилей на территории комплекса <span class="highlight">ЗАПРЕЩЕНА</span>.</li>
+                <li>Зарядка электромобилей на территории виллы возможна <span class="highlight">ТОЛЬКО ЗА ДОПОЛНИТЕЛЬНУЮ ПЛАТУ</span>.</li>
+                <li>Наличие животных требует обязательного согласования (может взиматься дополнительная плата).</li>
+                <li>Выгул животных на территории комплекса <span class="highlight">ЗАПРЕЩЕН</span>! Следите за чистотой газонов после животных.</li>
+                <li>Не оставляйте электричество и кондиционеры включенными в комнате, если уходите. Обслуживающий персонал войдет в комнату и выключит их.</li>
+                <li>Не оставляйте окна или двери открытыми, когда работают кондиционеры.</li>
+                <li>Не смывайте песок с пляжа в ванных комнатах. Это сразу забивает канализацию. Снаружи есть кран.</li>
+                <li>Не бросайте бумагу и гигиенические средства в унитаз.</li>
+                <li>Смывайте солнцезащитные масла/кремы с помощью геля для душа, они портят постельное белье и полотенца. Поврежденное или сильно загрязненное постельное белье и полотенца подлежат компенсации (10 € за единицу).</li>
+                <li>Выносите мусор. Рекомендуется делать это ежедневно, так как его растаскивают уличные животные. Если вам сложно, наш персонал сделает это, услуга стоит 10 € / день.</li>
+                <li>Курение внутри помещений <span class="highlight">ЗАПРЕЩЕНО</span>.</li>
+                <li>Не оставляйте ключи в замке внутри виллы, в случае инцидента мы не сможем открыть дверь запасными ключами. Дополнительный вызов специалиста стоит 100 €.</li>
+                <li>Если вы заполните холодильник теплой едой, ему потребуется 2-3 часа, чтобы достичь нужной температуры.</li>
+                <li>Соблюдайте тишину после 23:00.</li>
+                <li>Выезд до 11:00.</li>
+                <li>Любой ущерб компенсируется полностью наличными.</li>
+                <li>Заказы на завтрак принимаются до 18:00 предыдущего дня. Стоимость 18€/человек. 100% предоплата.</li>
+                <li>При любых жалобах или проблемах с завтраком звоните немедленно: <strong>+3069 73957267 Марина (Viber, WhatsApp)</strong></li>
+              </ul>
+              <p>Спасибо за понимание и соблюдение Правил! С уважением, Villas Hanioti</p>
+            </div>
+
+            <!-- Ukrainian -->
+            <div class="tab-pane fade" id="uk" role="tabpanel" aria-labelledby="uk-tab">
+              <h3>Правила проживання - Villas Hanioti</h3>
+              <p>Шановні гості, з метою комфортного та культурного відпочинку для всіх наших гостей, повідомляємо вам про встановлені правила проживання в Villas Hanioti:</p>
+              <ul>
+                <li>Будь ласка, повідомте нас за 30 хвилин до вашого прибуття.</li>
+                <li>Під час заселення особа, на яку оформлено бронювання, надає документ, що посвідчує особу, та заставу в розмірі 300€ на рецепції, яка буде повернута під час виїзду після перевірки вілли.</li>
+                <li>Оплата здійснюється під час заселення повністю готівкою.</li>
+                <li>Після проходження реєстрації, відповідно до Правил, гостям дозволяється заселитися на віллу.</li>
+                <li>Перебування інших осіб, окрім зазначених у бронюванні, <span class="highlight">ЗАБОРОНЕНО</span> (запрошення гостей <span class="highlight">ЗАБОРОНЕНО</span>).</li>
+                <li>В’їзд сторонніх автомобілів на територію комплексу <span class="highlight">ЗАБОРОНЕНИЙ</span>.</li>
+                <li>Парковка розрахована лише на 3 автомобілі (якщо автомобілів більше, вони паркуються за межами комплексу, не перешкоджаючи руху інших транспортних засобів. Автомобілі з порушеннями паркування можуть бути евакуйовані за скаргою сусідів).</li>
+                <li>Миття автомобілів на території комплексу <span class="highlight">ЗАБОРОНЕНО</span>.</li>
+                <li>Зарядка електромобілів на території вілли можлива <span class="highlight">ТІЛЬКИ ЗА ДОДАТКОВУ ПЛАТУ</span>.</li>
+                <li>Перебування тварин потребує обов’язкового погодження (може стягуватися додаткова плата).</li>
+                <li>Вигул тварин на території комплексу <span class="highlight">ЗАБОРОНЕНИЙ</span>! Тримайте газони чистими після тварин.</li>
+                <li>Не залишайте електрику та кондиціонери увімкненими в кімнаті, якщо виходите. Обслуговуючий персонал увійде до кімнати та вимкне їх.</li>
+                <li>Не залишайте вікна чи двері відчиненими, коли працюють кондиціонери.</li>
+                <li>Не змивайте пісок з пляжу у ванних кімнатах. Це одразу забиває каналізацію. Зовні є кран.</li>
+                <li>Не кидайте папір і гігієнічні засоби в унітаз.</li>
+                <li>Змивайте сонцезахисні масла/креми гелем для душу, вони псують постільну білизну та рушники. Пошкоджена або сильно забруднена постільна білизна та рушники підлягають компенсації (10 € за одиницю).</li>
+                <li>Виносьте сміття. Рекомендується робити це щодня, оскільки його розтягують вуличні тварини. Якщо вам важко, наш персонал зробить це, послуга коштує 10 € / день.</li>
+                <li>Куріння всередині приміщень <span class="highlight">ЗАБОРОНЕНО</span>.</li>
+                <li>Не залишайте ключі в замку всередині вілли, у разі інциденту ми не зможемо відчинити двері запасними ключами. Додатковий виклик спеціаліста коштує 100 €.</li>
+                <li>Якщо ви наповните холодильник теплою їжею, йому знадобиться 2-3 години, щоб досягти потрібної температури.</li>
+                <li>Дотримуйтесь тиші після 23:00.</li>
+                <li>Виїзд до 11:00.</li>
+                <li>Будь-які пошкодження компенсуються повністю готівкою.</li>
+                <li>Замовлення сніданків приймаються до 18:00 попереднього дня. Вартість 18€/особа. 100% передоплата.</li>
+                <li>У разі скарг або проблем зі сніданком телефонуйте негайно: <strong>+3069 73957267 Марина (Viber, WhatsApp)</strong></li>
+              </ul>
+              <p>Дякуємо за розуміння та дотримання Правил! З повагою, Villas Hanioti</p>
+            </div>
+
+            <!-- German -->
+            <div class="tab-pane fade" id="de" role="tabpanel" aria-labelledby="de-tab">
+              <h3>Unterkunftsregeln - Villas Hanioti</h3>
+              <p>Sehr geehrte Gäste, um einen komfortablen und kulturellen Urlaub für alle unsere Gäste zu gewährleisten, möchten wir Sie über die festgelegten Unterkunftsregeln in Villas Hanioti informieren:</p>
+              <ul>
+                <li>Bitte informieren Sie uns 30 Minuten vor Ihrer Ankunft.</li>
+                <li>Beim Check-in legt die Person, für die die Buchung vorgenommen wurde, ihren Ausweis und eine Kaution von 300 € an der Rezeption vor, die beim Check-out nach Überprüfung der Villa zurückerstattet wird.</li>
+                <li>Die Zahlung erfolgt beim Check-in vollständig in bar.</li>
+                <li>Nach Abschluss des Check-ins dürfen die Gäste gemäß den Regeln in die Villa einziehen.</li>
+                <li>Der Aufenthalt anderer Personen zusätzlich zu den in der Buchung angegebenen ist <span class="highlight">VERBOTEN</span> (das Einladen von Gästen ist <span class="highlight">VERBOTEN</span>).</li>
+                <li>Das Einfahren fremder Autos auf das Gelände des Komplexes ist <span class="highlight">VERBOTEN</span>.</li>
+                <li>Der Parkplatz ist nur für 3 Autos ausgelegt (bei mehr Autos müssen diese außerhalb des Komplexes geparkt werden, ohne die Bewegung anderer Fahrzeuge zu behindern. Fahrzeuge mit Parkverstößen können auf Beschwerde von Nachbarn abgeschleppt werden).</li>
+                <li>Das Waschen von Autos auf dem Gelände des Komplexes ist <span class="highlight">VERBOTEN</span>.</li>
+                <li>Das Laden von Elektroautos auf dem Gelände der Villa ist <span class="highlight">NUR GEGEN ZUSÄTZLICHE GEBÜHR</span> möglich.</li>
+                <li>Die Anwesenheit von Tieren unterliegt einer obligatorischen Genehmigung (es kann eine zusätzliche Gebühr anfallen).</li>
+                <li>Das Ausführen von Tieren auf dem Gelände des Komplexes ist <span class="highlight">VERBOTEN</span>! Halten Sie die Rasenflächen nach den Tieren sauber.</li>
+                <li>Lassen Sie Strom und Klimaanlagen nicht eingeschaltet, wenn Sie den Raum verlassen. Das Servicepersonal wird den Raum betreten und sie ausschalten.</li>
+                <li>Lassen Sie Fenster oder Türen nicht offen, während die Klimaanlagen laufen.</li>
+                <li>Spülen Sie keinen Sand vom Strand in den Bädern hinunter. Dies verstopft sofort die Kanalisation. Draußen gibt es einen Wasserhahn.</li>
+                <li>Werfen Sie kein Papier oder Hygieneprodukte in die Toilette.</li>
+                <li>Waschen Sie Sonnenschutzöle/-cremes mit Duschgel ab, da sie Bettwäsche und Handtücher zerstören. Beschädigte oder stark verschmutzte Bettwäsche und Handtücher müssen entschädigt werden (10 € pro Stück).</li>
+                <li>Entsorgen Sie Ihren Müll. Es wird empfohlen, dies täglich zu tun, da Straßenkatzen den Müll verteilen. Wenn Sie Schwierigkeiten haben, übernimmt unser Personal dies, der Service kostet 10 € / Tag.</li>
+                <li>Rauchen in den Räumlichkeiten ist <span class="highlight">VERBOTEN</span>.</li>
+                <li>Lassen Sie die Schlüssel nicht im Schlüsselloch innerhalb der Villa, da wir im Falle eines Vorfalls die Tür mit unseren Ersatzschlüsseln nicht öffnen können. Ein zusätzlicher Anruf eines Spezialisten kostet 100 €.</li>
+                <li>Wenn Sie den Kühlschrank mit warmen Lebensmitteln füllen, benötigt er 2-3 Stunden, um die gewünschte Temperatur zu erreichen.</li>
+                <li>Halten Sie nach 23:00 Uhr Ruhe.</li>
+                <li>Check-out bis 11:00 Uhr.</li>
+                <li>Jeder Schaden wird vollständig in bar entschädigt.</li>
+                <li>Frühstücksbestellungen werden bis 18:00 Uhr am Vortag angenommen. Kosten: 18 € / Person. 100 % Vorauszahlung.</li>
+                <li>Bei Beschwerden oder Problemen mit dem Frühstück rufen Sie bitte sofort an: <strong>+3069 73957267 Marina (Viber, WhatsApp)</strong></li>
+              </ul>
+              <p>Vielen Dank für Ihr Verständnis und die Einhaltung der Regeln! Mit freundlichen Grüßen, Villas Hanioti</p>
+            </div>
           </div>
-
         </div>
-
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-telephone icon"></i>
-          <div>
-            <h4>Contact</h4>
-            <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-clock icon"></i>
-          <div>
-            <h4>Opening Hours</h4>
-            <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
-          <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
       </div>
     </div>
+  </section><!-- End Rules Section -->
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">EstateAgency</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+</main>
+
+<footer id="footer" class="footer light-background">
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt icon"></i>
+        <div class="address">
+          <h4 data-translate="Address">Address</h4>
+          <p data-translate="Chaniotis">Chaniotis</p>
+          <p data-translate="Chalkidiki, Greece 63085">Chalkidiki, Greece 63085</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-telephone icon"></i>
+        <div>
+          <h4 data-translate="Contact">Contact</h4>
+          <p>
+            <strong data-translate="Phone:">Phone:</strong> <span>+306973957267</span><br>
+            <strong data-translate="Email:">Email:</strong> <span><a href="mailto:villashanioti5@gmail.com">villashanioti5@gmail.com</a></span><br>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-clock icon"></i>
+        <div>
+          <h4 data-translate="Opening Hours">Opening Hours</h4>
+          <p>
+            <strong data-translate="Mon-Sun:">Mon-Sun:</strong> <span data-translate="24/7 Support">24/7 Support</span><br>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <!-- Social links removed -->
       </div>
     </div>
+  </div>
+  <div class="container copyright text-center mt-4">
+    <p>© <span data-translate="Copyright">Copyright</span> <strong class="px-1 sitename">Villas Hanioti</strong> <span data-translate="All Rights Reserved">All Rights Reserved</span></p>
+  </div>
+</footer>
 
-  </footer>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+<!-- Custom Script for Language Switching -->
+<script>
+  // Initialize AOS
+  AOS.init();
+
+  // Function to show rules based on language selection from dropdown
+  function showRules(lang) {
+    const tabs = document.querySelectorAll('.nav-link');
+    const panes = document.querySelectorAll('.tab-pane');
+
+    tabs.forEach(tab => tab.classList.remove('active'));
+    panes.forEach(pane => pane.classList.remove('show', 'active'));
+
+    document.getElementById(`${lang}-tab`).classList.add('active');
+    document.getElementById(lang).classList.add('show', 'active');
+  }
+
+  // Optional: Translation for header/footer (minimal implementation)
+  const translations = {
+    en: {
+      "Home": "Home",
+      "About": "About",
+      "Villas": "Villas",
+      "Gallery": "Gallery",
+      "Language": "Language",
+      "Our Services": "Our Services",
+      "Contact": "Contact",
+      "Accommodation Rules": "Accommodation Rules",
+      "Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.": "Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.",
+      "Address": "Address",
+      "Chaniotis": "Chaniotis",
+      "Chalkidiki, Greece 63085": "Chalkidiki, Greece 63085",
+      "Contact": "Contact",
+      "Phone:": "Phone:",
+      "Email:": "Email:",
+      "Opening Hours": "Opening Hours",
+      "Mon-Sun:": "Mon-Sun:",
+      "24/7 Support": "24/7 Support",
+      "Copyright": "Copyright",
+      "All Rights Reserved": "All Rights Reserved"
+    },
+    el: {
+      "Home": "Αρχική",
+      "About": "Σχετικά",
+      "Villas": "Βίλες",
+      "Gallery": "Γκαλερί",
+      "Language": "Γλώσσα",
+      "Our Services": "Οι Υπηρεσίες μας",
+      "Contact": "Επικοινωνία",
+      "Accommodation Rules": "Κανόνες Διαμονής",
+      "Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.": "Παρακαλούμε ελέγξτε τους κανόνες διαμονής μας για να εξασφαλίσουμε μια άνετη και ευχάριστη διαμονή για όλους τους επισκέπτες στις Villas Hanioti.",
+      "Address": "Διεύθυνση",
+      "Chaniotis": "Χανιώτης",
+      "Chalkidiki, Greece 63085": "Χαλκιδική, Ελλάδα 63085",
+      "Contact": "Επικοινωνία",
+      "Phone:": "Τηλέφωνο:",
+      "Email:": "Email:",
+      "Opening Hours": "Ώρες Λειτουργίας",
+      "Mon-Sun:": "Δευ-Κυρ:",
+      "24/7 Support": "Υποστήριξη 24/7",
+      "Copyright": "Πνευματικά Δικαιώματα",
+      "All Rights Reserved": "Με επιφύλαξη παντός δικαιώματος"
+    },
+    tr: {
+      "Home": "Ana Sayfa",
+      "About": "Hakkında",
+      "Villas": "Villalar",
+      "Gallery": "Galeri",
+      "Language": "Dil",
+      "Our Services": "Hizmetlerimiz",
+      "Contact": "İletişim",
+      "Accommodation Rules": "Konaklama Kuralları",
+      "Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.": "Lütfen Villas Hanioti'deki tüm misafirlerimiz için konforlu ve keyifli bir konaklama sağlamak adına konaklama kurallarımızı inceleyin.",
+      "Address": "Adres",
+      "Chaniotis": "Hanioti",
+      "Chalkidiki, Greece 63085": "Halkidiki, Yunanistan 63085",
+      "Contact": "İletişim",
+      "Phone:": "Telefon:",
+      "Email:": "E-posta:",
+      "Opening Hours": "Çalışma Saatleri",
+      "Mon-Sun:": "Pzt-Paz:",
+      "24/7 Support": "24/7 Destek",
+      "Copyright": "Telif Hakkı",
+      "All Rights Reserved": "Tüm Hakları Saklıdır"
+    },
+    ru: {
+      "Home": "Главная",
+      "About": "О нас",
+      "Villas": "Виллы",
+      "Gallery": "Галерея",
+      "Language": "Язык",
+      "Our Services": "Наши услуги",
+      "Contact": "Контакты",
+      "Accommodation Rules": "Правила проживания",
+      "Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.": "Пожалуйста, ознакомьтесь с нашими правилами проживания, чтобы обеспечить комфортное и приятное пребывание для всех гостей в Villas Hanioti.",
+      "Address": "Адрес",
+      "Chaniotis": "Ханиоти",
+      "Chalkidiki, Greece 63085": "Халкидики, Греция 63085",
+      "Contact": "Контакты",
+      "Phone:": "Телефон:",
+      "Email:": "Электронная почта:",
+      "Opening Hours": "Часы работы",
+      "Mon-Sun:": "Пн-Вс:",
+      "24/7 Support": "Поддержка 24/7",
+      "Copyright": "Авторское право",
+      "All Rights Reserved": "Все права защищены"
+    },
+    uk: {
+      "Home": "Головна",
+      "About": "Про нас",
+      "Villas": "Вілли",
+      "Gallery": "Галерея",
+      "Language": "Мова",
+      "Our Services": "Наші послуги",
+      "Contact": "Контакти",
+      "Accommodation Rules": "Правила проживання",
+      "Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.": "Будь ласка, ознайомтеся з нашими правилами проживання, щоб забезпечити комфортне та приємне перебування для всіх гостей у Villas Hanioti.",
+      "Address": "Адреса",
+      "Chaniotis": "Ханіоті",
+      "Chalkidiki, Greece 63085": "Халкідікі, Греція 63085",
+      "Contact": "Контакти",
+      "Phone:": "Телефон:",
+      "Email:": "Електронна пошта:",
+      "Opening Hours": "Години роботи",
+      "Mon-Sun:": "Пн-Нд:",
+      "24/7 Support": "Підтримка 24/7",
+      "Copyright": "Авторське право",
+      "All Rights Reserved": "Усі права захищені"
+    },
+    de: {
+      "Home": "Startseite",
+      "About": "Über uns",
+      "Villas": "Villen",
+      "Gallery": "Galerie",
+      "Language": "Sprache",
+      "Our Services": "Unsere Dienstleistungen",
+      "Contact": "Kontakt",
+      "Accommodation Rules": "Unterkunftsregeln",
+      "Please review our accommodation rules to ensure a comfortable and enjoyable stay for all guests at Villas Hanioti.": "Bitte überprüfen Sie unsere Unterkunftsregeln, um einen komfortablen und angenehmen Aufenthalt für alle Gäste in Villas Hanioti zu gewährleisten.",
+      "Address": "Adresse",
+      "Chaniotis": "Chaniotis",
+      "Chalkidiki, Greece 63085": "Chalkidiki, Griechenland 63085",
+      "Contact": "Kontakt",
+      "Phone:": "Telefon:",
+      "Email:": "E-Mail:",
+      "Opening Hours": "Öffnungszeiten",
+      "Mon-Sun:": "Mo-So:",
+      "24/7 Support": "24/7 Unterstützung",
+      "Copyright": "Urheberrecht",
+      "All Rights Reserved": "Alle Rechte vorbehalten"
+    }
+  };
+
+  // Function to translate header/footer (optional)
+  function translatePage(lang) {
+    document.querySelectorAll('[data-translate]').forEach(element => {
+      const key = element.getAttribute('data-translate');
+      if (translations[lang] && translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+    localStorage.setItem('language', lang);
+  }
+
+  // Load saved language or default to English
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'en';
+    translatePage(savedLang);
+    showRules(savedLang); // Sync rules with initial language
+  });
+</script>
 
 </body>
 
