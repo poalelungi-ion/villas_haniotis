@@ -33,11 +33,11 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
     <a href="index.html" class="logo d-flex align-items-center">
-      <img src="assets/img/logo.png" alt="Villas Hanioti Logo" style="aspect-ratio: initial;">
-      <h1 class="sitename" style="margin-top: 3%; font-weight: normal;">Villas <span>Hanioti</span></h1>
+      <img src="assets/img/logo.png" alt="Villas Hanioti Logo">
+      <h1 class="sitename">Villas <span>Hanioti</span></h1>
     </a>
 
-    <nav id="navmenu" class="navmenu" style="font-weight: normal;">
+    <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="index.html" data-translate="Home">Home</a></li>
         <li><a href="about.html" data-translate="About">About</a></li>
@@ -103,42 +103,30 @@
   <!-- Mosaic Gallery Section -->
   <section id="gallery" class="gallery section">
     <div class="container" data-aos="fade-up">
-      <div class="mosaic-gallery">
-        <div class="gallery-item tall">
-          <img src="assets/img/gallery/gallery-1.jpg" alt="Villa Exterior" class="img-fluid">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/img/gallery/gallery-2.jpg" alt="Private Pool" class="img-fluid">
-        </div>
-        <div class="gallery-item wide">
-          <img src="assets/img/gallery/gallery-3.jpg" alt="Living Room" class="img-fluid">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/img/gallery/gallery-4.jpg" alt="Bedroom" class="img-fluid">
-        </div>
-        <div class="gallery-item tall">
-          <img src="assets/img/gallery/gallery-5.jpg" alt="Garden View" class="img-fluid">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/img/gallery/gallery-6.jpg" alt="BBQ Area" class="img-fluid">
-        </div>
-        <div class="gallery-item wide">
-          <img src="assets/img/gallery/gallery-7.jpg" alt="Sea View" class="img-fluid">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/img/gallery/gallery-8.jpg" alt="Terrace" class="img-fluid">
-        </div>
-        <div class="gallery-item tall">
-          <img src="assets/img/gallery/gallery-9.jpg" alt="Pool at Night" class="img-fluid">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/img/gallery/gallery-10.jpg" alt="Kitchen" class="img-fluid">
-        </div>
+      <div id="mosaic-gallery" class="mosaic-gallery">
+        <!-- Gallery items will be populated by JavaScript -->
+      </div>
+      <div class="pagination mt-4 d-flex justify-content-center" id="pagination-controls">
+        <!-- Pagination buttons will be populated by JavaScript -->
       </div>
     </div>
   </section><!-- /Mosaic Gallery Section -->
 
 </main>
+
+<!-- Sleek Image Modal with Navigation -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 100%; width: 100%; height: 100%; margin: 0;">
+    <div class="modal-content" style="background: rgba(0, 0, 0, 0.9); border: none; height: 100%;">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; top: 20px; right: 20px; background: var(--accent-color); color: var(--contrast-color); border-radius: 50%; width: 36px; height: 36px; opacity: 1;"></button>
+      <div class="modal-body d-flex align-items-center justify-content-center p-0 position-relative" style="height: 100%;">
+        <img id="modalImage" src="" alt="Full-size image" style="max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px;">
+        <button id="prevImage" class="modal-nav-btn prev" aria-label="Previous Image"><i class="bi bi-chevron-left"></i></button>
+        <button id="nextImage" class="modal-nav-btn next" aria-label="Next Image"><i class="bi bi-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer id="footer" class="footer light-background">
   <div class="container">
@@ -199,7 +187,7 @@
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
 
-<!-- Translation Script -->
+<!-- Translation and Gallery Script -->
 <script>
   // Translation dictionary
   const translations = {
@@ -317,28 +305,140 @@
         element.textContent = translations[lang][key];
       }
     });
-    localStorage.setItem('language', lang); // Save the selected language
+    localStorage.setItem('language', lang);
   }
 
-  // Apply translation on page load
+  // Gallery with pagination, lazy loading, and sleek full-screen navigation
   document.addEventListener('DOMContentLoaded', function () {
     const savedLang = localStorage.getItem('language') || 'en';
     translatePage(savedLang);
+
+    // List of all image filenames from assets/img/Exterior/
+    const exteriorImages = [
+      '0e4ef5fb-f765-4656-8330-e1bfbcf0358f.jpg', 'IMG_0698.jpg', 'IMG_0728.jpg', 'IMG_9900.jpg', 'IMG_9973.jpg',
+      '1f19c14a-6842-490d-814b-b006edad0e8c.jpg', 'IMG_0699.jpg', 'IMG_0729.jpg', 'IMG_9901.jpg', 'IMG_9974.jpg',
+      '7eedfab0-ed81-420d-8bfb-3dce4d6f030e.jpg', 'IMG_0700.jpg', 'IMG_0730.jpg', 'IMG_9902.jpg', 'IMG_9975.jpg',
+      '67d8ac19-d8cd-44f0-8d83-77469579bd40.jpg', 'IMG_0701.jpg',  'IMG_9903.jpg', 'IMG_9976.jpg',
+       'IMG_0704.jpg', 'IMG_1185.jpg', 'IMG_9904.jpg', 'IMG_9977.jpg',
+      'a9065f95-a133-4578-ac7a-6b615d4feeb5.jpg', 'IMG_0705.jpg', 'IMG_1646.jpg', 'IMG_9910.jpg', 'IMG_9979.jpg',
+      'e8fc3150-50fa-4b8d-8ab8-839394837892.jpg', 'IMG_0706.jpg', 'IMG_5564.jpg', 'IMG_9950.jpg', 'IMG_9980.jpg',
+      'e02634ed-a8f5-4201-8152-bb4ab62a2c1a.jpg', 'IMG_0707.jpg', 'IMG_5569.jpg', 'IMG_9952.jpg', 'IMG_9981.jpg',
+      'IMG_0552.jpg', 'IMG_0708.jpg', 'IMG_5570.jpg', 'IMG_9953.jpg', 'IMG_9982.jpg',
+      'IMG_0555.jpg', 'IMG_0709.jpg', 'IMG_5571.jpg', 'IMG_9955.jpg', 'IMG_9984.jpg',
+      'IMG_0564.jpg', 'IMG_0710.jpg', 'IMG_5574.jpg', 'IMG_9957.jpg', 'IMG_9985.jpg',
+      'IMG_0683.jpg', 'IMG_0711.jpg', 'IMG_9272.jpg', 'IMG_9958.jpg', 'IMG_9986.jpg',
+      'IMG_0684.jpg', 'IMG_0713.jpg', 'IMG_9273.jpg', 'IMG_9959.jpg', 'IMG_9988.jpg',
+      'IMG_0685.jpg', 'IMG_0714.jpg', 'IMG_9274.jpg', 'IMG_9960.jpg', 'IMG_9989.jpg',
+      'IMG_0686.jpg', 'IMG_0715.jpg', 'IMG_9275.jpg', 'IMG_9961.jpg', 'IMG_9990.jpg',
+      'IMG_0687.jpg', 'IMG_0716.jpg', 'IMG_9279.jpg', 'IMG_9962.jpg', 'IMG_9991.jpg',
+      'IMG_0688.jpg', 'IMG_0717.jpg', 'IMG_9281.jpg', 'IMG_9963.jpg', 'IMG_9995.jpg',
+      'IMG_0689.jpg', 'IMG_0718.jpg', 'IMG_9282.jpg', 'IMG_9964.jpg', 'IMG_9996.jpg',
+      'IMG_0690.jpg', 'IMG_0719.jpg', 'IMG_9285.jpg', 'IMG_9965.jpg', 'IMG_9997.jpg',
+      'IMG_0691.jpg', 'IMG_0720.jpg', 'IMG_9286.jpg', 'IMG_9966.jpg',
+       'IMG_0692.jpg', 'IMG_0721.jpg', 'IMG_9287.jpg', 'IMG_9967.jpg',
+      'IMG_0693.jpg', 'IMG_0722.jpg', 'IMG_9288.jpg', 'IMG_9968.jpg',
+      'IMG_0694.jpg', 'IMG_0723.jpg', 'IMG_9289.jpg', 'IMG_9969.jpg',
+      'IMG_0695.jpg', 'IMG_0724.jpg', 'IMG_9897.jpg', 'IMG_9970.jpg',
+      'IMG_0696.jpg', 'IMG_0725.jpg', 'IMG_9898.jpg', 'IMG_9971.jpg',
+      'IMG_0697.jpg', 'IMG_0727.jpg', 'IMG_9899.jpg', 'IMG_9972.jpg'
+    ];
+
+    const galleryContainer = document.getElementById('mosaic-gallery');
+    const paginationContainer = document.getElementById('pagination-controls');
+    const modalImage = document.getElementById('modalImage');
+    const prevButton = document.getElementById('prevImage');
+    const nextButton = document.getElementById('nextImage');
+    const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+    const imagesPerPage = 15;
+    let currentPage = 1;
+    const totalPages = Math.ceil(exteriorImages.length / imagesPerPage);
+    let currentImageIndex = 0;
+
+    // Define mosaic layout classes to cycle through
+    const layoutClasses = ['tall', '', 'wide', '', 'tall', '', 'wide', '', 'tall', ''];
+
+    function displayPage(page) {
+      galleryContainer.innerHTML = ''; // Clear current gallery
+      const startIndex = (page - 1) * imagesPerPage;
+      const endIndex = Math.min(startIndex + imagesPerPage, exteriorImages.length);
+      let classIndex = 0;
+
+      for (let i = startIndex; i < endIndex; i++) {
+        const filename = exteriorImages[i];
+        const galleryItem = document.createElement('div');
+        const layoutClass = layoutClasses[classIndex % layoutClasses.length];
+        galleryItem.className = `gallery-item ${layoutClass}`;
+        galleryItem.innerHTML = `<img src="assets/img/Exterior/${filename}" alt="${filename.split('.')[0]}" class="img-fluid" loading="lazy">`;
+        galleryItem.addEventListener('click', () => {
+          currentImageIndex = i;
+          updateModalImage();
+          imageModal.show();
+        });
+        galleryContainer.appendChild(galleryItem);
+        classIndex++;
+      }
+
+      // Update pagination
+      updatePagination(page);
+    }
+
+    function updatePagination(activePage) {
+      paginationContainer.innerHTML = '';
+      for (let i = 1; i <= totalPages; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.className = `pagination-btn ${i === activePage ? 'active' : ''}`;
+        pageButton.textContent = i;
+        pageButton.addEventListener('click', () => {
+          currentPage = i;
+          displayPage(currentPage);
+        });
+        paginationContainer.appendChild(pageButton);
+      }
+    }
+
+    function updateModalImage() {
+      modalImage.src = `assets/img/Exterior/${exteriorImages[currentImageIndex]}`;
+      prevButton.disabled = currentImageIndex === 0;
+      nextButton.disabled = currentImageIndex === exteriorImages.length - 1;
+    }
+
+    // Modal navigation
+    prevButton.addEventListener('click', () => {
+      if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updateModalImage();
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentImageIndex < exteriorImages.length - 1) {
+        currentImageIndex++;
+        updateModalImage();
+      }
+    });
+
+    // Initial display
+    if (exteriorImages.length > 0) {
+      displayPage(currentPage);
+    } else {
+      galleryContainer.innerHTML = '<p>No images available.</p>';
+      paginationContainer.style.display = 'none';
+    }
   });
 
   // Ensure navigation links maintain the selected language
   document.querySelectorAll('.navmenu a:not(.dropdown-toggle)').forEach(link => {
     link.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent default navigation
+      e.preventDefault();
       const href = this.getAttribute('href');
       const lang = localStorage.getItem('language') || 'en';
-      window.location.href = href; // Navigate to the page
-      translatePage(lang); // Ensure language persists (though this runs on next page load)
+      window.location.href = href;
+      translatePage(lang);
     });
   });
 </script>
 
-<!-- Custom CSS for Mosaic Gallery -->
+<!-- Custom CSS for Mosaic Gallery, Pagination, and Sleek Modal -->
 <style>
   .mosaic-gallery {
     display: grid;
@@ -351,6 +451,8 @@
   .gallery-item {
     overflow: hidden;
     border-radius: 8px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
 
   .gallery-item img {
@@ -365,7 +467,7 @@
   }
 
   .gallery-item.tall {
-    grid-row: span 2;
+    grid-row: span 1;
   }
 
   .gallery-item.wide {
@@ -385,6 +487,99 @@
     .gallery-item.tall {
       grid-row: span 1;
     }
+  }
+
+  .pagination {
+    margin-top: 30px;
+  }
+
+  .pagination-btn {
+    background-color: var(--surface-color);
+    color: var(--default-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-family: var(--heading-font);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .pagination-btn:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+
+  .pagination-btn.active {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border-color: var(--accent-color);
+  }
+
+  .pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .modal-content {
+    background: rgba(0, 0, 0, 0.9);
+    border: none;
+  }
+
+  .modal-header .btn-close {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: background-color 0.3s ease;
+  }
+
+  .modal-header .btn-close:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+
+  .modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(39, 94, 168, 0.7); /* --accent-color with transparency */
+    color: var(--contrast-color);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+
+  .modal-nav-btn:hover {
+    background: var(--accent-color);
+  }
+
+  .modal-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .modal-nav-btn.prev {
+    left: 20px;
+  }
+
+  .modal-nav-btn.next {
+    right: 20px;
   }
 </style>
 
