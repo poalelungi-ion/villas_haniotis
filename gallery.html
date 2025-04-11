@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Gallery - Villas Hanioti</title>
+  <title data-translate="Gallery">Gallery - Villas Hanioti</title>
   <meta name="description" content="Explore the stunning photo gallery of Villas Hanioti in Hanioti, Chalkidiki, Greece, showcasing luxury villas, private pools, and scenic views.">
   <meta name="keywords" content="Villas Hanioti, Chalkidiki, Greece, gallery, luxury villas, vacation rental, photos">
 
@@ -26,6 +26,166 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom CSS for Mosaic Gallery, Pagination, Modal, and Language Dropdown -->
+  <style>
+    .navmenu .dropdown .dropdown-menu.show {
+      display: block;
+      position: absolute;
+      background: var(--nav-dropdown-background-color);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+    }
+
+    @media (max-width: 1199px) {
+      .navmenu .dropdown .dropdown-menu.show {
+        position: static;
+        box-shadow: none;
+      }
+    }
+
+    .mosaic-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-auto-rows: 200px;
+      grid-gap: 10px;
+      padding: 20px 0;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item.tall {
+      grid-row: span 1;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+      .mosaic-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-auto-rows: 150px;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 1;
+      }
+
+      .gallery-item.tall {
+        grid-row: span 1;
+      }
+    }
+
+    .pagination {
+      margin-top: 30px;
+    }
+
+    .pagination-btn {
+      background-color: var(--surface-color);
+      color: var(--default-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+      width: 40px;
+      height: 40px;
+      margin: 0 5px;
+      border-radius: 50%;
+      font-size: 16px;
+      font-family: var(--heading-font);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .pagination-btn:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+
+    .pagination-btn.active {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-color: var(--accent-color);
+    }
+
+    .pagination-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .modal-content {
+      background: rgba(0, 0, 0, 0.9);
+      border: none;
+    }
+
+    .modal-header .btn-close {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transition: background-color 0.3s ease;
+    }
+
+    .modal-header .btn-close:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+    }
+
+    .modal-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(39, 94, 168, 0.7); /* --accent-color with transparency */
+      color: var(--contrast-color);
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .modal-nav-btn:hover {
+      background: var(--accent-color);
+    }
+
+    .modal-nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .modal-nav-btn.prev {
+      left: 20px;
+    }
+
+    .modal-nav-btn.next {
+      right: 20px;
+    }
+  </style>
 </head>
 
 <body class="gallery-page">
@@ -33,40 +193,41 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
     <a href="index.html" class="logo d-flex align-items-center">
-      <img src="assets/img/logo.png" alt="Villas Hanioti Logo">
-      <h1 class="sitename">Villas <span>Hanioti</span></h1>
+      <img src="assets/img/logo.png" alt="Villas Hanioti Logo" style="aspect-ratio: initial;">
+      <h1 class="sitename" style="margin-top: 3%; font-weight: normal;" data-translate="Villas Hanioti">Villas <span>Hanioti</span></h1>
     </a>
 
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class="navmenu" style="font-weight: normal;">
       <ul>
         <li><a href="index.html" data-translate="Home">Home</a></li>
         <li><a href="about.html" data-translate="About">About</a></li>
-        <li><a href="services.html" data-translate="Accommodations">Accommodations</a></li>
+        <li><a href="services.html" data-translate="Acomodation Rules">Accommodation Rules</a></li>
         <li><a href="properties.html" data-translate="Villas">Villas</a></li>
         <li><a href="gallery.html" class="active" data-translate="Gallery">Gallery</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul class="dropdown-menu show">
-            <li><a href="#" onclick="translatePage('en')">English</a></li>
-            <li><a href="#" onclick="translatePage('el')">Greek</a></li>
-<!--            <li><a href="#" onclick="translatePage('uk')">Ukrainian</a></li>-->
-<!--            <li><a href="#" onclick="translatePage('ru')">Russian</a></li>-->
-<!--            <li><a href="#" onclick="translatePage('tr')">Turkish</a></li>-->
+            <li><a href="#" onclick="translatePage('en')" data-translate="English">English</a></li>
+            <li><a href="#" onclick="translatePage('el')" data-translate="Greek">Greek</a></li>
+<!--            <li><a href="#" onclick="translatePage('uk')" data-translate="Ukrainian">Ukrainian</a></li>-->
+<!--            <li><a href="#" onclick="translatePage('ru')" data-translate="Russian">Russian</a></li>-->
+<!--            <li><a href="#" onclick="translatePage('tr')" data-translate="Turkish">Turkish</a></li>-->
           </ul>
         </li>
         <li class="dropdown"><a href="#" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Basic Facilities</a></li>
-            <li class="dropdown"><a href="#">Additional Amenities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">WiFi</a></li>
-                <li><a href="#">Parking</a></li>
-                <li><a href="#">BBQ Facilities</a></li>
-                <li><a href="#">Private Pool</a></li>
+          <ul class="dropdown-menu show">
+            <li><a href="service-breakfast.html" data-translate="Breakfast">Breakfast</a></li>
+            <li><a href="service-playzone.html" data-translate="Play Zone">Play Zone</a></li>
+            <li><a href="service-transportation.html" data-translate="Transportation Facilities">Transportation Facilities</a></li>
+            <li class="dropdown"><a href="#" data-translate="Additional Facilities">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="service-wifi.html" data-translate="Free WiFi">WiFi</a></li>
+                <li><a href="service-parking.html" data-translate="Free Parking">Parking</a></li>
+                <li><a href="service-BBQ.html" data-translate="BBQ Facilities">BBQ Facilities</a></li>
+                <li><a href="service-pool.html" data-translate="Private Pool">Private Pool</a></li>
               </ul>
             </li>
-            <li><a href="#">Airport Shuttle</a></li>
-            <li><a href="#">Pet-Friendly Options</a></li>
+            <li><a href="https://goldrentcar.eu/contact.html" data-translate="Airport Shuttle">Airport Shuttle</a></li>
           </ul>
         </li>
         <li><a href="contact.html" data-translate="Contact">Contact</a></li>
@@ -145,11 +306,13 @@
           <h4 data-translate="Contact">Contact</h4>
           <p>
             <strong data-translate="Phone:">Phone:</strong>
+          </p>
           <p>
-            <a href="tel:+306936854795">+30 693 6854795</a> 🇬🇷 🇹🇷 🇷🇺<br>
-            <a href="tel:+306973957267">+30 697 3957267</a> 🇬🇧 🇺🇦
-          </p><br>
-          <strong data-translate="Email:">Email:</strong> <span>villashanioti5@gmail.com</span><br>
+            <span data-translate="Phone 1">+30 693 6854795 🇬🇷 🇹🇷 🇷🇺</span><br>
+            <span data-translate="Phone 2">+30 697 3957267 🇬🇧 🇺🇦</span>
+          </p>
+          <p>
+            <strong data-translate="Email:">Email:</strong> <span data-translate="Email Address">villashanioti5@gmail.com</span>
           </p>
         </div>
       </div>
@@ -158,7 +321,7 @@
         <div>
           <h4 data-translate="Opening Hours">Opening Hours</h4>
           <p>
-            <strong data-translate="Mon-Sun:">Mon-Sun:</strong> <span data-translate="24/7 Support">24/7 Support</span><br>
+            <strong data-translate="Mon-Sun:">Mon-Sun:</strong> <span data-translate="24/7 Support">24/7 Support</span>
           </p>
         </div>
       </div>
@@ -168,8 +331,7 @@
     </div>
   </div>
   <div class="container copyright text-center mt-4">
-    <p>© <span data-translate="Copyright">Copyright</span> <strong class="px-1 sitename">Villas Hanioti</strong> <span data-translate="All Rights Reserved">All Rights Reserved</span></p>
-
+    <p>© <span data-translate="Copyright">Copyright</span> <strong class="px-1 sitename" data-translate="Villas Hanioti">Villas Hanioti</strong> <span data-translate="All Rights Reserved">All Rights Reserved</span></p>
   </div>
 </footer>
 
@@ -196,110 +358,201 @@
     en: {
       "Home": "Home",
       "About": "About",
-      "Accommodations": "Accommodations",
+      "Acomodation Rules": "Accommodation Rules",
       "Villas": "Villas",
       "Gallery": "Gallery",
       "Language": "Language",
       "Our Services": "Our Services",
       "Contact": "Contact",
+      "English": "English",
+      "Greek": "Greek",
+      "Ukrainian": "Ukrainian",
+      "Russian": "Russian",
+      "Turkish": "Turkish",
+      "Breakfast": "Breakfast",
+      "Play Zone": "Play Zone",
+      "Transportation Facilities": "Transportation Facilities",
+      "Additional Facilities": "Additional Facilities",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Parking",
+      "BBQ Facilities": "BBQ Facilities",
+      "Private Pool": "Private Pool",
+      "Airport Shuttle": "Airport Shuttle",
       "Explore the beauty of Villas Hanioti through our stunning photo gallery, featuring luxurious villas, private pools, and breathtaking views of Hanioti, Chalkidiki, Greece.": "Explore the beauty of Villas Hanioti through our stunning photo gallery, featuring luxurious villas, private pools, and breathtaking views of Hanioti, Chalkidiki, Greece.",
       "Address": "Address",
       "Chaniotis": "Chaniotis",
       "Chalkidiki, Greece 63085": "Chalkidiki, Greece 63085",
       "Phone:": "Phone:",
       "Email:": "Email:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Opening Hours",
       "Mon-Sun:": "Mon-Sun:",
       "24/7 Support": "24/7 Support",
       "Copyright": "Copyright",
-      "All Rights Reserved": "All Rights Reserved"
+      "All Rights Reserved": "All Rights Reserved",
+      "Villas Hanioti": "Villas Hanioti"
     },
     el: {
       "Home": "Αρχική",
       "About": "Σχετικά",
-      "Accommodations": "Καταλύματα",
+      "Acomodation Rules": "Κανόνες Διαμονής",
       "Villas": "Βίλες",
       "Gallery": "Γκαλερί",
       "Language": "Γλώσσα",
       "Our Services": "Οι Υπηρεσίες μας",
       "Contact": "Επικοινωνία",
+      "English": "Αγγλικά",
+      "Greek": "Ελληνικά",
+      "Ukrainian": "Ουκρανικά",
+      "Russian": "Ρωσικά",
+      "Turkish": "Τουρκικά",
+      "Breakfast": "Πρωινό",
+      "Play Zone": "Ζώνη Παιχνιδιού",
+      "Transportation Facilities": "Υπηρεσίες Μεταφοράς",
+      "Additional Facilities": "Πρόσθετες Παροχές",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Χώρος Στάθμευσης",
+      "BBQ Facilities": "Εγκαταστάσεις BBQ",
+      "Private Pool": "Ιδιωτική Πισίνα",
+      "Airport Shuttle": "Υπηρεσία Μεταφοράς από/προς το Αεροδρόμιο",
       "Explore the beauty of Villas Hanioti through our stunning photo gallery, featuring luxurious villas, private pools, and breathtaking views of Hanioti, Chalkidiki, Greece.": "Εξερευνήστε την ομορφιά των Βιλών Χανιώτη μέσα από την εκπληκτική μας γκαλερί φωτογραφιών, που παρουσιάζει πολυτελείς βίλες, ιδιωτικές πισίνες και εκπληκτικές θέες της Χανιώτης, Χαλκιδικής, Ελλάδας.",
       "Address": "Διεύθυνση",
       "Chaniotis": "Χανιώτης",
       "Chalkidiki, Greece 63085": "Χαλκιδική, Ελλάδα 63085",
       "Phone:": "Τηλέφωνο:",
       "Email:": "Email:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Ώρες Λειτουργίας",
       "Mon-Sun:": "Δευ-Κυρ:",
       "24/7 Support": "Υποστήριξη 24/7",
       "Copyright": "Πνευματικά Δικαιώματα",
-      "All Rights Reserved": "Με επιφύλαξη παντός δικαιώματος"
+      "All Rights Reserved": "Με επιφύλαξη παντός δικαιώματος",
+      "Villas Hanioti": "Βίλες Χανιώτη"
     },
     uk: {
       "Home": "Головна",
       "About": "Про нас",
-      "Accommodations": "Проживання",
+      "Acomodation Rules": "Правила проживання",
       "Villas": "Вілли",
       "Gallery": "Галерея",
       "Language": "Мова",
       "Our Services": "Наші послуги",
       "Contact": "Контакти",
+      "English": "Англійська",
+      "Greek": "Грецька",
+      "Ukrainian": "Українська",
+      "Russian": "Російська",
+      "Turkish": "Турецька",
+      "Breakfast": "Сніданок",
+      "Play Zone": "Ігрова зона",
+      "Transportation Facilities": "Транспортні послуги",
+      "Additional Facilities": "Додаткові зручності",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Паркінг",
+      "BBQ Facilities": "Зона барбекю",
+      "Private Pool": "Приватний басейн",
+      "Airport Shuttle": "Трансфер з/до аеропорту",
       "Explore the beauty of Villas Hanioti through our stunning photo gallery, featuring luxurious villas, private pools, and breathtaking views of Hanioti, Chalkidiki, Greece.": "Досліджуйте красу вілл Ханіоті через нашу приголомшливу фотогалерею, що включає розкішні вілли, приватні басейни та захоплюючі краєвиди Ханіоті, Халкідікі, Греція.",
       "Address": "Адреса",
       "Chaniotis": "Ханіоті",
       "Chalkidiki, Greece 63085": "Халкідікі, Греція 63085",
       "Phone:": "Телефон:",
       "Email:": "Електронна пошта:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Години роботи",
       "Mon-Sun:": "Пн-Нд:",
       "24/7 Support": "Підтримка 24/7",
       "Copyright": "Авторське право",
-      "All Rights Reserved": "Усі права захищено"
+      "All Rights Reserved": "Усі права захищено",
+      "Villas Hanioti": "Вілли Ханіоті"
     },
     ru: {
       "Home": "Главная",
       "About": "О нас",
-      "Accommodations": "Проживание",
+      "Acomodation Rules": "Правила проживания",
       "Villas": "Виллы",
       "Gallery": "Галерея",
       "Language": "Язык",
       "Our Services": "Наши услуги",
       "Contact": "Контакты",
+      "English": "Английский",
+      "Greek": "Греческий",
+      "Ukrainian": "Украинский",
+      "Russian": "Русский",
+      "Turkish": "Турецкий",
+      "Breakfast": "Завтрак",
+      "Play Zone": "Игровая зона",
+      "Transportation Facilities": "Транспортные услуги",
+      "Additional Facilities": "Дополнительные удобства",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Парковка",
+      "BBQ Facilities": "Зона барбекю",
+      "Private Pool": "Частный бассейн",
+      "Airport Shuttle": "Трансфер из/в аэропорт",
       "Explore the beauty of Villas Hanioti through our stunning photo gallery, featuring luxurious villas, private pools, and breathtaking views of Hanioti, Chalkidiki, Greece.": "Исследуйте красоту вилл Ханиоти через нашу потрясающую фотогалерею, включающую роскошные виллы, частные бассейны и захватывающие виды Ханиоти, Халкидики, Греция.",
       "Address": "Адрес",
       "Chaniotis": "Ханиоти",
       "Chalkidiki, Greece 63085": "Халкидики, Греция 63085",
       "Phone:": "Телефон:",
       "Email:": "Электронная почта:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Часы работы",
       "Mon-Sun:": "Пн-Вс:",
       "24/7 Support": "Поддержка 24/7",
       "Copyright": "Авторское право",
-      "All Rights Reserved": "Все права защищены"
+      "All Rights Reserved": "Все права защищены",
+      "Villas Hanioti": "Виллы Ханиоти"
     },
     tr: {
       "Home": "Ana Sayfa",
       "About": "Hakkımızda",
-      "Accommodations": "Konaklama",
+      "Acomodation Rules": "Konaklama Kuralları",
       "Villas": "Villalar",
       "Gallery": "Galeri",
       "Language": "Dil",
       "Our Services": "Hizmetlerimiz",
       "Contact": "İletişim",
+      "English": "İngilizce",
+      "Greek": "Yunanca",
+      "Ukrainian": "Ukraynaca",
+      "Russian": "Rusça",
+      "Turkish": "Türkçe",
+      "Breakfast": "Kahvaltı",
+      "Play Zone": "Oyun Alanı",
+      "Transportation Facilities": "Ulaşım Hizmetleri",
+      "Additional Facilities": "Ek Olanaklar",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Otopark",
+      "BBQ Facilities": "Barbekü Alanı",
+      "Private Pool": "Özel Havuz",
+      "Airport Shuttle": "Havalimanı Servisi",
       "Explore the beauty of Villas Hanioti through our stunning photo gallery, featuring luxurious villas, private pools, and breathtaking views of Hanioti, Chalkidiki, Greece.": "Villas Hanioti'nin güzelliğini, lüks villaları, özel havuzları ve Hanioti, Halkidiki, Yunanistan'ın nefes kesen manzaralarını sergileyen çarpıcı fotoğraf galerimizle keşfedin.",
       "Address": "Adres",
       "Chaniotis": "Hanioti",
       "Chalkidiki, Greece 63085": "Halkidiki, Yunanistan 63085",
       "Phone:": "Telefon:",
       "Email:": "E-posta:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Çalışma Saatleri",
       "Mon-Sun:": "Pzt-Paz:",
       "24/7 Support": "7/24 Destek",
       "Copyright": "Telif Hakkı",
-      "All Rights Reserved": "Tüm Hakları Saklıdır"
+      "All Rights Reserved": "Tüm Hakları Saklıdır",
+      "Villas Hanioti": "Villas Hanioti"
     }
   };
 
+  // Function to translate the page
   function translatePage(lang) {
     document.querySelectorAll('[data-translate]').forEach(element => {
       const key = element.getAttribute('data-translate');
@@ -307,6 +560,8 @@
         element.textContent = translations[lang][key];
       }
     });
+    // Update the title dynamically
+    document.title = translations[lang]["Gallery"] + " - " + translations[lang]["Villas Hanioti"];
     localStorage.setItem('language', lang);
   }
 
@@ -320,8 +575,8 @@
       '0e4ef5fb-f765-4656-8330-e1bfbcf0358f.jpg', 'IMG_0698.jpg', 'IMG_0728.jpg', 'IMG_9900.jpg', 'IMG_9973.jpg',
       '1f19c14a-6842-490d-814b-b006edad0e8c.jpg', 'IMG_0699.jpg', 'IMG_0729.jpg', 'IMG_9901.jpg', 'IMG_9974.jpg',
       '7eedfab0-ed81-420d-8bfb-3dce4d6f030e.jpg', 'IMG_0700.jpg', 'IMG_0730.jpg', 'IMG_9902.jpg', 'IMG_9975.jpg',
-      '67d8ac19-d8cd-44f0-8d83-77469579bd40.jpg', 'IMG_0701.jpg',  'IMG_9903.jpg', 'IMG_9976.jpg',
-       'IMG_0704.jpg', 'IMG_1185.jpg', 'IMG_9904.jpg', 'IMG_9977.jpg',
+      '67d8ac19-d8cd-44f0-8d83-77469579bd40.jpg', 'IMG_0701.jpg', 'IMG_9903.jpg', 'IMG_9976.jpg',
+      'IMG_0704.jpg', 'IMG_1185.jpg', 'IMG_9904.jpg', 'IMG_9977.jpg',
       'a9065f95-a133-4578-ac7a-6b615d4feeb5.jpg', 'IMG_0705.jpg', 'IMG_1646.jpg', 'IMG_9910.jpg', 'IMG_9979.jpg',
       'e8fc3150-50fa-4b8d-8ab8-839394837892.jpg', 'IMG_0706.jpg', 'IMG_5564.jpg', 'IMG_9950.jpg', 'IMG_9980.jpg',
       'e02634ed-a8f5-4201-8152-bb4ab62a2c1a.jpg', 'IMG_0707.jpg', 'IMG_5569.jpg', 'IMG_9952.jpg', 'IMG_9981.jpg',
@@ -337,7 +592,7 @@
       'IMG_0689.jpg', 'IMG_0718.jpg', 'IMG_9282.jpg', 'IMG_9964.jpg', 'IMG_9996.jpg',
       'IMG_0690.jpg', 'IMG_0719.jpg', 'IMG_9285.jpg', 'IMG_9965.jpg', 'IMG_9997.jpg',
       'IMG_0691.jpg', 'IMG_0720.jpg', 'IMG_9286.jpg', 'IMG_9966.jpg',
-       'IMG_0692.jpg', 'IMG_0721.jpg', 'IMG_9287.jpg', 'IMG_9967.jpg',
+      'IMG_0692.jpg', 'IMG_0721.jpg', 'IMG_9287.jpg', 'IMG_9967.jpg',
       'IMG_0693.jpg', 'IMG_0722.jpg', 'IMG_9288.jpg', 'IMG_9968.jpg',
       'IMG_0694.jpg', 'IMG_0723.jpg', 'IMG_9289.jpg', 'IMG_9969.jpg',
       'IMG_0695.jpg', 'IMG_0724.jpg', 'IMG_9897.jpg', 'IMG_9970.jpg',
@@ -423,7 +678,8 @@
     if (exteriorImages.length > 0) {
       displayPage(currentPage);
     } else {
-      galleryContainer.innerHTML = '<p>No images available.</p>';
+      galleryContainer.innerHTML = '<p data-translate="No images available.">No images available.</p>';
+      translatePage(savedLang); // Reapply translation for dynamic content
       paginationContainer.style.display = 'none';
     }
   });
@@ -431,160 +687,16 @@
   // Ensure navigation links maintain the selected language
   document.querySelectorAll('.navmenu a:not(.dropdown-toggle)').forEach(link => {
     link.addEventListener('click', function (e) {
-      e.preventDefault();
       const href = this.getAttribute('href');
-      const lang = localStorage.getItem('language') || 'en';
-      window.location.href = href;
-      translatePage(lang);
+      if (href && href !== '#') { // Only prevent default for actual navigation links
+        e.preventDefault();
+        const lang = localStorage.getItem('language') || 'en';
+        window.location.href = href;
+        translatePage(lang); // This runs on next page load anyway
+      }
     });
   });
 </script>
 
-<!-- Custom CSS for Mosaic Gallery, Pagination, and Sleek Modal -->
-<style>
-  .mosaic-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 200px;
-    grid-gap: 10px;
-    padding: 20px 0;
-  }
-
-  .gallery-item {
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.1);
-  }
-
-  .gallery-item.tall {
-    grid-row: span 1;
-  }
-
-  .gallery-item.wide {
-    grid-column: span 2;
-  }
-
-  @media (max-width: 768px) {
-    .mosaic-gallery {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      grid-auto-rows: 150px;
-    }
-
-    .gallery-item.wide {
-      grid-column: span 1;
-    }
-
-    .gallery-item.tall {
-      grid-row: span 1;
-    }
-  }
-
-  .pagination {
-    margin-top: 30px;
-  }
-
-  .pagination-btn {
-    background-color: var(--surface-color);
-    color: var(--default-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
-    border-radius: 50%;
-    font-size: 16px;
-    font-family: var(--heading-font);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-
-  .pagination-btn:hover {
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-  }
-
-  .pagination-btn.active {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    border-color: var(--accent-color);
-  }
-
-  .pagination-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  .modal-content {
-    background: rgba(0, 0, 0, 0.9);
-    border: none;
-  }
-
-  .modal-header .btn-close {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    transition: background-color 0.3s ease;
-  }
-
-  .modal-header .btn-close:hover {
-    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  }
-
-  .modal-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(39, 94, 168, 0.7); /* --accent-color with transparency */
-    color: var(--contrast-color);
-    border: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
-    z-index: 10;
-  }
-
-  .modal-nav-btn:hover {
-    background: var(--accent-color);
-  }
-
-  .modal-nav-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  .modal-nav-btn.prev {
-    left: 20px;
-  }
-
-  .modal-nav-btn.next {
-    right: 20px;
-  }
-</style>
-
 </body>
-
 </html>

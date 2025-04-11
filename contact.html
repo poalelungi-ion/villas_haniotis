@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - Villas Hanioti</title>
+  <title data-translate="Contact">Contact - Villas Hanioti</title>
   <meta name="description" content="Contact Villas Hanioti in Hanioti, Chalkidiki, Greece for luxury villa bookings and inquiries.">
   <meta name="keywords" content="Villas Hanioti, Chalkidiki, Greece, contact, luxury villas, vacation rental">
 
@@ -26,6 +26,24 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom CSS to Ensure Language Dropdown is Always Visible -->
+  <style>
+    .navmenu .dropdown .dropdown-menu.show {
+      display: block;
+      position: absolute;
+      background: var(--nav-dropdown-background-color);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+    }
+
+    @media (max-width: 1199px) {
+      .navmenu .dropdown .dropdown-menu.show {
+        position: static;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="contact-page">
@@ -34,40 +52,40 @@
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
     <a href="index.html" class="logo d-flex align-items-center">
       <img src="assets/img/logo.png" alt="Villas Hanioti Logo" style="aspect-ratio: initial;">
-      <h1 class="sitename" style="margin-top: 3%; font-weight: normal;">Villas <span>Hanioti</span></h1>
+      <h1 class="sitename" style="margin-top: 3%; font-weight: normal;" data-translate="Villas Hanioti">Villas <span>Hanioti</span></h1>
     </a>
 
     <nav id="navmenu" class="navmenu" style="font-weight: normal;">
       <ul>
         <li><a href="index.html" data-translate="Home">Home</a></li>
         <li><a href="about.html" data-translate="About">About</a></li>
-        <li><a href="services.html" data-translate="Accommodations">Accommodation Rules</a></li>
+        <li><a href="services.html" data-translate="Acomodation Rules">Accommodation Rules</a></li>
         <li><a href="properties.html" data-translate="Villas">Villas</a></li>
         <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
-        <!-- Language Dropdown (Always Visible) -->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul class="dropdown-menu show">
-            <li><a href="#" onclick="translatePage('en')">English</a></li>
-            <li><a href="#" onclick="translatePage('el')">Greek</a></li>
-<!--            <li><a href="#" onclick="translatePage('uk')">Ukrainian</a></li>-->
-<!--            <li><a href="#" onclick="translatePage('ru')">Russian</a></li>-->
-<!--            <li><a href="#" onclick="translatePage('tr')">Turkish</a></li>-->
+            <li><a href="#" onclick="translatePage('en')" data-translate="English">English</a></li>
+            <li><a href="#" onclick="translatePage('el')" data-translate="Greek">Greek</a></li>
+<!--            <li><a href="#" onclick="translatePage('uk')" data-translate="Ukrainian">Ukrainian</a></li>-->
+<!--            <li><a href="#" onclick="translatePage('ru')" data-translate="Russian">Russian</a></li>-->
+<!--            <li><a href="#" onclick="translatePage('tr')" data-translate="Turkish">Turkish</a></li>-->
           </ul>
         </li>
-        <li class="dropdown"><a href="#"  data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href="#" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul class="dropdown-menu show">
-            <li><a href="service-breakfast.html">Breakfast</a></li>
-            <li><a href="#">Play Zone</a></li>
-            <li class="dropdown"><a href="#">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="service-breakfast.html" data-translate="Breakfast">Breakfast</a></li>
+            <li><a href="service-playzone.html" data-translate="Play Zone">Play Zone</a></li>
+            <li><a href="service-transportation.html" data-translate="Transportation Facilities">Transportation Facilities</a></li>
+            <li class="dropdown"><a href="#" data-translate="Additional Facilities">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="service-wifi.html" class="active">WiFi</a></li>
-                <li><a href="service-parking.html">Parking</a></li>
-                <li><a href="service-BBQ.html">BBQ Facilities</a></li>
-                <li><a href="#">Private Pool</a></li>
+                <li><a href="service-wifi.html" data-translate="Free WiFi">WiFi</a></li>
+                <li><a href="service-parking.html" data-translate="Free Parking">Parking</a></li>
+                <li><a href="service-BBQ.html" data-translate="BBQ Facilities">BBQ Facilities</a></li>
+                <li><a href="service-pool.html" data-translate="Private Pool">Private Pool</a></li>
               </ul>
             </li>
-            <li><a href="https://goldrentcar.eu/contact.html">Airport Shuttle</a></li>
+            <li><a href="https://goldrentcar.eu/contact.html" data-translate="Airport Shuttle">Airport Shuttle</a></li>
           </ul>
         </li>
         <li><a href="contact.html" class="active" data-translate="Contact">Contact</a></li>
@@ -103,15 +121,12 @@
 
   <!-- Contact Section -->
   <section id="contact" class="contact section">
-
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
       <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
         <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.974632318614!2d23.578614315258!3d40.001567979413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a9e8f8f8f8f8f8%3A0x0!2sHanioti%2C%20Chalkidiki%2063085%2C%20Greece!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div><!-- End Google Maps -->
 
       <div class="row gy-4">
-
         <div class="col-lg-4">
           <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <i class="bi bi-geo-alt flex-shrink-0"></i>
@@ -125,10 +140,9 @@
             <i class="bi bi-telephone flex-shrink-0"></i>
             <div>
               <h3 data-translate="Call Us">Call Us</h3>
-
               <p>
-                <a href="tel:+306936854795">+30 693 6854795</a> 🇬🇷 🇹🇷 🇷🇺<br>
-                <a href="tel:+306973957267">+30 697 3957267</a> 🇬🇧 🇺🇦
+                <span data-translate="Phone 1">+30 693 6854795 🇬🇷 🇹🇷 🇷🇺</span><br>
+                <span data-translate="Phone 2">+30 697 3957267 🇬🇧 🇺🇦</span>
               </p>
             </div>
           </div><!-- End Info Item -->
@@ -137,48 +151,37 @@
             <i class="bi bi-envelope flex-shrink-0"></i>
             <div>
               <h3 data-translate="Email Us">Email Us</h3>
-              <p><a href="mailto:villashanioti5@gmail.com">villashanioti5@gmail.com</a></p>
+              <p data-translate="Email Address">villashanioti5@gmail.com</p>
             </div>
           </div><!-- End Info Item -->
-
         </div>
 
         <div class="col-lg-8">
           <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
             <div class="row gy-4">
-
               <div class="col-md-6">
                 <input type="text" name="name" class="form-control" placeholder="Your Name" data-translate-placeholder="Your Name" required="">
               </div>
-
               <div class="col-md-6">
                 <input type="email" class="form-control" name="email" placeholder="Your Email" data-translate-placeholder="Your Email" required="">
               </div>
-
               <div class="col-md-12">
                 <input type="text" class="form-control" name="subject" placeholder="Subject" data-translate-placeholder="Subject" required="">
               </div>
-
               <div class="col-md-12">
                 <textarea class="form-control" name="message" rows="6" placeholder="Message" data-translate-placeholder="Message" required=""></textarea>
               </div>
-
               <div class="col-md-12 text-center">
                 <div class="loading" data-translate="Loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message" data-translate="Your message has been sent. Thank you!">Your message has been sent. Thank you!</div>
-
                 <button type="submit" data-translate="Send Message">Send Message</button>
               </div>
-
             </div>
           </form>
         </div><!-- End Contact Form -->
-
       </div>
-
     </div>
-
   </section><!-- /Contact Section -->
 
 </main>
@@ -200,11 +203,13 @@
           <h4 data-translate="Contact">Contact</h4>
           <p>
             <strong data-translate="Phone:">Phone:</strong>
+          </p>
           <p>
-            <a href="tel:+306936854795">+30 693 6854795</a> 🇬🇷 🇹🇷 🇷🇺<br>
-            <a href="tel:+306973957267">+30 697 3957267</a> 🇬🇧 🇺🇦
-          </p><br>
-          <strong data-translate="Email:">Email:</strong> <span>villashanioti5@gmail.com</span><br>
+            <span data-translate="Phone 1">+30 693 6854795 🇬🇷 🇹🇷 🇷🇺</span><br>
+            <span data-translate="Phone 2">+30 697 3957267 🇬🇧 🇺🇦</span>
+          </p>
+          <p>
+            <strong data-translate="Email:">Email:</strong> <span data-translate="Email Address">villashanioti5@gmail.com</span>
           </p>
         </div>
       </div>
@@ -213,7 +218,7 @@
         <div>
           <h4 data-translate="Opening Hours">Opening Hours</h4>
           <p>
-            <strong data-translate="Mon-Sun:">Mon-Sun:</strong> <span data-translate="24/7 Support">24/7 Support</span><br>
+            <strong data-translate="Mon-Sun:">Mon-Sun:</strong> <span data-translate="24/7 Support">24/7 Support</span>
           </p>
         </div>
       </div>
@@ -223,8 +228,7 @@
     </div>
   </div>
   <div class="container copyright text-center mt-4">
-    <p>© <span data-translate="Copyright">Copyright</span> <strong class="px-1 sitename">Villas Hanioti</strong> <span data-translate="All Rights Reserved">All Rights Reserved</span></p>
-
+    <p>© <span data-translate="Copyright">Copyright</span> <strong class="px-1 sitename" data-translate="Villas Hanioti">Villas Hanioti</strong> <span data-translate="All Rights Reserved">All Rights Reserved</span></p>
   </div>
 </footer>
 
@@ -251,12 +255,26 @@
     en: {
       "Home": "Home",
       "About": "About",
-      "Accommodations": "Accommodations",
+      "Acomodation Rules": "Accommodation Rules",
       "Villas": "Villas",
       "Gallery": "Gallery",
       "Language": "Language",
       "Our Services": "Our Services",
       "Contact": "Contact",
+      "English": "English",
+      "Greek": "Greek",
+      "Ukrainian": "Ukrainian",
+      "Russian": "Russian",
+      "Turkish": "Turkish",
+      "Breakfast": "Breakfast",
+      "Play Zone": "Play Zone",
+      "Transportation Facilities": "Transportation Facilities",
+      "Additional Facilities": "Additional Facilities",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Parking",
+      "BBQ Facilities": "BBQ Facilities",
+      "Private Pool": "Private Pool",
+      "Airport Shuttle": "Airport Shuttle",
       "Get in touch with Villas Hanioti for inquiries, bookings, or any assistance you need for your stay in Hanioti, Chalkidiki, Greece. We’re here to help you plan your perfect vacation!": "Get in touch with Villas Hanioti for inquiries, bookings, or any assistance you need for your stay in Hanioti, Chalkidiki, Greece. We’re here to help you plan your perfect vacation!",
       "Address": "Address",
       "Chaniotis, Chalkidiki, Greece 63085": "Chaniotis, Chalkidiki, Greece 63085",
@@ -273,21 +291,39 @@
       "Chalkidiki, Greece 63085": "Chalkidiki, Greece 63085",
       "Phone:": "Phone:",
       "Email:": "Email:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Opening Hours",
       "Mon-Sun:": "Mon-Sun:",
       "24/7 Support": "24/7 Support",
       "Copyright": "Copyright",
-      "All Rights Reserved": "All Rights Reserved"
+      "All Rights Reserved": "All Rights Reserved",
+      "Villas Hanioti": "Villas Hanioti"
     },
     el: {
       "Home": "Αρχική",
       "About": "Σχετικά",
-      "Accommodations": "Καταλύματα",
+      "Acomodation Rules": "Κανόνες Διαμονής",
       "Villas": "Βίλες",
       "Gallery": "Γκαλερί",
       "Language": "Γλώσσα",
       "Our Services": "Οι Υπηρεσίες μας",
       "Contact": "Επικοινωνία",
+      "English": "Αγγλικά",
+      "Greek": "Ελληνικά",
+      "Ukrainian": "Ουκρανικά",
+      "Russian": "Ρωσικά",
+      "Turkish": "Τουρκικά",
+      "Breakfast": "Πρωινό",
+      "Play Zone": "Ζώνη Παιχνιδιού",
+      "Transportation Facilities": "Υπηρεσίες Μεταφοράς",
+      "Additional Facilities": "Πρόσθετες Παροχές",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Χώρος Στάθμευσης",
+      "BBQ Facilities": "Εγκαταστάσεις BBQ",
+      "Private Pool": "Ιδιωτική Πισίνα",
+      "Airport Shuttle": "Υπηρεσία Μεταφοράς από/προς το Αεροδρόμιο",
       "Get in touch with Villas Hanioti for inquiries, bookings, or any assistance you need for your stay in Hanioti, Chalkidiki, Greece. We’re here to help you plan your perfect vacation!": "Επικοινωνήστε με τις Βίλες Χανιώτη για ερωτήσεις, κρατήσεις ή οποιαδήποτε βοήθεια χρειάζεστε για τη διαμονή σας στη Χανιώτη, Χαλκιδική, Ελλάδα. Είμαστε εδώ για να σας βοηθήσουμε να σχεδιάσετε τις τέλειες διακοπές σας!",
       "Address": "Διεύθυνση",
       "Chaniotis, Chalkidiki, Greece 63085": "Χανιώτης, Χαλκιδική, Ελλάδα 63085",
@@ -304,21 +340,39 @@
       "Chalkidiki, Greece 63085": "Χαλκιδική, Ελλάδα 63085",
       "Phone:": "Τηλέφωνο:",
       "Email:": "Email:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Ώρες Λειτουργίας",
       "Mon-Sun:": "Δευ-Κυρ:",
       "24/7 Support": "Υποστήριξη 24/7",
       "Copyright": "Πνευματικά Δικαιώματα",
-      "All Rights Reserved": "Με επιφύλαξη παντός δικαιώματος"
+      "All Rights Reserved": "Με επιφύλαξη παντός δικαιώματος",
+      "Villas Hanioti": "Βίλες Χανιώτη"
     },
     uk: {
       "Home": "Головна",
       "About": "Про нас",
-      "Accommodations": "Проживання",
+      "Acomodation Rules": "Правила проживання",
       "Villas": "Вілли",
       "Gallery": "Галерея",
       "Language": "Мова",
       "Our Services": "Наші послуги",
       "Contact": "Контакти",
+      "English": "Англійська",
+      "Greek": "Грецька",
+      "Ukrainian": "Українська",
+      "Russian": "Російська",
+      "Turkish": "Турецька",
+      "Breakfast": "Сніданок",
+      "Play Zone": "Ігрова зона",
+      "Transportation Facilities": "Транспортні послуги",
+      "Additional Facilities": "Додаткові зручності",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Паркінг",
+      "BBQ Facilities": "Зона барбекю",
+      "Private Pool": "Приватний басейн",
+      "Airport Shuttle": "Трансфер з/до аеропорту",
       "Get in touch with Villas Hanioti for inquiries, bookings, or any assistance you need for your stay in Hanioti, Chalkidiki, Greece. We’re here to help you plan your perfect vacation!": "Зв’яжіться з Villas Hanioti для запитів, бронювань або будь-якої допомоги, яка вам потрібна для перебування в Ханіоті, Халкідікі, Греція. Ми тут, щоб допомогти вам спланувати ідеальний відпочинок!",
       "Address": "Адреса",
       "Chaniotis, Chalkidiki, Greece 63085": "Ханіоті, Халкідікі, Греція 63085",
@@ -335,21 +389,39 @@
       "Chalkidiki, Greece 63085": "Халкідікі, Греція 63085",
       "Phone:": "Телефон:",
       "Email:": "Електронна пошта:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Години роботи",
       "Mon-Sun:": "Пн-Нд:",
       "24/7 Support": "Підтримка 24/7",
       "Copyright": "Авторське право",
-      "All Rights Reserved": "Усі права захищено"
+      "All Rights Reserved": "Усі права захищено",
+      "Villas Hanioti": "Вілли Ханіоті"
     },
     ru: {
       "Home": "Главная",
       "About": "О нас",
-      "Accommodations": "Проживание",
+      "Acomodation Rules": "Правила проживания",
       "Villas": "Виллы",
       "Gallery": "Галерея",
       "Language": "Язык",
       "Our Services": "Наши услуги",
       "Contact": "Контакты",
+      "English": "Английский",
+      "Greek": "Греческий",
+      "Ukrainian": "Украинский",
+      "Russian": "Русский",
+      "Turkish": "Турецкий",
+      "Breakfast": "Завтрак",
+      "Play Zone": "Игровая зона",
+      "Transportation Facilities": "Транспортные услуги",
+      "Additional Facilities": "Дополнительные удобства",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Парковка",
+      "BBQ Facilities": "Зона барбекю",
+      "Private Pool": "Частный бассейн",
+      "Airport Shuttle": "Трансфер из/в аэропорт",
       "Get in touch with Villas Hanioti for inquiries, bookings, or any assistance you need for your stay in Hanioti, Chalkidiki, Greece. We’re here to help you plan your perfect vacation!": "Свяжитесь с Villas Hanioti для запросов, бронирований или любой помощи, которая вам нужна для пребывания в Ханиоти, Халкидики, Греция. Мы здесь, чтобы помочь вам спланировать идеальный отдых!",
       "Address": "Адрес",
       "Chaniotis, Chalkidiki, Greece 63085": "Ханиоти, Халкидики, Греция 63085",
@@ -366,21 +438,39 @@
       "Chalkidiki, Greece 63085": "Халкидики, Греция 63085",
       "Phone:": "Телефон:",
       "Email:": "Электронная почта:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Часы работы",
       "Mon-Sun:": "Пн-Вс:",
       "24/7 Support": "Поддержка 24/7",
       "Copyright": "Авторское право",
-      "All Rights Reserved": "Все права защищены"
+      "All Rights Reserved": "Все права защищены",
+      "Villas Hanioti": "Виллы Ханиоти"
     },
     tr: {
       "Home": "Ana Sayfa",
       "About": "Hakkımızda",
-      "Accommodations": "Konaklama",
+      "Acomodation Rules": "Konaklama Kuralları",
       "Villas": "Villalar",
       "Gallery": "Galeri",
       "Language": "Dil",
       "Our Services": "Hizmetlerimiz",
       "Contact": "İletişim",
+      "English": "İngilizce",
+      "Greek": "Yunanca",
+      "Ukrainian": "Ukraynaca",
+      "Russian": "Rusça",
+      "Turkish": "Türkçe",
+      "Breakfast": "Kahvaltı",
+      "Play Zone": "Oyun Alanı",
+      "Transportation Facilities": "Ulaşım Hizmetleri",
+      "Additional Facilities": "Ek Olanaklar",
+      "Free WiFi": "WiFi",
+      "Free Parking": "Otopark",
+      "BBQ Facilities": "Barbekü Alanı",
+      "Private Pool": "Özel Havuz",
+      "Airport Shuttle": "Havalimanı Servisi",
       "Get in touch with Villas Hanioti for inquiries, bookings, or any assistance you need for your stay in Hanioti, Chalkidiki, Greece. We’re here to help you plan your perfect vacation!": "Hanioti, Halkidiki, Yunanistan’daki konaklamanız için sorular, rezervasyonlar veya ihtiyacınız olan herhangi bir yardım için Villas Hanioti ile iletişime geçin. Mükemmel tatilinizi planlamanıza yardımcı olmak için buradayız!",
       "Address": "Adres",
       "Chaniotis, Chalkidiki, Greece 63085": "Hanioti, Halkidiki, Yunanistan 63085",
@@ -397,14 +487,19 @@
       "Chalkidiki, Greece 63085": "Halkidiki, Yunanistan 63085",
       "Phone:": "Telefon:",
       "Email:": "E-posta:",
+      "Phone 1": "+30 693 6854795 🇬🇷 🇹🇷 🇷🇺",
+      "Phone 2": "+30 697 3957267 🇬🇧 🇺🇦",
+      "Email Address": "villashanioti5@gmail.com",
       "Opening Hours": "Çalışma Saatleri",
       "Mon-Sun:": "Pzt-Paz:",
       "24/7 Support": "7/24 Destek",
       "Copyright": "Telif Hakkı",
-      "All Rights Reserved": "Tüm Hakları Saklıdır"
+      "All Rights Reserved": "Tüm Hakları Saklıdır",
+      "Villas Hanioti": "Villas Hanioti"
     }
   };
 
+  // Function to translate the page
   function translatePage(lang) {
     document.querySelectorAll('[data-translate]').forEach(element => {
       const key = element.getAttribute('data-translate');
@@ -418,6 +513,8 @@
         element.placeholder = translations[lang][key];
       }
     });
+    // Update the title dynamically
+    document.title = translations[lang]["Contact"] + " - " + translations[lang]["Villas Hanioti"];
     localStorage.setItem('language', lang); // Save the selected language
   }
 
@@ -430,33 +527,16 @@
   // Ensure navigation links maintain the selected language
   document.querySelectorAll('.navmenu a:not(.dropdown-toggle)').forEach(link => {
     link.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent default navigation
       const href = this.getAttribute('href');
-      const lang = localStorage.getItem('language') || 'en';
-      window.location.href = href; // Navigate to the page
-      translatePage(lang); // Ensure language persists (though this runs on next page load)
+      if (href && href !== '#') { // Only prevent default for actual navigation links
+        e.preventDefault();
+        const lang = localStorage.getItem('language') || 'en';
+        window.location.href = href; // Navigate to the page
+        translatePage(lang); // This runs on next page load anyway
+      }
     });
   });
 </script>
 
-<!-- Custom CSS to Ensure Language Dropdown is Always Visible -->
-<style>
-  .navmenu .dropdown .dropdown-menu.show {
-    display: block;
-    position: absolute;
-    background: var(--nav-dropdown-background-color);
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-    z-index: 99;
-  }
-
-  @media (max-width: 1199px) {
-    .navmenu .dropdown .dropdown-menu.show {
-      position: static;
-      box-shadow: none;
-    }
-  }
-</style>
-
 </body>
-
 </html>
