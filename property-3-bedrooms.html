@@ -37,15 +37,18 @@
       gap: 10px;
       padding: 10px;
     }
+    .gallery-mosaic a {
+      display: block; /* Ensures the link wraps the image properly */
+    }
     .gallery-mosaic img {
       width: 100%;
-      height: 150px; /* Fixed height for uniformity */
-      object-fit: cover; /* Ensures images fit nicely */
+      height: 150px;
+      object-fit: cover;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
     .gallery-mosaic img:hover {
-      transform: scale(1.05); /* Slight zoom on hover */
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -144,9 +147,9 @@
           }
         </script>
         <div class="swiper-wrapper align-items-center">
-          <div class="swiper-slide"><img src="assets/img/4 bedrooms, 2 bathrooms/IMG_0015.jpg" alt="Villa Exterior"></div>
-          <div class="swiper-slide"><img src="assets/img/4 bedrooms, 2 bathrooms/IMG_0699.jpg" alt="Villa Interior"></div>
-          <div class="swiper-slide"><img src="assets/img/4 bedrooms, 2 bathrooms/IMG_0725.jpg" alt="Villa Private Pool"></div>
+          <div class="swiper-slide"><img src="assets/img/Exterior/IMG_9279.JPG" alt="Villa Exterior"></div>
+          <div class="swiper-slide"><img src="assets/img/Exterior/IMG_0686.JPG" alt="Villa Interior"></div>
+          <div class="swiper-slide"><img src="assets/img/Exterior/IMG_9287.JPG" alt="Villa Private Pool"></div>
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
@@ -394,7 +397,8 @@
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<!-- Lightbox2 JS -->
+<!-- Lightbox2 JS (Ensure it loads after jQuery if required) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
 <!-- Main JS File -->
@@ -474,6 +478,18 @@
   document.addEventListener('DOMContentLoaded', function () {
     const savedLang = localStorage.getItem('language') || 'en';
     translatePage(savedLang);
+  });
+</script>
+
+<!-- Lightbox Initialization Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Ensure Lightbox is initialized
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true, // Loops back to the first image after the last one
+      'disableScrolling': true // Prevents page scrolling while lightbox is open
+    });
   });
 </script>
 
