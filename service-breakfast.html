@@ -164,33 +164,41 @@
 
     <nav id="navmenu" class="navmenu" style="font-weight: normal;">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Accommodations</a></li>
-        <li><a href="properties.html">Villas</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="agents.html">Location</a></li>
-        <li class="dropdown"><a href="#" class="active"><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="service_breakfast.html" class="active">Breakfast</a></li>
-            <li class="dropdown"><a href="#"><span>Additional Amenities</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">WiFi</a></li>
-                <li><a href="#">Parking</a></li>
-                <li><a href="#">BBQ Facilities</a></li>
+        <li><a href="index.html" data-translate="Home">Home</a></li>
+        <li><a href="about.html" data-translate="About">About</a></li>
+        <li><a href="services.html" data-translate="Acomodation Rules">Acomodation Rules</a></li>
+        <li><a href="properties.html" data-translate="Villas">Villas</a></li>
+        <li><a href="gallery.html" data-translate="Gallery">Gallery</a></li>
+        <!-- Language Dropdown (Always Visible) -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-translate="Language">Language <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="#" onclick="translatePage('en')">English</a></li>
+            <li><a href="#" onclick="translatePage('el')">Greek</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="active" data-translate="Our Services">Our Services <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu show">
+            <li><a href="service-breakfast.html">Breakfast</a></li>
+            <li><a href="#">Play Zone</a></li>
+            <li class="dropdown"><a href="#">Additional Facilities <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="service-wifi.html" class="active">WiFi</a></li>
+                <li><a href="service-parking.html">Parking</a></li>
+                <li><a href="service-BBQ.html">BBQ Facilities</a></li>
                 <li><a href="#">Private Pool</a></li>
               </ul>
             </li>
-            <li><a href="#">Airport Shuttle</a></li>
-            <li><a href="#">Pet-Friendly Options</a></li>
+            <li><a href="https://goldrentcar.eu/contact.html">Airport Shuttle</a></li>
           </ul>
         </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" data-translate="Contact">Contact</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
   </div>
 </header>
+
 
 <main class="main">
 
@@ -351,45 +359,42 @@
       <div class="col-lg-3 col-md-6 d-flex">
         <i class="bi bi-geo-alt icon"></i>
         <div class="address">
-          <h4>Address</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p></p>
+          <h4 data-translate="Address">Address</h4>
+          <p data-translate="Chaniotis">Chaniotis</p>
+          <p data-translate="Chalkidiki, Greece 63085">Chalkidiki, Greece 63085</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 d-flex">
         <i class="bi bi-telephone icon"></i>
         <div>
-          <h4>Contact</h4>
+          <h4 data-translate="Contact">Contact</h4>
           <p>
-            <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-            <strong>Email:</strong> <span><a href="mailto:info@example.com">info@example.com</a></span><br>
+            <strong data-translate="Phone:">Phone:</strong>
+          <p>
+            <a href="tel:+306936854795">+30 693 6854795</a> 🇬🇷 🇹🇷 🇷🇺<br>
+            <a href="tel:+306973957267">+30 697 3957267</a> 🇬🇧 🇺🇦
+          </p><br>
+          <strong data-translate="Email:">Email:</strong> <span>villashanioti5@gmail.com</span><br>
           </p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6 d-flex">
         <i class="bi bi-clock icon"></i>
         <div>
-          <h4>Opening Hours</h4>
+          <h4 data-translate="Opening Hours">Opening Hours</h4>
           <p>
-            <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-            <strong>Sunday</strong>: <span>Closed</span>
+            <strong data-translate="Mon-Sun:">Mon-Sun:</strong> <span data-translate="24/7 Support">24/7 Support</span><br>
           </p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
-        <h4>Follow Us</h4>
-        <div class="social-links d-flex">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
+        <!-- Social links removed -->
       </div>
     </div>
   </div>
   <div class="container copyright text-center mt-4">
-    <p>© <span>Copyright</span> <strong class="px-1 sitename">Villas Hanioti</strong> <span>All Rights Reserved</span></p>
+    <p>© <span data-translate="Copyright">Copyright</span> <strong class="px-1 sitename">Villas Hanioti</strong> <span data-translate="All Rights Reserved">All Rights Reserved</span></p>
+
   </div>
 </footer>
 
